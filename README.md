@@ -8,7 +8,7 @@ Web app interaktif untuk belajar Pendidikan Agama Islam (PAI) kelas 6 SD. Mencak
 
 | File | Keterangan |
 |------|------------|
-| `belajar-pai-bab5-bab6.html` | File utama — buka langsung di browser, tidak perlu server |
+| `index.html` | File utama — buka langsung di browser, tidak perlu server |
 
 ---
 
