@@ -96,7 +96,7 @@ Setiap bab memiliki 5 tab latihan:
 
 ## 👦 Target Pengguna
 
-Siswa kelas 6 SD Islam — didesain dengan:
+Siswa kelas 1 SD Islam — didesain dengan:
 - Font besar (base 18px) agar mudah dibaca
 - Warna cerah dan berbeda per bab
 - Interaksi sederhana (klik/tap)
@@ -106,4 +106,4 @@ Siswa kelas 6 SD Islam — didesain dengan:
 
 ## 📝 Lisensi
 
-Dibuat untuk keperluan edukasi. Materi bersumber dari buku PAI SD Islam kelas 6.
+Dibuat untuk keperluan edukasi. Materi bersumber dari buku PAI SD Islam kelas 1.
