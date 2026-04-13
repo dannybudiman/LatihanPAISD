@@ -1,6 +1,6 @@
 # 🕌 Belajar PAI Interaktif — Kelas 1 SD
 
-Aplikasi web edukasi interaktif untuk membantu siswa Kelas 6 SD mempelajari materi Pendidikan Agama Islam (PAI). Dibangun sebagai file HTML statis yang ringan dan bisa diakses langsung via browser tanpa instalasi apa pun.
+Aplikasi web edukasi interaktif untuk membantu siswa Kelas 1 SD mempelajari materi Pendidikan Agama Islam (PAI). Dibangun sebagai file HTML statis yang ringan dan bisa diakses langsung via browser tanpa instalasi apa pun.
 
 🔗 🔗 **Live Demo:** [dannybudiman.github.io/LatihanPAISD](https://dannybudiman.github.io/LatihanPAISD/)
 
