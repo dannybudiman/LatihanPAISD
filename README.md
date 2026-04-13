@@ -2,6 +2,8 @@
 
 Aplikasi web interaktif untuk belajar Pendidikan Agama Islam (PAI) Kelas 1 SD, mencakup Bab 5 hingga Bab 9. Dirancang agar siswa bisa belajar mandiri dengan tampilan yang menarik, berwarna, dan responsif di desktop maupun mobile.
 
+🔗 **[Buka Aplikasi — dannybudiman.github.io/LatihanPAISD](https://dannybudiman.github.io/LatihanPAISD/)**
+
 ---
 
 ## 📸 Tampilan Aplikasi
