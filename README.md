@@ -74,7 +74,7 @@ Setiap bab memiliki 5 tab latihan:
 ## 🚀 Cara Pakai
 
 ```
-1. Download file belajar-pai-bab5-bab6.html
+1. Download file index.html
 2. Buka di browser (Chrome / Firefox / Safari)
 3. Pilih bab di bagian atas
 4. Pilih tab yang diinginkan
