@@ -108,15 +108,6 @@ Tampilan otomatis menyesuaikan layar mobile (≤500px) dengan ukuran font dan pa
 
 ---
 
-## 🐛 Bug yang Diperbaiki
-
-| # | Lokasi | Deskripsi | Status |
-|---|--------|-----------|--------|
-| 1 | JS line ~1347 | Duplikasi deklarasi `const fcIdx` menyebabkan `SyntaxError` dan seluruh script crash | ✅ Fixed |
-| 2 | HTML line ~345 | Nav Bab 6 menggunakan class `bab5-nav` (seharusnya `bab6-nav`), menyebabkan warna tab aktif tidak muncul | ✅ Fixed |
-
----
-
 ## 👨‍🏫 Kredit
 
 Dibuat untuk pembelajaran PAI SD Islam Kelas 1. Konten materi bersumber dari buku teks PAI SD Kelas 1 (referensi halaman tercantum di setiap flash card).
