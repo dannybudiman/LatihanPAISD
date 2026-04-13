@@ -15,6 +15,10 @@
   --orange:#ff6b35; --orange-dark:#c84b00;
   --lime:#8bc34a; --lime-dark:#558b2f;
   --rose:#e91e8c; --rose-dark:#ad145c;
+  /* Bab 7, 8, 9 */
+  --indigo:#5c6bc0; --indigo-dark:#3949ab;
+  --emerald:#00897b; --emerald-dark:#00695c;
+  --crimson:#c62828; --crimson-dark:#8e0000;
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{font-size:18px;}
@@ -44,6 +48,9 @@ body{font-family:'Nunito',sans-serif;background:linear-gradient(135deg,#e0f4ff 0
 }
 .bab-btn.active-bab5{background:var(--teal);border-color:var(--teal);color:white;box-shadow:0 4px 14px rgba(0,180,216,0.5);}
 .bab-btn.active-bab6{background:var(--orange);border-color:var(--orange);color:white;box-shadow:0 4px 14px rgba(255,107,53,0.5);}
+.bab-btn.active-bab7{background:var(--indigo);border-color:var(--indigo);color:white;box-shadow:0 4px 14px rgba(92,107,192,0.5);}
+.bab-btn.active-bab8{background:var(--emerald);border-color:var(--emerald);color:white;box-shadow:0 4px 14px rgba(0,137,123,0.5);}
+.bab-btn.active-bab9{background:var(--crimson);border-color:var(--crimson);color:white;box-shadow:0 4px 14px rgba(198,40,40,0.5);}
 
 /* ===== HEADER ===== */
 .header{
@@ -210,6 +217,12 @@ body{font-family:'Nunito',sans-serif;background:linear-gradient(135deg,#e0f4ff 0
 .btn.bab5-btn:hover{background:var(--teal-dark);transform:translateY(-3px);}
 .btn.bab6-btn{background:var(--orange);color:white;box-shadow:0 5px 14px rgba(255,107,53,0.35);}
 .btn.bab6-btn:hover{background:var(--orange-dark);transform:translateY(-3px);}
+.btn.bab7-btn{background:var(--indigo);color:white;box-shadow:0 5px 14px rgba(92,107,192,0.35);}
+.btn.bab7-btn:hover{background:var(--indigo-dark);transform:translateY(-3px);}
+.btn.bab8-btn{background:var(--emerald);color:white;box-shadow:0 5px 14px rgba(0,137,123,0.35);}
+.btn.bab8-btn:hover{background:var(--emerald-dark);transform:translateY(-3px);}
+.btn.bab9-btn{background:var(--crimson);color:white;box-shadow:0 5px 14px rgba(198,40,40,0.35);}
+.btn.bab9-btn:hover{background:var(--crimson-dark);transform:translateY(-3px);}
 .btn.gold-btn{background:var(--gold);color:#1a1a00;box-shadow:0 5px 14px rgba(244,165,0,0.3);}
 .btn.gold-btn:hover{background:#c88c00;transform:translateY(-2px);}
 .btn-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px;}
@@ -219,6 +232,9 @@ body{font-family:'Nunito',sans-serif;background:linear-gradient(135deg,#e0f4ff 0
 .result-badge.show{display:block;animation:popIn 0.5s ease;}
 .result-badge.bab5-badge{background:linear-gradient(135deg,var(--teal-dark),var(--teal));box-shadow:0 8px 28px rgba(0,119,182,0.3);}
 .result-badge.bab6-badge{background:linear-gradient(135deg,var(--orange-dark),var(--orange));box-shadow:0 8px 28px rgba(255,107,53,0.3);}
+.result-badge.bab7-badge{background:linear-gradient(135deg,var(--indigo-dark),var(--indigo));box-shadow:0 8px 28px rgba(92,107,192,0.3);}
+.result-badge.bab8-badge{background:linear-gradient(135deg,var(--emerald-dark),var(--emerald));box-shadow:0 8px 28px rgba(0,137,123,0.3);}
+.result-badge.bab9-badge{background:linear-gradient(135deg,var(--crimson-dark),var(--crimson));box-shadow:0 8px 28px rgba(198,40,40,0.3);}
 @keyframes popIn{0%{transform:scale(0.8);opacity:0;}100%{transform:scale(1);opacity:1;}}
 .result-emoji{font-size:3.2rem;margin-bottom:8px;}
 .result-score{font-family:'Baloo 2',cursive;font-size:2rem;}
@@ -243,6 +259,49 @@ body{font-family:'Nunito',sans-serif;background:linear-gradient(135deg,#e0f4ff 0
 .sec-header{font-family:'Baloo 2',cursive;font-size:1.4rem;margin-bottom:16px;display:flex;align-items:center;gap:10px;}
 .sec-header.bab5{color:var(--teal-dark);}
 .sec-header.bab6{color:var(--orange-dark);}
+.sec-header.bab7{color:var(--indigo-dark);}
+.sec-header.bab8{color:var(--emerald-dark);}
+.sec-header.bab9{color:var(--crimson-dark);}
+.header.bab7{background:linear-gradient(135deg,var(--indigo-dark),var(--indigo));}
+.header.bab8{background:linear-gradient(135deg,var(--emerald-dark),var(--emerald));}
+.header.bab9{background:linear-gradient(135deg,var(--crimson-dark),var(--crimson));}
+.materi-hero.bab7-hero{background:linear-gradient(135deg,var(--indigo-dark),var(--indigo));}
+.materi-hero.bab8-hero{background:linear-gradient(135deg,var(--emerald-dark),var(--emerald));}
+.materi-hero.bab9-hero{background:linear-gradient(135deg,var(--crimson-dark),var(--crimson));}
+.flashcard-back.bab7-back{background:linear-gradient(135deg,var(--indigo-dark),var(--indigo));}
+.flashcard-back.bab8-back{background:linear-gradient(135deg,var(--emerald-dark),var(--emerald));}
+.flashcard-back.bab9-back{background:linear-gradient(135deg,var(--crimson-dark),var(--crimson));}
+.fc-btn.bab7-btn{background:var(--indigo);}
+.fc-btn.bab7-btn:hover{background:var(--indigo-dark);}
+.fc-btn.bab8-btn{background:var(--emerald);}
+.fc-btn.bab8-btn:hover{background:var(--emerald-dark);}
+.fc-btn.bab9-btn{background:var(--crimson);}
+.fc-btn.bab9-btn:hover{background:var(--crimson-dark);}
+.quiz-q.bab7{color:var(--indigo-dark);}
+.quiz-q.bab8{color:var(--emerald-dark);}
+.quiz-q.bab9{color:var(--crimson-dark);}
+.score-val.bab7{color:var(--indigo);}
+.score-val.bab8{color:var(--emerald);}
+.score-val.bab9{color:var(--crimson);}
+.tugas-title.bab7{color:var(--indigo-dark);}
+.tugas-title.bab8{color:var(--emerald-dark);}
+.tugas-title.bab9{color:var(--crimson-dark);}
+.tag-item.selected-benar{background:#e8fff7;border-color:var(--green);color:#006048;}
+.tag-item.selected-salah{background:#fff0f3;border-color:var(--pink);color:#9b1a30;}
+.acc-card.indigo{border-left-color:var(--indigo);}
+.acc-card.indigo .acc-title{color:var(--indigo-dark);}
+.acc-card.emerald{border-left-color:var(--emerald);}
+.acc-card.emerald .acc-title{color:var(--emerald-dark);}
+.acc-card.crimson{border-left-color:var(--crimson);}
+.acc-card.crimson .acc-title{color:var(--crimson-dark);}
+.bubble.indigo{background:#eef0fb;border-color:var(--indigo);color:var(--indigo-dark);}
+.bubble.emerald{background:#e0f2f1;border-color:var(--emerald);color:var(--emerald-dark);}
+.bubble.crimson{background:#ffebee;border-color:var(--crimson);color:var(--crimson-dark);}
+.shalat-table{width:100%;border-collapse:collapse;margin-top:12px;}
+.shalat-table th{background:var(--emerald);color:white;padding:12px;font-family:'Baloo 2',cursive;font-size:1rem;text-align:center;}
+.shalat-table td{padding:12px 16px;border-bottom:2px solid #f0f0f0;font-weight:700;font-size:1rem;text-align:center;}
+.shalat-table tr:nth-child(even){background:#f9f9f9;}
+.shalat-table .rakaat-badge{display:inline-block;background:var(--emerald);color:white;border-radius:20px;padding:3px 14px;font-weight:800;}
 
 /* ===== RESPONSIVE ===== */
 @media(max-width:500px){
@@ -257,9 +316,12 @@ body{font-family:'Nunito',sans-serif;background:linear-gradient(135deg,#e0f4ff 0
 
 <!-- BAB SELECTOR -->
 <div class="bab-bar">
-  <span>PILIH BAB:</span>
-  <button class="bab-btn active-bab5" onclick="switchBab(5,this)">📖 Bab 5 — Mengenal Allah</button>
-  <button class="bab-btn" onclick="switchBab(6,this)">🚿 Bab 6 — Pembatal Wudhu</button>
+  <span>BAB:</span>
+  <button class="bab-btn active-bab5" onclick="switchBab(5,this)">📖 Bab 5</button>
+  <button class="bab-btn" onclick="switchBab(6,this)">🚿 Bab 6</button>
+  <button class="bab-btn" onclick="switchBab(7,this)">👂 Bab 7</button>
+  <button class="bab-btn" onclick="switchBab(8,this)">🕌 Bab 8</button>
+  <button class="bab-btn" onclick="switchBab(9,this)">🧠 Bab 9</button>
 </div>
 
 <!-- HEADER -->
@@ -280,12 +342,39 @@ body{font-family:'Nunito',sans-serif;background:linear-gradient(135deg,#e0f4ff 0
 </div>
 
 <!-- NAV BAB 6 -->
-<div class="nav bab5-nav" id="nav-bab6" style="display:none">
+<div class="nav bab6-nav" id="nav-bab6" style="display:none">
   <button class="tab-btn active" onclick="showTab('b6-materi',this,'bab6-nav')">📚 Materi</button>
   <button class="tab-btn" onclick="showTab('b6-flashcard',this,'bab6-nav')">🃏 Flash Card</button>
   <button class="tab-btn" onclick="showTab('b6-tugas1',this,'bab6-nav')">✏️ Tugas I</button>
   <button class="tab-btn" onclick="showTab('b6-tugas2',this,'bab6-nav')">📝 Tugas II</button>
   <button class="tab-btn" onclick="showTab('b6-wordmatch',this,'bab6-nav')">🔤 Tebak Kata</button>
+</div>
+
+<!-- NAV BAB 7 -->
+<div class="nav" id="nav-bab7" style="display:none">
+  <button class="tab-btn active" onclick="showTab('b7-materi',this,'bab7-nav')">📚 Materi</button>
+  <button class="tab-btn" onclick="showTab('b7-flashcard',this,'bab7-nav')">🃏 Flash Card</button>
+  <button class="tab-btn" onclick="showTab('b7-tugas1',this,'bab7-nav')">✏️ Tugas I</button>
+  <button class="tab-btn" onclick="showTab('b7-tugas2',this,'bab7-nav')">📝 Tugas II</button>
+  <button class="tab-btn" onclick="showTab('b7-wordmatch',this,'bab7-nav')">🔤 Tebak Kata</button>
+</div>
+
+<!-- NAV BAB 8 -->
+<div class="nav" id="nav-bab8" style="display:none">
+  <button class="tab-btn active" onclick="showTab('b8-materi',this,'bab8-nav')">📚 Materi</button>
+  <button class="tab-btn" onclick="showTab('b8-flashcard',this,'bab8-nav')">🃏 Flash Card</button>
+  <button class="tab-btn" onclick="showTab('b8-tugas1',this,'bab8-nav')">✏️ Tugas I</button>
+  <button class="tab-btn" onclick="showTab('b8-tugas2',this,'bab8-nav')">📝 Tugas II</button>
+  <button class="tab-btn" onclick="showTab('b8-wordmatch',this,'bab8-nav')">🔤 Tebak Kata</button>
+</div>
+
+<!-- NAV BAB 9 -->
+<div class="nav" id="nav-bab9" style="display:none">
+  <button class="tab-btn active" onclick="showTab('b9-materi',this,'bab9-nav')">📚 Materi</button>
+  <button class="tab-btn" onclick="showTab('b9-flashcard',this,'bab9-nav')">🃏 Flash Card</button>
+  <button class="tab-btn" onclick="showTab('b9-tugas1',this,'bab9-nav')">✏️ Tugas I</button>
+  <button class="tab-btn" onclick="showTab('b9-tugas2',this,'bab9-nav')">📝 Tugas II</button>
+  <button class="tab-btn" onclick="showTab('b9-wordmatch',this,'bab9-nav')">🔤 Tebak Kata</button>
 </div>
 
 <!-- ==================== BAB 5 CONTENT ==================== -->
@@ -771,88 +860,490 @@ body{font-family:'Nunito',sans-serif;background:linear-gradient(135deg,#e0f4ff 0
 
 </div><!-- end bab6-world -->
 
+<!-- ==================== BAB 7: ALLAH MAHA MENDENGAR ==================== -->
+<div id="bab7-world" class="bab-world">
+
+<div id="b7-materi" class="section active">
+  <div class="materi-hero bab7-hero">
+    <h2>👂 Allah Maha Mendengar (As-Sami')</h2>
+    <p>Allah mendengar semua perkataan kita! Yuk belajar! 👇 Klik kartu untuk membuka</p>
+  </div>
+
+  <div class="acc-card indigo open" onclick="toggleAcc(this)">
+    <div class="acc-header"><div class="acc-title">👂 Nama Allah As-Sami'</div><span class="acc-chevron">▼</span></div>
+    <div class="acc-body">
+      <p>Di antara nama-nama Allah yang sempurna, ada sifat <strong>As-Sami' (اَلسَّمِيعُ)</strong> artinya <strong>Maha Mendengar.</strong></p>
+      <div class="arabic-box" style="margin-top:14px">
+        <div class="arabic-text" style="font-size:2.5rem">اَلسَّمِيعُ</div>
+        <div class="arabic-trans">As-Sami' — Maha Mendengar</div>
+      </div>
+      <div style="margin-top:14px;background:#eef0fb;border-radius:12px;padding:14px 16px;border-left:4px solid var(--indigo)">
+        <p style="color:var(--indigo-dark);font-weight:800">💬 Yuk, bicara yang baik atau diam!</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="acc-card" onclick="toggleAcc(this)">
+    <div class="acc-header"><div class="acc-title">🌍 Allah Mendengar Semua</div><span class="acc-chevron">▼</span></div>
+    <div class="acc-body">
+      <p>Allah Maha Mendengar <strong>semua</strong> perkataan:</p>
+      <div class="bubble-list" style="margin-top:12px">
+        <div class="bubble indigo">👤 Perkataan manusia</div>
+        <div class="bubble indigo">🐾 Suara hewan</div>
+        <div class="bubble indigo">📡 Suara yang jauh</div>
+        <div class="bubble indigo">🔊 Suara yang dekat</div>
+        <div class="bubble indigo">🔉 Suara yang kecil</div>
+        <div class="bubble indigo">🔊 Suara yang besar</div>
+        <div class="bubble indigo">❤️ Suara hati kita</div>
+      </div>
+      <p style="margin-top:14px"><strong>Pendengaran Allah Maha Sempurna</strong> — berbeda dengan pendengaran makhluk yang terbatas.</p>
+    </div>
+  </div>
+
+  <div class="arabic-box">
+    <div style="color:rgba(255,255,255,0.5);font-size:0.8rem;letter-spacing:1px;margin-bottom:10px">QS. AN-NISA': 134</div>
+    <div class="arabic-text">وَكَانَ اللهُ سَمِيعًا بَصِيرًا</div>
+    <div class="arabic-trans">"Dan Allah Maha Mendengar lagi Maha Melihat."</div>
+  </div>
+
+  <div class="arabic-box">
+    <div style="color:rgba(255,255,255,0.5);font-size:0.8rem;letter-spacing:1px;margin-bottom:10px">QS. ASY-SYURA: 11</div>
+    <div class="arabic-text" style="font-size:1.4rem">لَيْسَ كَمِثْلِهِ شَيْءٌ وَهُوَ السَّمِيعُ الْبَصِيرُ</div>
+    <div class="arabic-trans">"Tidak ada sesuatu pun yang serupa dengan Dia, dan Dia-lah yang Maha Mendengar dan Maha Melihat." (QS. Asy-Syura: 11)</div>
+  </div>
+
+  <div class="acc-card indigo" onclick="toggleAcc(this)">
+    <div class="acc-header"><div class="acc-title">🤲 Allah Mendengar Doa Kita</div><span class="acc-chevron">▼</span></div>
+    <div class="acc-body">
+      <p>Allah Maha Mendengar semua doa hamba-Nya, dan mengabulkannya, bahkan mendengar suara hati kita.</p>
+      <div class="arabic-box" style="margin-top:14px">
+        <div class="arabic-text">ادْعُونِي أَسْتَجِبْ لَكُمْ</div>
+        <div class="arabic-trans">"Berdoalah kepada-Ku maka akan Aku kabulkan."</div>
+      </div>
+      <div style="margin-top:14px;background:#eef0fb;border-radius:12px;padding:14px 16px;text-align:center">
+        <p style="color:var(--indigo-dark);font-weight:800;font-size:1.05rem">Allah Maha Mendengar semua ucapan kita,<br>maka <span style="color:var(--crimson)">Jagalah lisanmu!</span></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="acc-card green" onclick="toggleAcc(this)">
+    <div class="acc-header"><div class="acc-title">✅ Manfaat Mengimani As-Sami'</div><span class="acc-chevron">▼</span></div>
+    <div class="acc-body">
+      <div class="bubble-list">
+        <div class="bubble green">🕌 Semakin taat kepada Allah</div>
+        <div class="bubble green">👄 Menjaga lisan</div>
+        <div class="bubble green">💬 Hanya berbicara yang baik</div>
+        <div class="bubble green">📖 Rajin membaca Al-Quran</div>
+        <div class="bubble green">🙏 Rajin berzikir</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="b7-flashcard" class="section">
+  <div class="sec-header bab7">🃏 Flash Card Dalil — Bab 7</div>
+  <p style="color:#555;margin-bottom:16px;font-size:1rem;font-weight:600">Ketuk kartu untuk melihat penjelasannya!</p>
+  <div id="b7-fc-display"></div>
+  <p class="flip-hint">👆 Ketuk kartu untuk balik!</p>
+  <div class="fc-nav">
+    <button class="fc-btn bab7-btn" onclick="fcNav(7,-1)">◀ Sebelumnya</button>
+    <span class="fc-counter" id="b7-fc-counter" style="color:var(--indigo-dark)">1 / 6</span>
+    <button class="fc-btn bab7-btn" onclick="fcNav(7,1)">Berikutnya ▶</button>
+  </div>
+</div>
+
+<div id="b7-tugas1" class="section">
+  <div class="sec-header bab7">✏️ Tugas Siswa I — Hal. 90</div>
+  <div class="tugas-card">
+    <div class="tugas-title bab7">📌 Klik sekali = Perbuatan BAIK ✓, dua kali = Perbuatan BURUK ✗</div>
+    <div class="tugas-legend">
+      <div class="legend-item"><div class="legend-dot" style="background:var(--teal)"></div>Klik 1× = Baik ✓</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--green)"></div>Klik 2× = Buruk ✗</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#ddd"></div>Klik 3× = Hapus</div>
+    </div>
+    <div class="tag-grid" id="b7-t1-grid"></div>
+    <div class="btn-row">
+      <button class="btn bab7-btn" onclick="checkT1(7)">✅ Periksa</button>
+      <button class="btn gold-btn" onclick="resetT1(7)">🔄 Ulangi</button>
+    </div>
+    <div class="result-badge bab7-badge" id="b7-t1-result">
+      <div class="result-emoji">🎉</div><div class="result-score" id="b7-t1-score"></div><div class="result-msg" id="b7-t1-msg"></div>
+    </div>
+  </div>
+</div>
+
+<div id="b7-tugas2" class="section">
+  <div class="sec-header bab7">📝 Tugas Siswa II — Hal. 88</div>
+  <div class="score-bar"><span>Skor:</span><span class="score-val bab7" id="b7-t2-score">0 / 20</span></div>
+  <div id="b7-t2-container"></div>
+  <div class="btn-row">
+    <button class="btn bab7-btn" onclick="checkT2(7)">✅ Cek Semua</button>
+    <button class="btn gold-btn" onclick="resetT2(7)">🔄 Mulai Ulang</button>
+  </div>
+  <div class="result-badge bab7-badge" id="b7-t2-result">
+    <div class="result-emoji" id="b7-t2-emoji">🏆</div><div class="result-score" id="b7-t2-final"></div><div class="result-msg" id="b7-t2-msg"></div>
+  </div>
+</div>
+
+<div id="b7-wordmatch" class="section">
+  <div class="sec-header bab7">🔤 Cocokkan Kata — Bab 7</div>
+  <div id="b7-wm-container"></div>
+  <div class="btn-row"><button class="btn gold-btn" onclick="resetWM(7)">🔄 Ulangi</button></div>
+  <div class="result-badge bab7-badge" id="b7-wm-result">
+    <div class="result-emoji">🌟</div><div class="result-score" id="b7-wm-score"></div><div class="result-msg">Hebat! Semua benar! 🎓</div>
+  </div>
+</div>
+</div><!-- end bab7-world -->
+
+<!-- ==================== BAB 8: SHALAT FARDHU ==================== -->
+<div id="bab8-world" class="bab-world">
+
+<div id="b8-materi" class="section active">
+  <div class="materi-hero bab8-hero">
+    <h2>🕌 Shalat-Shalat Fardhu</h2>
+    <p>Aku wajib shalat setiap hari 5 kali! Yuk pelajari! 👇 Klik kartu untuk membuka</p>
+  </div>
+
+  <div class="acc-card emerald open" onclick="toggleAcc(this)">
+    <div class="acc-header"><div class="acc-title">🕌 Apa itu Shalat Fardhu?</div><span class="acc-chevron">▼</span></div>
+    <div class="acc-body">
+      <p><strong>Shalat fardhu = shalat wajib.</strong> Shalat fardhu adalah <strong>rukun Islam yang kedua.</strong></p>
+      <div style="margin-top:14px;background:#e0f2f1;border-radius:12px;padding:14px 16px;border-left:4px solid var(--emerald)">
+        <p style="color:var(--emerald-dark);font-weight:800;font-size:1.1rem;text-align:center">🗓️ Aku wajib shalat setiap hari 5 kali<br>walaupun sedang SAKIT ataupun SIBUK!</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="acc-card emerald" onclick="toggleAcc(this)">
+    <div class="acc-header"><div class="acc-title">📋 5 Shalat Fardhu & Rakaatnya</div><span class="acc-chevron">▼</span></div>
+    <div class="acc-body">
+      <table class="shalat-table">
+        <tr><th>Nama Shalat</th><th>Jumlah Rakaat</th></tr>
+        <tr><td>🌅 Shubuh</td><td><span class="rakaat-badge">2 rakaat</span></td></tr>
+        <tr><td>☀️ Zhuhur</td><td><span class="rakaat-badge">4 rakaat</span></td></tr>
+        <tr><td>🌤️ Ashar</td><td><span class="rakaat-badge">4 rakaat</span></td></tr>
+        <tr><td>🌆 Maghrib</td><td><span class="rakaat-badge">3 rakaat</span></td></tr>
+        <tr><td>🌙 Isya</td><td><span class="rakaat-badge">4 rakaat</span></td></tr>
+        <tr style="background:#e0f2f1"><td><strong>Total</strong></td><td><strong>17 rakaat/hari</strong></td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="arabic-box">
+    <div style="color:rgba(255,255,255,0.5);font-size:0.8rem;letter-spacing:1px;margin-bottom:10px">QS. AN-NUR: 56</div>
+    <div class="arabic-text" style="font-size:1.3rem">وَأَقِيمُوا الصَّلَاةَ وَآتُوا الزَّكَاةَ وَأَطِيعُوا الرَّسُولَ لَعَلَّكُمْ تُرْحَمُونَ</div>
+    <div class="arabic-trans">"Dan dirikanlah shalat, tunaikanlah zakat, dan ta'atlah kepada rasul, supaya kamu diberi rahmat." (QS. An-Nur: 56)</div>
+  </div>
+
+  <div class="acc-card green" onclick="toggleAcc(this)">
+    <div class="acc-header"><div class="acc-title">✅ Manfaat Shalat</div><span class="acc-chevron">▼</span></div>
+    <div class="acc-body">
+      <div class="bubble-list">
+        <div class="bubble emerald">🤲 Mendekatkan diri kepada Allah</div>
+        <div class="bubble emerald">💚 Menenangkan hati</div>
+        <div class="bubble emerald">🛡️ Mencegah perbuatan keji dan munkar</div>
+      </div>
+      <div class="arabic-box" style="margin-top:14px">
+        <div style="color:rgba(255,255,255,0.5);font-size:0.8rem;margin-bottom:8px">QS. AL-ANKABUT: 45</div>
+        <div class="arabic-text" style="font-size:1.4rem">إِنَّ الصَّلَاةَ تَنْهَى عَنِ الْفَحْشَاءِ وَالْمُنكَرِ</div>
+        <div class="arabic-trans">"Sesungguhnya shalat itu mencegah dari perbuatan keji dan munkar."</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="acc-card emerald" onclick="toggleAcc(this)">
+    <div class="acc-header"><div class="acc-title">⭐ Ciri Shalat yang Bagus & Buruk</div><span class="acc-chevron">▼</span></div>
+    <div class="acc-body">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:4px">
+        <div style="background:#e0f2f1;border-radius:14px;padding:14px;border:2px solid var(--emerald)">
+          <p style="font-weight:800;color:var(--emerald-dark);margin-bottom:8px">⭐ Shalat Bagus:</p>
+          <div class="bubble-list"><div class="bubble emerald">🤍 Ikhlas karena Allah</div><div class="bubble emerald">📿 Mengikuti cara Rasulullah</div></div>
+        </div>
+        <div style="background:#fff0f3;border-radius:14px;padding:14px;border:2px solid var(--pink)">
+          <p style="font-weight:800;color:#9b1a30;margin-bottom:8px">❌ Shalat Buruk:</p>
+          <div class="bubble-list"><div class="bubble red">😒 Tidak ikhlas</div><div class="bubble red">⏩ Terburu-buru</div><div class="bubble red">😄 Bercanda</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="acc-card" style="border-left-color:var(--crimson)" onclick="toggleAcc(this)">
+    <div class="acc-header"><div class="acc-title" style="color:var(--crimson-dark)">⚠️ Balasan Meninggalkan Shalat</div><span class="acc-chevron">▼</span></div>
+    <div class="acc-body">
+      <p>Balasan bagi orang yang meninggalkan shalat fardhu dimasukkan ke <strong>neraka Saqar.</strong></p>
+      <div class="arabic-box" style="margin-top:12px">
+        <div style="color:rgba(255,255,255,0.5);font-size:0.8rem;margin-bottom:8px">QS. AL-MUDDATSTSIR: 42</div>
+        <div class="arabic-text" style="font-size:1.3rem">مَا سَلَكَكُمْ فِي سَقَرَ — قَالُوا لَمْ نَكُ مِنَ الْمُصَلِّينَ</div>
+        <div class="arabic-trans">"Apakah yang memasukkan kamu ke dalam neraka Saqar? Mereka menjawab: Kami dahulu tidak termasuk orang-orang yang mengerjakan shalat."</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="b8-flashcard" class="section">
+  <div class="sec-header bab8">🃏 Flash Card Dalil — Bab 8</div>
+  <p style="color:#555;margin-bottom:16px;font-size:1rem;font-weight:600">Ketuk kartu untuk melihat penjelasannya!</p>
+  <div id="b8-fc-display"></div>
+  <p class="flip-hint">👆 Ketuk kartu untuk balik!</p>
+  <div class="fc-nav">
+    <button class="fc-btn bab8-btn" onclick="fcNav(8,-1)">◀ Sebelumnya</button>
+    <span class="fc-counter" id="b8-fc-counter" style="color:var(--emerald-dark)">1 / 6</span>
+    <button class="fc-btn bab8-btn" onclick="fcNav(8,1)">Berikutnya ▶</button>
+  </div>
+</div>
+
+<div id="b8-tugas1" class="section">
+  <div class="sec-header bab8">✏️ Tugas Siswa — Benar atau Salah?</div>
+  <div class="tugas-card">
+    <div class="tugas-title bab8">📌 Klik sekali = BENAR ✓, dua kali = SALAH ✗ untuk setiap pernyataan shalat!</div>
+    <div class="tugas-legend">
+      <div class="legend-item"><div class="legend-dot" style="background:var(--emerald)"></div>Klik 1× = Benar ✓</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--pink)"></div>Klik 2× = Salah ✗</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#ddd"></div>Klik 3× = Hapus</div>
+    </div>
+    <div class="tag-grid" id="b8-t1-grid"></div>
+    <div class="btn-row">
+      <button class="btn bab8-btn" onclick="checkT1(8)">✅ Periksa</button>
+      <button class="btn gold-btn" onclick="resetT1(8)">🔄 Ulangi</button>
+    </div>
+    <div class="result-badge bab8-badge" id="b8-t1-result">
+      <div class="result-emoji">🎉</div><div class="result-score" id="b8-t1-score"></div><div class="result-msg" id="b8-t1-msg"></div>
+    </div>
+  </div>
+</div>
+
+<div id="b8-tugas2" class="section">
+  <div class="sec-header bab8">📝 Tugas Siswa II — Hal. 99</div>
+  <div class="score-bar"><span>Skor:</span><span class="score-val bab8" id="b8-t2-score">0 / 20</span></div>
+  <div id="b8-t2-container"></div>
+  <div class="btn-row">
+    <button class="btn bab8-btn" onclick="checkT2(8)">✅ Cek Semua</button>
+    <button class="btn gold-btn" onclick="resetT2(8)">🔄 Mulai Ulang</button>
+  </div>
+  <div class="result-badge bab8-badge" id="b8-t2-result">
+    <div class="result-emoji" id="b8-t2-emoji">🏆</div><div class="result-score" id="b8-t2-final"></div><div class="result-msg" id="b8-t2-msg"></div>
+  </div>
+</div>
+
+<div id="b8-wordmatch" class="section">
+  <div class="sec-header bab8">🔤 Cocokkan Kata — Bab 8</div>
+  <div id="b8-wm-container"></div>
+  <div class="btn-row"><button class="btn gold-btn" onclick="resetWM(8)">🔄 Ulangi</button></div>
+  <div class="result-badge bab8-badge" id="b8-wm-result">
+    <div class="result-emoji">🌟</div><div class="result-score" id="b8-wm-score"></div><div class="result-msg">Semua benar! Kamu hafal shalat fardhu! 🕌</div>
+  </div>
+</div>
+</div><!-- end bab8-world -->
+
+<!-- ==================== BAB 9: ALLAH MAHA MENGETAHUI ==================== -->
+<div id="bab9-world" class="bab-world">
+
+<div id="b9-materi" class="section active">
+  <div class="materi-hero bab9-hero">
+    <h2>🧠 Allah Maha Mengetahui (Al-'Aliim)</h2>
+    <p>Allah mengetahui segalanya — bahkan isi hati kita! 👇 Klik kartu untuk membuka</p>
+  </div>
+
+  <div class="acc-card crimson open" onclick="toggleAcc(this)">
+    <div class="acc-header"><div class="acc-title">🧠 Nama Allah Al-'Aliim</div><span class="acc-chevron">▼</span></div>
+    <div class="acc-body">
+      <p><strong>Al-'Aliim (اَلْعَلِيمُ)</strong> artinya <strong>Maha Mengetahui.</strong></p>
+      <div class="arabic-box" style="margin-top:14px">
+        <div class="arabic-text" style="font-size:2.5rem">اَلْعَلِيمُ</div>
+        <div class="arabic-trans">Al-'Aliim — Maha Mengetahui</div>
+      </div>
+      <p style="margin-top:12px"><strong>Allah Maha Mengetahui semua yang terjadi di dunia ini.</strong> Ilmu Allah sangat luas, sangat sempurna dan tidak dibatasi apapun.</p>
+    </div>
+  </div>
+
+  <div class="acc-card crimson" onclick="toggleAcc(this)">
+    <div class="acc-header"><div class="acc-title">🌍 Cakupan Ilmu Allah</div><span class="acc-chevron">▼</span></div>
+    <div class="acc-body">
+      <p>Allah mengetahui apapun yang ada di dunia dan akhirat:</p>
+      <div class="bubble-list" style="margin-top:12px">
+        <div class="bubble crimson">🔬 Yang kecil & yang besar</div>
+        <div class="bubble crimson">👁️ Yang nyata & yang ghaib</div>
+        <div class="bubble crimson">📡 Yang jauh & yang dekat</div>
+        <div class="bubble crimson">🗣️ Semua perbuatan kita</div>
+        <div class="bubble crimson">💬 Semua ucapan kita</div>
+        <div class="bubble crimson">❤️ Yang terbetik di hati kita</div>
+        <div class="bubble crimson">🌿 Setiap daun yang jatuh</div>
+        <div class="bubble crimson">🐟 Jumlah ikan di lautan</div>
+        <div class="bubble crimson">💭 Rencana jahat yang belum dilakukan</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="arabic-box">
+    <div style="color:rgba(255,255,255,0.5);font-size:0.8rem;letter-spacing:1px;margin-bottom:10px">QS. AL-BAQARAH: 282</div>
+    <div class="arabic-text">وَاللهُ بِكُلِّ شَيْءٍ عَلِيمٌ</div>
+    <div class="arabic-trans">"Dan Allah Maha Mengetahui atas segala sesuatu."</div>
+  </div>
+
+  <div class="arabic-box">
+    <div style="color:rgba(255,255,255,0.5);font-size:0.8rem;letter-spacing:1px;margin-bottom:10px">QS. AR-RA'DU: 9</div>
+    <div class="arabic-text" style="font-size:1.4rem">عَالِمُ الْغَيْبِ وَالشَّهَادَةِ الْكَبِيرُ الْمُتَعَالِ</div>
+    <div class="arabic-trans">"(Allah) Yang Maha Mengetahui semua yang ghaib dan yang tampak, Yang Maha Besar lagi Maha Tinggi." (QS. Ar-Ra'du: 9)</div>
+  </div>
+
+  <div class="arabic-box">
+    <div style="color:rgba(255,255,255,0.5);font-size:0.8rem;letter-spacing:1px;margin-bottom:10px">QS. ALI IMRAN: 119</div>
+    <div class="arabic-text">إِنَّ اللهَ عَلِيمٌ بِذَاتِ الصُّدُورِ</div>
+    <div class="arabic-trans">"Sesungguhnya Allah Maha Mengetahui segala isi hati."</div>
+  </div>
+
+  <div class="acc-card green" onclick="toggleAcc(this)">
+    <div class="acc-header"><div class="acc-title">✅ Manfaat Mengimani Al-'Aliim</div><span class="acc-chevron">▼</span></div>
+    <div class="acc-body">
+      <div class="bubble-list">
+        <div class="bubble green">🕌 Semakin taat kepada Allah</div>
+        <div class="bubble green">🚫 Menjauhi maksiat</div>
+        <div class="bubble green">😇 Selalu berbuat baik</div>
+        <div class="bubble green">💚 Menjauhi penyakit hati</div>
+        <div class="bubble green">🙏 Rajin beribadah</div>
+        <div class="bubble green">🤍 Ikhlas dalam ibadah</div>
+      </div>
+      <div style="margin-top:14px;background:#ffebee;border-radius:12px;padding:14px 16px;border-left:4px solid var(--crimson)">
+        <p style="color:var(--crimson-dark);font-weight:800">⚠️ Kita tidak boleh berbuat dosa walaupun sendiri dan tidak ada yang melihat — karena Allah selalu Maha Mengetahui!</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="b9-flashcard" class="section">
+  <div class="sec-header bab9">🃏 Flash Card Dalil — Bab 9</div>
+  <p style="color:#555;margin-bottom:16px;font-size:1rem;font-weight:600">Ketuk kartu untuk melihat penjelasannya!</p>
+  <div id="b9-fc-display"></div>
+  <p class="flip-hint">👆 Ketuk kartu untuk balik!</p>
+  <div class="fc-nav">
+    <button class="fc-btn bab9-btn" onclick="fcNav(9,-1)">◀ Sebelumnya</button>
+    <span class="fc-counter" id="b9-fc-counter" style="color:var(--crimson-dark)">1 / 6</span>
+    <button class="fc-btn bab9-btn" onclick="fcNav(9,1)">Berikutnya ▶</button>
+  </div>
+</div>
+
+<div id="b9-tugas1" class="section">
+  <div class="sec-header bab9">✏️ Tugas Siswa I — Benar atau Salah?</div>
+  <div class="tugas-card">
+    <div class="tugas-title bab9">📌 Klik sekali = BENAR ✓, dua kali = SALAH ✗ untuk setiap sikap dalam mengimani Al-'Aliim!</div>
+    <div class="tugas-legend">
+      <div class="legend-item"><div class="legend-dot" style="background:var(--green)"></div>Klik 1× = Benar ✓</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--pink)"></div>Klik 2× = Salah ✗</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#ddd"></div>Klik 3× = Hapus</div>
+    </div>
+    <div class="tag-grid" id="b9-t1-grid"></div>
+    <div class="btn-row">
+      <button class="btn bab9-btn" onclick="checkT1(9)">✅ Periksa</button>
+      <button class="btn gold-btn" onclick="resetT1(9)">🔄 Ulangi</button>
+    </div>
+    <div class="result-badge bab9-badge" id="b9-t1-result">
+      <div class="result-emoji">🎉</div><div class="result-score" id="b9-t1-score"></div><div class="result-msg" id="b9-t1-msg"></div>
+    </div>
+  </div>
+</div>
+
+<div id="b9-tugas2" class="section">
+  <div class="sec-header bab9">📝 Tugas Siswa II — Hal. 110</div>
+  <div class="score-bar"><span>Skor:</span><span class="score-val bab9" id="b9-t2-score">0 / 20</span></div>
+  <div id="b9-t2-container"></div>
+  <div class="btn-row">
+    <button class="btn bab9-btn" onclick="checkT2(9)">✅ Cek Semua</button>
+    <button class="btn gold-btn" onclick="resetT2(9)">🔄 Mulai Ulang</button>
+  </div>
+  <div class="result-badge bab9-badge" id="b9-t2-result">
+    <div class="result-emoji" id="b9-t2-emoji">🏆</div><div class="result-score" id="b9-t2-final"></div><div class="result-msg" id="b9-t2-msg"></div>
+  </div>
+</div>
+
+<div id="b9-wordmatch" class="section">
+  <div class="sec-header bab9">🔤 Cocokkan Kata — Bab 9</div>
+  <div id="b9-wm-container"></div>
+  <div class="btn-row"><button class="btn gold-btn" onclick="resetWM(9)">🔄 Ulangi</button></div>
+  <div class="result-badge bab9-badge" id="b9-wm-result">
+    <div class="result-emoji">🌟</div><div class="result-score" id="b9-wm-score"></div><div class="result-msg">Hebat! Kamu sangat pintar! 🎓</div>
+  </div>
+</div>
+</div><!-- end bab9-world -->
+
 <script>
 // ===== BAB SWITCH =====
-let currentBab = 5;
+const babInfo = {
+  5:{title:'🕌 Mengenal Allah Ta\'ala', badge:'Bab V'},
+  6:{title:'🚿 Pembatal Wudhu', badge:'Bab VI'},
+  7:{title:'👂 Allah Maha Mendengar', badge:'Bab VII'},
+  8:{title:'🕌 Shalat-Shalat Fardhu', badge:'Bab VIII'},
+  9:{title:'🧠 Allah Maha Mengetahui', badge:'Bab IX'},
+};
 function switchBab(bab, btn) {
-  currentBab = bab;
-  document.querySelectorAll('.bab-btn').forEach(b => b.classList.remove('active-bab5','active-bab6'));
+  document.querySelectorAll('.bab-btn').forEach(b => b.classList.remove('active-bab5','active-bab6','active-bab7','active-bab8','active-bab9'));
   btn.classList.add(`active-bab${bab}`);
-  document.getElementById('bab5-world').classList.toggle('active', bab===5);
-  document.getElementById('bab6-world').classList.toggle('active', bab===6);
-  document.getElementById('nav-bab5').style.display = bab===5 ? 'flex' : 'none';
-  document.getElementById('nav-bab6').style.display = bab===6 ? 'flex' : 'none';
+  [5,6,7,8,9].forEach(b => {
+    const w = document.getElementById(`bab${b}-world`);
+    if (w) w.classList.toggle('active', b===bab);
+    const n = document.getElementById(`nav-bab${b}`);
+    if (n) n.style.display = b===bab ? 'flex' : 'none';
+  });
   const hdr = document.getElementById('main-header');
   hdr.className = `header bab${bab}`;
-  document.getElementById('header-title').textContent = bab===5 ? '🕌 Mengenal Allah Ta\'ala' : '🚿 Pembatal Wudhu';
-  document.getElementById('header-sub').textContent = bab===5 ? 'Kelas 6 — PAI SD Islam' : 'Kelas 6 — PAI SD Islam';
-  document.getElementById('bab-badge').textContent = bab===5 ? 'Bab V' : 'Bab VI';
+  document.getElementById('header-title').textContent = babInfo[bab].title;
+  document.getElementById('bab-badge').textContent = babInfo[bab].badge;
 }
 
-// ===== TAB SWITCH =====
 function showTab(id, btn, navClass) {
-  const world = document.getElementById(id.startsWith('b5') ? 'bab5-world' : 'bab6-world');
+  const babNum = parseInt(id.replace('b','').split('-')[0]);
+  const world = document.getElementById(`bab${babNum}-world`);
   world.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
-  const nav = document.getElementById(id.startsWith('b5') ? 'nav-bab5' : 'nav-bab6');
+  const nav = document.getElementById(`nav-bab${babNum}`);
   nav.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
 }
 
-// ===== ACCORDION =====
 function toggleAcc(card) { card.classList.toggle('open'); }
 
-// ===== FLASHCARDS =====
+// ===== FLASHCARD DATA =====
 const fc5 = [
-  { label:'QS. Fushilat: 37', arabic:'وَمِنْ آيَاتِهِ اللَّيْلُ وَالنَّهَارُ وَالشَّمْسُ وَالْقَمَرُ', meaning:'"Dan di antara tanda-tanda kekuasaan-Nya ialah malam, siang, matahari dan bulan. Janganlah sembah matahari maupun bulan, tapi sembahlah Allah Yang menciptakannya."', source:'QS. Fushilat: 37' },
-  { label:'2 Cara Mengenal Allah', arabic:'١. عَبْرَ آيَاتِ اللهِ  ٢. عَبْرَ مَخْلُوقَاتِ اللهِ', meaning:'1️⃣ Mengenal ayat-ayat Allah (tanda kekuasaan-Nya)\n\n2️⃣ Mengenal makhluk-makhluk Allah (ciptaan-Nya)', source:'Bab V — Hal. 57' },
-  { label:'Ayat-Ayat Allah', arabic:'آيَاتُ اللهِ = عَلَامَاتُ قُدْرَةِ اللهِ', meaning:'✨ Ayat-ayat Allah = TANDA-TANDA KEKUASAAN ALLAH\n\n• Keajaiban alam semesta\n• Peristiwa alam\n• Keajaiban Al-Quran\n• Keajaiban syariat Islam', source:'Hal. 59' },
-  { label:'Peristiwa Alam', arabic:'الظَّوَاهِرُ الطَّبِيعِيَّةُ = آيَاتُ اللهِ', meaning:'🌿 Peristiwa alam sebagai ayat Allah:\n• Pergantian malam & siang\n• Fase bulan • Gunung meletus\n• Tsunami • Gempa • Gerhana\n• Hujan • Pertumbuhan manusia', source:'Hal. 60' },
-  { label:'Gerhana Matahari', arabic:'كُسُوفُ الشَّمْسِ = آيَةٌ مِنْ آيَاتِ اللهِ', meaning:'🌑 Gerhana terjadi saat bulan berada tepat di antara bumi dan matahari sehingga cahaya matahari terhalang dan sebagian bumi gelap.\n\nIni tanda kebesaran Allah!', source:'Hal. 61' },
-  { label:'Makhluk Allah', arabic:'اَللهُ = اَلْخَالِقُ  |  غَيْرُ اللهِ = اَلْمَخْلُوقُ', meaning:'🌟 Allah = KHALIQ (Pencipta)\nSelain Allah = MAKHLUK\n\n• Makhluk NYATA: manusia, hewan, tumbuhan\n• Makhluk GHAIB: malaikat, jin, iblis, setan', source:'Hal. 63' },
-  { label:'Pergantian Siang Malam', arabic:'تَعَاقُبُ اللَّيْلِ وَالنَّهَارِ بِلَا انْقِطَاعٍ', meaning:'☀️ Matahari terbit dari TIMUR dan terbenam di BARAT setiap hari, tanpa pernah tertukar.\n\n🌙 Berganti terus tanpa henti.\n\nSubhanallah — Allahu Akbar!', source:'Hal. 62' }
+  {label:'QS. Fushilat: 37', arabic:'وَمِنْ آيَاتِهِ اللَّيْلُ وَالنَّهَارُ وَالشَّمْسُ وَالْقَمَرُ', meaning:'"Dan di antara tanda-tanda kekuasaan-Nya ialah malam, siang, matahari dan bulan. Janganlah sembah matahari maupun bulan, tapi sembahlah Allah Yang menciptakannya."', source:'QS. Fushilat: 37'},
+  {label:'2 Cara Mengenal Allah', arabic:'١. عَبْرَ آيَاتِ اللهِ  ٢. عَبْرَ مَخْلُوقَاتِ اللهِ', meaning:'1️⃣ Mengenal ayat-ayat Allah (tanda kekuasaan-Nya)\n\n2️⃣ Mengenal makhluk-makhluk Allah (ciptaan-Nya)', source:'Bab V — Hal. 57'},
+  {label:'Ayat-Ayat Allah', arabic:'آيَاتُ اللهِ = عَلَامَاتُ قُدْرَةِ اللهِ', meaning:'✨ Ayat-ayat Allah = TANDA-TANDA KEKUASAAN ALLAH\n\n• Keajaiban alam semesta\n• Peristiwa alam\n• Keajaiban Al-Quran\n• Keajaiban syariat Islam', source:'Hal. 59'},
+  {label:'Peristiwa Alam', arabic:'الظَّوَاهِرُ الطَّبِيعِيَّةُ = آيَاتُ اللهِ', meaning:'🌿 Peristiwa alam sebagai ayat Allah:\n• Pergantian malam & siang\n• Fase bulan • Gunung meletus\n• Tsunami • Gempa • Gerhana\n• Hujan • Pertumbuhan manusia', source:'Hal. 60'},
+  {label:'Gerhana Matahari', arabic:'كُسُوفُ الشَّمْسِ = آيَةٌ مِنْ آيَاتِ اللهِ', meaning:'🌑 Gerhana terjadi saat bulan berada tepat di antara bumi dan matahari sehingga cahaya matahari terhalang dan sebagian bumi gelap.\n\nIni tanda kebesaran Allah!', source:'Hal. 61'},
+  {label:'Makhluk Allah', arabic:'اَللهُ = اَلْخَالِقُ  |  غَيْرُ اللهِ = اَلْمَخْلُوقُ', meaning:'🌟 Allah = KHALIQ (Pencipta)\nSelain Allah = MAKHLUK\n\n• Makhluk NYATA: manusia, hewan, tumbuhan\n• Makhluk GHAIB: malaikat, jin, iblis, setan', source:'Hal. 63'},
+  {label:'Pergantian Siang Malam', arabic:'تَعَاقُبُ اللَّيْلِ وَالنَّهَارِ بِلَا انْقِطَاعٍ', meaning:'☀️ Matahari terbit dari TIMUR dan terbenam di BARAT setiap hari, tanpa pernah tertukar.\n\n🌙 Berganti terus tanpa henti.\n\nSubhanallah — Allahu Akbar!', source:'Hal. 62'},
 ];
-
 const fc6 = [
-  { label:'Hadits Wudhu', arabic:'لَا تُقْبَلُ صَلَاةٌ مَنْ أَحْدَثَ حَتَّى يَتَوَضَّأَ', meaning:'"Shalat seseorang yang berhadats tidak akan diterima sampai ia berwudhu." (Muttafaqun alaih)\n\n💧 Wudhu adalah syarat sahnya shalat!', source:'HR. Muttafaqun Alaih' },
-  { label:'Apa itu Hadats?', arabic:'اَلْحَدَثُ = حَالَةُ مَنْ لَمْ يَتَوَضَّأْ', meaning:'🚿 HADATS = keadaan seseorang yang belum berwudhu.\n\nJika batal wudhu → harus wudhu lagi sebelum shalat.', source:'Bab VI — Hal. 73' },
-  { label:'Pembatal Wudhu 1', arabic:'نَوَاقِضُ الْوُضُوءِ — الجزء الأول', meaning:'❌ Pembatal wudhu (1):\n\n🚽 Kencing\n💨 Kentut\n🚾 Buang air besar\n🐪 Makan daging unta', source:'Hal. 74' },
-  { label:'Pembatal Wudhu 2', arabic:'نَوَاقِضُ الْوُضُوءِ — الجزء الثاني', meaning:'❌ Pembatal wudhu (2):\n\n😴 Tidur lelap (dalam keadaan tidak sadar)\n😵 Hilangnya akal karena mabuk, pingsan, atau gila', source:'Hal. 74' },
-  { label:'Yang Tidak Membatalkan', arabic:'مَا لَا يَنْقُضُ الْوُضُوءَ', meaning:'✅ Yang TIDAK membatalkan wudhu:\n\n🍰 Makan kue/makanan biasa\n🏃 Berlari / bermain\n🥛 Minum susu\n😤 Bersin\n🛒 Jalan-jalan', source:'Hal. 78' },
-  { label:'Contoh Kejadian Batal', arabic:'أَمْثِلَةُ نَوَاقِضِ الْوُضُوءِ', meaning:'📖 Contoh nyata:\n• Ahmad tidur lelap → ❌ Batal\n• Salma pingsan → ❌ Batal\n• Umar kentut → ❌ Batal\n• Shofia buang air kecil → ❌ Batal\n• Ali makan daging unta → ❌ Batal', source:'Hal. 75' }
+  {label:'Hadits Wudhu', arabic:'لَا تُقْبَلُ صَلَاةٌ مَنْ أَحْدَثَ حَتَّى يَتَوَضَّأَ', meaning:'"Shalat seseorang yang berhadats tidak akan diterima sampai ia berwudhu." (Muttafaqun alaih)\n\n💧 Wudhu adalah syarat sahnya shalat!', source:'HR. Muttafaqun Alaih'},
+  {label:'Apa itu Hadats?', arabic:'اَلْحَدَثُ = حَالَةُ مَنْ لَمْ يَتَوَضَّأْ', meaning:'🚿 HADATS = keadaan seseorang yang belum berwudhu.\n\nJika batal wudhu → harus wudhu lagi sebelum shalat.', source:'Bab VI — Hal. 73'},
+  {label:'Pembatal Wudhu 1', arabic:'نَوَاقِضُ الْوُضُوءِ — الجزء الأول', meaning:'❌ Pembatal wudhu (1):\n\n🚽 Kencing\n💨 Kentut\n🚾 Buang air besar\n🐪 Makan daging unta', source:'Hal. 74'},
+  {label:'Pembatal Wudhu 2', arabic:'نَوَاقِضُ الْوُضُوءِ — الجزء الثاني', meaning:'❌ Pembatal wudhu (2):\n\n😴 Tidur lelap (dalam keadaan tidak sadar)\n😵 Hilangnya akal karena mabuk, pingsan, atau gila', source:'Hal. 74'},
+  {label:'Yang Tidak Membatalkan', arabic:'مَا لَا يَنْقُضُ الْوُضُوءَ', meaning:'✅ Yang TIDAK membatalkan wudhu:\n\n🍰 Makan kue/makanan biasa\n🏃 Berlari / bermain\n🥛 Minum susu\n😤 Bersin\n🛒 Jalan-jalan', source:'Hal. 78'},
+  {label:'Contoh Kejadian Batal', arabic:'أَمْثِلَةُ نَوَاقِضِ الْوُضُوءِ', meaning:'📖 Contoh nyata:\n• Ahmad tidur lelap → ❌ Batal\n• Salma pingsan → ❌ Batal\n• Umar kentut → ❌ Batal\n• Shofia buang air kecil → ❌ Batal\n• Ali makan daging unta → ❌ Batal', source:'Hal. 75'},
 ];
-
-let fcIdx = {5:0, 6:0};
-
-function renderFC(bab) {
-  const cards = bab===5 ? fc5 : fc6;
-  const idx = fcIdx[bab];
-  const fc = cards[idx];
-  const el = document.getElementById(`b${bab}-fc-display`);
-  el.innerHTML = `
-    <div style="perspective:1200px;margin:20px 0">
-      <div class="flashcard" id="fc${bab}" onclick="this.classList.toggle('flipped')">
-        <div class="flashcard-front">
-          <div class="label">${fc.label}</div>
-          <div class="arabic">${fc.arabic}</div>
-          <div style="color:rgba(255,255,255,0.45);font-size:0.8rem;margin-top:12px">Ketuk untuk penjelasan ↓</div>
-        </div>
-        <div class="flashcard-back bab${bab}-back">
-          <div class="meaning" style="white-space:pre-line">${fc.meaning}</div>
-          <div class="source">📍 ${fc.source}</div>
-        </div>
-      </div>
-    </div>`;
-  document.getElementById(`b${bab}-fc-counter`).textContent = `${idx+1} / ${cards.length}`;
-}
-
-function fcNav(bab, dir) {
-  const cards = bab===5 ? fc5 : fc6;
-  fcIdx[bab] = (fcIdx[bab] + dir + cards.length) % cards.length;
-  renderFC(bab);
-}
-
-renderFC(5); renderFC(6);
+const fc7 = [
+  {label:'As-Sami\' (اَلسَّمِيعُ)', arabic:'اَلسَّمِيعُ', meaning:'👂 AS-SAMI\' artinya MAHA MENDENGAR\n\nAllah mendengar semua perkataan manusia, suara hewan, suara yang jauh dan dekat, suara yang kecil dan besar — bahkan suara hati kita!', source:'Bab VII — Hal. 84'},
+  {label:'QS. An-Nisa: 134', arabic:'وَكَانَ اللهُ سَمِيعًا بَصِيرًا', meaning:'"Dan Allah Maha Mendengar lagi Maha Melihat."\n\n(QS. An-Nisa\': 134)', source:'Hal. 86'},
+  {label:'QS. Asy-Syura: 11', arabic:'لَيْسَ كَمِثْلِهِ شَيْءٌ وَهُوَ السَّمِيعُ الْبَصِيرُ', meaning:'"Tidak ada sesuatu pun yang serupa dengan Dia, dan Dia-lah yang Maha Mendengar dan Maha Melihat."\n\n(QS. Asy-Syura: 11)', source:'Hal. 86'},
+  {label:'Doa & As-Sami\'', arabic:'ادْعُونِي أَسْتَجِبْ لَكُمْ', meaning:'"Berdoalah kepada-Ku maka akan Aku kabulkan."\n\nAllah Maha Mendengar semua doa hamba-Nya dan mengabulkannya, bahkan mendengar suara hati kita!', source:'Hal. 85'},
+  {label:'Manfaat Mengimani As-Sami\'', arabic:'فَوَائِدُ الإِيمَانِ بِالسَّمِيعِ', meaning:'✅ Manfaat mengimani Allah As-Sami\':\n\n• Kita semakin taat kepada Allah\n• Kita menjaga lisan\n• Hanya berbicara yang baik\n• Rajin membaca Al-Quran\n• Rajin berzikir', source:'Hal. 87'},
+  {label:'Pesan As-Sami\'', arabic:'اِحْفَظْ لِسَانَكَ', meaning:'🗣️ Allah Maha Mendengar semua ucapan kita.\n\nMaka JAGALAH LISANMU!\n\nBicara yang baik atau DIAM!', source:'Hal. 83-85'},
+];
+const fc8 = [
+  {label:'Shalat Fardhu', arabic:'الصَّلَاةُ الْفَرْضِيَّةُ = الصَّلَاةُ الْوَاجِبَةُ', meaning:'🕌 Shalat fardhu = shalat WAJIB\n\nShalat fardhu adalah rukun Islam yang KEDUA.\n\nWajib dilaksanakan 5 kali sehari oleh setiap muslim.', source:'Bab VIII — Hal. 92'},
+  {label:'5 Shalat & Rakaatnya', arabic:'الصَّلَوَاتُ الْخَمْسُ وَرَكَعَاتُهَا', meaning:'🕌 5 Shalat Fardhu:\n\n• Shubuh → 2 rakaat\n• Zhuhur → 4 rakaat\n• Ashar → 4 rakaat\n• Maghrib → 3 rakaat\n• Isya → 4 rakaat\n\nTotal: 17 rakaat per hari', source:'Hal. 93'},
+  {label:'QS. An-Nur: 56', arabic:'وَأَقِيمُوا الصَّلَاةَ وَآتُوا الزَّكَاةَ وَأَطِيعُوا الرَّسُولَ لَعَلَّكُمْ تُرْحَمُونَ', meaning:'"Dan dirikanlah shalat, tunaikanlah zakat, dan ta\'atlah kepada rasul, supaya kamu diberi rahmat."\n\n(QS. An-Nur: 56)', source:'Hal. 94'},
+  {label:'Manfaat Shalat', arabic:'فَوَائِدُ الصَّلَاةِ', meaning:'✅ Manfaat shalat:\n\n• Mendekatkan diri kepada Allah\n• Menenangkan hati\n• Mencegah perbuatan keji dan munkar', source:'Hal. 95'},
+  {label:'QS. Al-Ankabut: 45', arabic:'إِنَّ الصَّلَاةَ تَنْهَى عَنِ الْفَحْشَاءِ وَالْمُنكَرِ', meaning:'"Sesungguhnya shalat itu mencegah dari perbuatan keji dan munkar."\n\n(QS. Al-Ankabut: 45)', source:'Hal. 96'},
+  {label:'Balasan Meninggalkan Shalat', arabic:'مَا سَلَكَكُمْ فِي سَقَرَ — قَالُوا لَمْ نَكُ مِنَ الْمُصَلِّينَ', meaning:'⚠️ "Apakah yang memasukkan kamu ke dalam neraka Saqar? Mereka menjawab: Kami dahulu tidak termasuk orang yang mengerjakan shalat."\n\n(QS. Al-Muddatstsir: 42)', source:'Hal. 97'},
+];
+const fc9 = [
+  {label:'Al-\'Aliim (اَلْعَلِيمُ)', arabic:'اَلْعَلِيمُ', meaning:'🧠 AL-\'ALIIM artinya MAHA MENGETAHUI\n\nAllah mengetahui semua yang terjadi di dunia ini — yang kecil maupun besar, yang nyata maupun ghaib, yang jauh maupun dekat.', source:'Bab IX — Hal. 105'},
+  {label:'QS. Al-Baqarah: 282', arabic:'وَاللهُ بِكُلِّ شَيْءٍ عَلِيمٌ', meaning:'"Dan Allah Maha Mengetahui atas segala sesuatu."\n\n(QS. Al-Baqarah: 282)', source:'Hal. 106'},
+  {label:'QS. Ar-Ra\'du: 9', arabic:'عَالِمُ الْغَيْبِ وَالشَّهَادَةِ الْكَبِيرُ الْمُتَعَالِ', meaning:'"(Allah) Yang Maha Mengetahui semua yang ghaib dan yang tampak, Yang Maha Besar lagi Maha Tinggi."\n\n(QS. Ar-Ra\'du: 9)', source:'Hal. 106'},
+  {label:'QS. Ali Imran: 119', arabic:'إِنَّ اللهَ عَلِيمٌ بِذَاتِ الصُّدُورِ', meaning:'"Sesungguhnya Allah Maha Mengetahui segala isi hati."\n\n(QS. Ali Imran: 119)\n\nAllah mengetahui isi hati kita, bahkan yang belum kita ucapkan!', source:'Hal. 106'},
+  {label:'Cakupan Ilmu Allah', arabic:'عِلْمُ اللهِ وَاسِعٌ لَا حُدُودَ لَهُ', meaning:'🌍 Allah mengetahui:\n• Semua perbuatan — terang-terangan maupun rahasia\n• Setiap ucapan maupun yang terbetik di hati\n• Setiap daun yang jatuh di hutan belantara\n• Jumlah ikan di lautan luas\n• Semua rencana jahat walau belum dilakukan', source:'Hal. 107'},
+  {label:'Manfaat Mengimani Al-\'Aliim', arabic:'فَوَائِدُ الإِيمَانِ بِالْعَلِيمِ', meaning:'✅ Manfaat mengimani Allah Al-\'Aliim:\n\n• Semakin taat kepada Allah\n• Menjauhi maksiat\n• Selalu berbuat baik\n• Menjauhi penyakit hati\n• Rajin beribadah\n• Ikhlas dalam ibadah', source:'Hal. 108'},
+];
+const fcMap = {5:fc5, 6:fc6, 7:fc7, 8:fc8, 9:fc9};
 
 // ===== TUGAS I DATA =====
 const t1Data5 = [
@@ -867,7 +1358,6 @@ const t1Data5 = [
   {name:'🦓 Zebra',ans:'darat'},{name:'🦭 Anjing laut',ans:'laut'},{name:'🌾 Padi',ans:'darat'},
   {name:'🐡 Ikan buntal',ans:'laut'},{name:'🦁 Singa',ans:'darat'},{name:'🦜 Burung beo',ans:'darat'},
 ];
-
 const t1Data6 = [
   {name:'😴 Tidur lelap',ans:'batal'},{name:'🍰 Makan kue',ans:'tidak'},{name:'💨 Kentut',ans:'batal'},
   {name:'🏃 Berlari',ans:'tidak'},{name:'🚽 Kencing',ans:'batal'},{name:'🥛 Minum susu',ans:'tidak'},
@@ -877,50 +1367,46 @@ const t1Data6 = [
   {name:'🍎 Makan buah',ans:'tidak'},{name:'🚿 Wudhu lagi',ans:'tidak'},{name:'💊 Minum obat',ans:'tidak'},
   {name:'🤧 Ingus keluar',ans:'tidak'},{name:'😤 Batuk keras',ans:'tidak'},
 ];
-
-let t1State = {5:{}, 6:{}};
-
-function renderT1(bab) {
-  const data = bab===5 ? t1Data5 : t1Data6;
-  const grid = document.getElementById(`b${bab}-t1-grid`);
-  grid.innerHTML = '';
-  data.forEach((item, i) => {
-    const s = t1State[bab][i] || 0;
-    const isB5 = bab===5;
-    const marks = isB5 ? ['','✓ Laut','✗ Darat'] : ['','✓ Batal','✗ Tidak'];
-    const cls = isB5
-      ? ['','selected-laut','selected-darat']
-      : ['','selected-batal','selected-tidak'];
-    const div = document.createElement('div');
-    div.className = `tag-item ${cls[s]}`;
-    div.innerHTML = `${item.name} <span class="tag-mark">${marks[s]}</span>`;
-    div.onclick = () => { t1State[bab][i] = ((t1State[bab][i]||0)+1)%3; renderT1(bab); };
-    grid.appendChild(div);
-  });
-}
-
-function checkT1(bab) {
-  const data = bab===5 ? t1Data5 : t1Data6;
-  let correct = 0;
-  data.forEach((item, i) => {
-    const s = t1State[bab][i]||0;
-    const ans = s===1 ? (bab===5?'laut':'batal') : s===2 ? (bab===5?'darat':'tidak') : null;
-    if (ans===item.ans) correct++;
-  });
-  const pct = Math.round(correct/data.length*100);
-  document.getElementById(`b${bab}-t1-score`).textContent = `${correct} / ${data.length} Benar`;
-  document.getElementById(`b${bab}-t1-msg`).textContent = pct>=80?'🌟 Luar biasa!':pct>=60?'👍 Bagus! Terus belajar!':'💪 Coba lagi ya!';
-  document.getElementById(`b${bab}-t1-result`).querySelector('.result-emoji').textContent = pct>=80?'🏆':pct>=60?'⭐':'💪';
-  document.getElementById(`b${bab}-t1-result`).classList.add('show');
-}
-
-function resetT1(bab) {
-  t1State[bab] = {};
-  renderT1(bab);
-  document.getElementById(`b${bab}-t1-result`).classList.remove('show');
-}
-
-renderT1(5); renderT1(6);
+// Bab 7: Perbuatan BAIK (sesuai As-Sami') vs BURUK — dari hal. 91 Bab 7
+const t1Data7 = [
+  {name:'📖 Membaca Al-Quran',ans:'baik'},{name:'😤 Menghina orang',ans:'buruk'},
+  {name:'🎵 Bernyanyi',ans:'baik'},{name:'😡 Berteriak-teriak',ans:'buruk'},
+  {name:'🙏 Berzikir',ans:'baik'},{name:'🗣️ Membicarakan keburukan teman',ans:'buruk'},
+  {name:'📿 Murajaah hafalan Al-Quran',ans:'baik'},{name:'😈 Memuji keindahan ciptaan Allah',ans:'baik'},
+  {name:'👊 Mengolok-olok',ans:'buruk'},{name:'💬 Berkata jujur',ans:'baik'},
+  {name:'🤥 Berbohong',ans:'buruk'},{name:'🤲 Berdoa dengan sungguh',ans:'baik'},
+  {name:'📢 Memfitnah',ans:'buruk'},{name:'💝 Berkata lemah lembut',ans:'baik'},
+  {name:'😂 Bercanda berlebihan',ans:'buruk'},{name:'🙏 Mengucapkan salam',ans:'baik'},
+  {name:'🔊 Ribut di masjid',ans:'buruk'},{name:'🌸 Berkata terima kasih',ans:'baik'},
+  {name:'🤐 Diam jika tak ada manfaat',ans:'baik'},{name:'😤 Mengeluh terus',ans:'buruk'},
+];
+// Bab 8: Pernyataan shalat BENAR vs SALAH — dari hal. 102
+const t1Data8 = [
+  {name:'✅ Yusril shalat shubuh 2 rakaat',ans:'benar'},{name:'❓ Yusril shalat shubuh 3 rakaat',ans:'salah'},
+  {name:'❓ Toni hanya shalat kalau disuruh ibunya saja',ans:'salah'},{name:'✅ Ahmad setiap hari shalat fardhu 5 kali',ans:'benar'},
+  {name:'❓ Yudi setiap hari hanya shalat maghrib saja',ans:'salah'},{name:'✅ Sofyan shalat isya 4 rakaat',ans:'benar'},
+  {name:'❓ Ali tidak shalat subuh karena mengantuk',ans:'salah'},{name:'✅ Shalat fardhu wajib 5 kali sehari',ans:'benar'},
+  {name:'✅ Shubuh 2 rakaat, Zhuhur 4 rakaat',ans:'benar'},{name:'❓ Maghrib 4 rakaat',ans:'salah'},
+  {name:'✅ Total shalat fardhu 17 rakaat sehari',ans:'benar'},{name:'❓ Shalat fardhu boleh ditinggal jika sibuk',ans:'salah'},
+  {name:'✅ Ashar dan Isya sama-sama 4 rakaat',ans:'benar'},{name:'❓ Shalat fardhu ada 10 macam',ans:'salah'},
+  {name:'✅ Meninggalkan shalat fardhu berdosa',ans:'benar'},{name:'❓ Zhuhur hanya 2 rakaat',ans:'salah'},
+  {name:'✅ Shalat mencegah perbuatan keji dan munkar',ans:'benar'},{name:'❓ Isya hanya 3 rakaat',ans:'salah'},
+  {name:'✅ Shalat adalah rukun Islam ke-2',ans:'benar'},{name:'❓ Boleh shalat sambil bercanda',ans:'salah'},
+];
+// Bab 9: Sikap BENAR vs SALAH mengimani Al-'Aliim — dari hal. 112
+const t1Data9 = [
+  {name:'✅ Selalu berkata baik karena Allah tahu',ans:'benar'},{name:'❌ Biasa saja berbuat dosa karena Allah tidak kelihatan',ans:'salah'},
+  {name:'❌ Saat sendiri, sering berbuat buruk karena tidak ada yang tahu',ans:'salah'},{name:'✅ Tidak mau berbuat dosa walaupun di tempat sepi',ans:'benar'},
+  {name:'❌ Malas shalat kalau tidak ada ibu',ans:'salah'},{name:'✅ Suka bersedekah walau tidak ada yang melihat',ans:'benar'},
+  {name:'✅ Setiap hari shalat karena Allah',ans:'benar'},{name:'❌ Berbohong kepada teman karena dia tidak tahu',ans:'salah'},
+  {name:'✅ Takut berbuat maksiat di mana pun',ans:'benar'},{name:'❌ Saat sepi, berani berbuat dosa',ans:'salah'},
+  {name:'✅ Ikhlas beribadah tanpa ingin dipuji',ans:'benar'},{name:'❌ Berbuat baik hanya kalau ada yang melihat',ans:'salah'},
+  {name:'✅ Menjaga hati dari iri dan dengki',ans:'benar'},{name:'❌ Merasa aman berbuat jahat',ans:'salah'},
+  {name:'✅ Rajin beribadah walaupun sendirian',ans:'benar'},{name:'❌ Curang saat ujian karena tidak ada yang tahu',ans:'salah'},
+  {name:'✅ Selalu merasa diawasi Allah',ans:'benar'},{name:'❌ Tidak perlu jujur kalau tidak ketahuan',ans:'salah'},
+  {name:'✅ Berbuat baik walau tidak ada yang lihat',ans:'benar'},{name:'❌ Berbuat dosa di tempat gelap',ans:'salah'},
+];
+const t1Map = {5:t1Data5, 6:t1Data6, 7:t1Data7, 8:t1Data8, 9:t1Data9};
 
 // ===== TUGAS II DATA =====
 const t2Data5 = [
@@ -945,7 +1431,6 @@ const t2Data5 = [
   {q:'19. Iblis dan setan termasuk makhluk ....',opts:['Nyata','Ghaib'],ans:1},
   {q:'20. Dengan mengenal ciptaan Allah yang menakjubkan, kita semakin mengenal ....',opts:['Ilmu pengetahuan saja','Allah Yang Maha Kuasa'],ans:1},
 ];
-
 const t2Data6 = [
   {q:'1. Jika wudhu kita batal, kita harus ....',opts:['Shalat saja','Wudhu lagi'],ans:1},
   {q:'2. Jika kita shalat tanpa berwudhu, shalat kita ....',opts:['Batal','Sah'],ans:0},
@@ -968,12 +1453,209 @@ const t2Data6 = [
   {q:'19. Sinta wudhu lalu buang air besar. Wudhu Sinta ....',opts:['Batal','Tidak batal'],ans:0},
   {q:'20. Umar wudhu lalu minum susu. Bolehkah Umar langsung shalat?',opts:['Boleh, wudhu masih sah','Tidak boleh, harus wudhu lagi'],ans:0},
 ];
+// Bab 7 — persis dari buku hal. 88 (10 soal) + 10 pengembangan
+const t2Data7 = [
+  {q:'1. As-Sami\' artinya ....',opts:['Maha Melihat','Maha Mendengar'],ans:1},
+  {q:'2. Pendengaran Allah ....',opts:['Sangat sempurna','Sangat terbatas'],ans:0},
+  {q:'3. Allah Maha mendengar ucapan kita, oleh karena itu kita ....',opts:['Selalu berkata jujur','Kadang berbohong'],ans:0},
+  {q:'4. Pendengaran makhluk sangat ....',opts:['Sempurna','Terbatas'],ans:1},
+  {q:'5. Kita ... menyamakan pendengaran Allah dengan pendengaran manusia.',opts:['Boleh','Tidak boleh'],ans:1},
+  {q:'6. Kita yakin pasti Allah ... doa kita.',opts:['Mendengar','Melihat'],ans:0},
+  {q:'7. Maha Mendengar adalah nama Allah ....',opts:['اَلْبَصِيرُ','اَلسَّمِيعُ'],ans:1},
+  {q:'8. Mengejek teman adalah perbuatan ....',opts:['Buruk','Baik'],ans:0},
+  {q:'9. Dalil Allah Maha Mendengar adalah ....',opts:['QS. An-Nisa: 134','QS. Al-Baqarah: 10'],ans:0},
+  {q:'10. Aku semakin rajin berdoa karena Allah ....',opts:['Mendengar doaku','Melihat suaraku'],ans:0},
+  {q:'11. Manfaat mengimani As-Sami\' adalah kita semakin ....',opts:['Malas beribadah','Rajin berzikir'],ans:1},
+  {q:'12. Karena Allah Maha Mendengar, kita harus menjaga ....',opts:['Lisan','Harta'],ans:0},
+  {q:'13. Allah mendengar doa kita lalu ....',opts:['Mengabulkannya','Mengabaikannya'],ans:0},
+  {q:'14. Suara yang jauh dan kecil ....',opts:['Tidak dapat didengar Allah','Tetap didengar Allah'],ans:1},
+  {q:'15. Allah bahkan mendengar ....',opts:['Suara hati kita','Hanya ucapan keras'],ans:0},
+  {q:'16. Kita dianjurkan bicara yang baik atau ....',opts:['Berteriak','Diam'],ans:1},
+  {q:'17. Rajin membaca Al-Quran adalah manfaat mengimani ....',opts:['As-Sami\'','Al-Bashiir'],ans:0},
+  {q:'18. Pendengaran Allah berbeda dengan pendengaran makhluk karena Allah ....',opts:['Memiliki telinga','Maha Sempurna tanpa batas'],ans:1},
+  {q:'19. Berzikir termasuk perbuatan yang ....',opts:['Didengar Allah dan berpahala','Sia-sia saja'],ans:0},
+  {q:'20. Dalil "Tidak ada sesuatu pun yang serupa dengan Dia, dan Dia-lah Maha Mendengar" dari surat ....',opts:['QS. An-Nisa: 134','QS. Asy-Syura: 11'],ans:1},
+];
+// Bab 8 — persis dari buku hal. 99 (10 soal) + 10 pengembangan
+const t2Data8 = [
+  {q:'1. Shalat fardhu artinya shalat ....',opts:['Wajib','Tidak wajib'],ans:0},
+  {q:'2. Shalat fardhu ada ....',opts:['10','5'],ans:1},
+  {q:'3. Shalat yang bilangan rakaatnya 3 adalah shalat ....',opts:['Maghrib','Isya'],ans:0},
+  {q:'4. Jika meninggalkan shalat maka ....',opts:['Berdosa','Berpahala'],ans:0},
+  {q:'5. Shalat yang benar akan mencegah dari perbuatan ....',opts:['Baik dan benar','Keji dan munkar'],ans:1},
+  {q:'6. Kita bisa meminta tolong kepada Allah dengan cara ....',opts:['Sabar dan shalat','Menangis sedih'],ans:0},
+  {q:'7. Orang yang tidak shalat akan masuk neraka ....',opts:['Jahannam','Saqar'],ans:1},
+  {q:'8. Shalat fardhu yang 4 rakaat ada ....',opts:['2','3'],ans:1},
+  {q:'9. Orang yang meninggalkan shalat fardhu akan ....',opts:['Berdosa','Berpahala'],ans:0},
+  {q:'10. Setiap hari kita shalat fardhu sebanyak ... rakaat.',opts:['5','17'],ans:1},
+  {q:'11. Shalat Shubuh dilaksanakan ... rakaat.',opts:['2','4'],ans:0},
+  {q:'12. Shalat Ashar dilaksanakan ... rakaat.',opts:['3','4'],ans:1},
+  {q:'13. Shalat fardhu adalah rukun Islam yang ....',opts:['Pertama','Kedua'],ans:1},
+  {q:'14. Dalil perintah shalat terdapat pada ....',opts:['QS. An-Nur: 56','QS. Al-Baqarah: 1'],ans:0},
+  {q:'15. Manfaat shalat untuk menenangkan ....',opts:['Hati','Badan saja'],ans:0},
+  {q:'16. Ciri shalat yang bagus adalah ....',opts:['Terburu-buru','Ikhlas karena Allah'],ans:1},
+  {q:'17. Shalat Isya dilaksanakan ... rakaat.',opts:['3','4'],ans:1},
+  {q:'18. Shalat Maghrib dilaksanakan ... rakaat.',opts:['3','4'],ans:0},
+  {q:'19. Shalat mencegah perbuatan keji dan munkar sesuai ....',opts:['QS. Al-Ankabut: 45','QS. An-Nisa: 1'],ans:0},
+  {q:'20. Walaupun sedang sakit atau sibuk, kita ....',opts:['Boleh tinggalkan shalat','Tetap wajib shalat'],ans:1},
+];
+// Bab 9 — dari buku hal. 110
+const t2Data9 = [
+  {q:'1. Al-\'Aliim artinya Allah Maha ....',opts:['Mendengar','Mengetahui'],ans:1},
+  {q:'2. Ilmu Allah sangat luas dan ....',opts:['Terbatas','Tidak dibatasi apapun'],ans:1},
+  {q:'3. Allah mengetahui perbuatan kita yang terang-terangan maupun ....',opts:['Rahasia','Hanya yang terlihat'],ans:0},
+  {q:'4. Allah mengetahui semua yang ada di ....',opts:['Indonesia saja','Dunia dan akhirat'],ans:1},
+  {q:'5. Karena Allah Maha Mengetahui, kita harus ....',opts:['Berani berbuat dosa','Selalu berbuat baik'],ans:1},
+  {q:'6. Al-\'Aliim dalam tulisan Arab adalah ....',opts:['اَلسَّمِيعُ','اَلْعَلِيمُ'],ans:1},
+  {q:'7. "Dan Allah Maha Mengetahui atas segala sesuatu" dari surat ....',opts:['QS. Al-Baqarah: 282','QS. An-Nisa: 1'],ans:0},
+  {q:'8. Allah mengetahui isi hati kita sesuai ....',opts:['QS. Ali Imran: 119','QS. Al-Baqarah: 1'],ans:0},
+  {q:'9. Manfaat mengimani Al-\'Aliim adalah menjauhi ....',opts:['Kebaikan','Maksiat'],ans:1},
+  {q:'10. Allah mengetahui setiap daun yang jatuh walaupun di ....',opts:['Kota saja','Hutan belantara'],ans:1},
+  {q:'11. Kita tidak boleh berbuat dosa walaupun ....',opts:['Sendiri dan tidak ada yang melihat','Ada teman'],ans:0},
+  {q:'12. Allah mengetahui hal-hal yang ghaib maupun yang ....',opts:['Tersembunyi saja','Tampak/nyata'],ans:1},
+  {q:'13. Manfaat mengimani Al-\'Aliim adalah rajin ....',opts:['Berbuat jahat','Beribadah'],ans:1},
+  {q:'14. Yang BENAR dalam mengimani Al-\'Aliim adalah ....',opts:['Berbuat baik hanya jika ada yang melihat','Ikhlas berbuat baik karena Allah selalu tahu'],ans:1},
+  {q:'15. Allah mengetahui jumlah ikan di ....',opts:['Akuarium saja','Lautan luas'],ans:1},
+  {q:'16. Rencana jahat yang belum dilakukan ....',opts:['Tidak diketahui Allah','Tetap diketahui Allah'],ans:1},
+  {q:'17. Karena Allah Maha Mengetahui, kita harus ....',opts:['Takut berbuat maksiat di mana pun','Bebas berbuat dosa asal tidak ketahuan'],ans:0},
+  {q:'18. Manfaat mengimani Al-\'Aliim adalah menjauhi ....',opts:['Penyakit hati','Kebaikan'],ans:0},
+  {q:'19. "Sesungguhnya Allah Maha Mengetahui segala isi hati" dari surat ....',opts:['QS. Ali Imran: 119','QS. Al-Baqarah: 282'],ans:0},
+  {q:'20. Allah mengetahui apa yang terbetik di hati kita yang ....',opts:['Sudah diucapkan','Belum kita ucapkan'],ans:1},
+];
+const t2Map = {5:t2Data5, 6:t2Data6, 7:t2Data7, 8:t2Data8, 9:t2Data9};
 
-let t2State = {5:{ans:{},checked:false}, 6:{ans:{},checked:false}};
+// ===== WORD MATCH DATA =====
+const wmData5 = [
+  {word:'Hiu',cat:'🌊 Laut'},{word:'Gunung',cat:'🏔️ Darat'},{word:'Bintang',cat:'🌌 Langit'},
+  {word:'Paus',cat:'🌊 Laut'},{word:'Pohon Mangga',cat:'🏔️ Darat'},{word:'Bulan',cat:'🌌 Langit'},
+  {word:'Terumbu Karang',cat:'🌊 Laut'},{word:'Manusia',cat:'🏔️ Darat'},{word:'Matahari',cat:'🌌 Langit'},
+  {word:'Ubur-ubur',cat:'🌊 Laut'},{word:'Jerapah',cat:'🏔️ Darat'},{word:'Awan',cat:'🌌 Langit'},
+  {word:'Cumi-cumi',cat:'🌊 Laut'},{word:'Harimau',cat:'🏔️ Darat'},{word:'Kerang',cat:'🌊 Laut'},
+];
+const wmCat5 = ['🌊 Laut','🏔️ Darat','🌌 Langit'];
+const wmData6 = [
+  {word:'Kentut',cat:'❌ Batal Wudhu'},{word:'Makan Kue',cat:'✅ Tidak Batal'},
+  {word:'Kencing',cat:'❌ Batal Wudhu'},{word:'Bermain',cat:'✅ Tidak Batal'},
+  {word:'Buang Air Besar',cat:'❌ Batal Wudhu'},{word:'Minum Susu',cat:'✅ Tidak Batal'},
+  {word:'Tidur Lelap',cat:'❌ Batal Wudhu'},{word:'Berlari',cat:'✅ Tidak Batal'},
+  {word:'Pingsan',cat:'❌ Batal Wudhu'},{word:'Bersin',cat:'✅ Tidak Batal'},
+  {word:'Makan Daging Unta',cat:'❌ Batal Wudhu'},{word:'Membaca Buku',cat:'✅ Tidak Batal'},
+];
+const wmCat6 = ['❌ Batal Wudhu','✅ Tidak Batal'];
+const wmData7 = [
+  {word:'As-Sami\'',cat:'👂 Nama Allah'},{word:'Maha Mendengar',cat:'📖 Artinya'},
+  {word:'Berkata jujur',cat:'✅ Perbuatan Baik'},{word:'Mengejek teman',cat:'❌ Perbuatan Buruk'},
+  {word:'Berzikir',cat:'✅ Perbuatan Baik'},{word:'Berbohong',cat:'❌ Perbuatan Buruk'},
+  {word:'Rajin berdoa',cat:'✅ Perbuatan Baik'},{word:'Memfitnah',cat:'❌ Perbuatan Buruk'},
+  {word:'QS. An-Nisa: 134',cat:'👂 Nama Allah'},{word:'Menjaga lisan',cat:'✅ Perbuatan Baik'},
+  {word:'Berkata kotor',cat:'❌ Perbuatan Buruk'},{word:'Membaca Al-Quran',cat:'✅ Perbuatan Baik'},
+];
+const wmCat7 = ['👂 Nama Allah','📖 Artinya','✅ Perbuatan Baik','❌ Perbuatan Buruk'];
+const wmData8 = [
+  {word:'Shubuh',cat:'2️⃣ Rakaat'},{word:'Zhuhur',cat:'4️⃣ Rakaat'},
+  {word:'Ashar',cat:'4️⃣ Rakaat'},{word:'Maghrib',cat:'3️⃣ Rakaat'},
+  {word:'Isya',cat:'4️⃣ Rakaat'},{word:'Mendekatkan diri ke Allah',cat:'✅ Manfaat Shalat'},
+  {word:'Menenangkan hati',cat:'✅ Manfaat Shalat'},{word:'Mencegah keji & munkar',cat:'✅ Manfaat Shalat'},
+  {word:'Ikhlas karena Allah',cat:'⭐ Ciri Shalat Bagus'},{word:'Mengikuti cara Rasulullah',cat:'⭐ Ciri Shalat Bagus'},
+];
+const wmCat8 = ['2️⃣ Rakaat','3️⃣ Rakaat','4️⃣ Rakaat','✅ Manfaat Shalat','⭐ Ciri Shalat Bagus'];
+const wmData9 = [
+  {word:'Al-\'Aliim',cat:'🧠 Nama Allah'},{word:'Maha Mengetahui',cat:'📖 Artinya'},
+  {word:'Selalu jujur',cat:'✅ Sikap Benar'},{word:'Berbuat dosa saat sepi',cat:'❌ Sikap Salah'},
+  {word:'Ikhlas beribadah',cat:'✅ Sikap Benar'},{word:'Berbohong karena tidak ketahuan',cat:'❌ Sikap Salah'},
+  {word:'QS. Al-Baqarah: 282',cat:'🧠 Nama Allah'},{word:'Takut berbuat maksiat',cat:'✅ Sikap Benar'},
+  {word:'Berbuat baik walau sendiri',cat:'✅ Sikap Benar'},{word:'Curang saat ujian',cat:'❌ Sikap Salah'},
+];
+const wmCat9 = ['🧠 Nama Allah','📖 Artinya','✅ Sikap Benar','❌ Sikap Salah'];
+const wmDataMap = {5:wmData5,6:wmData6,7:wmData7,8:wmData8,9:wmData9};
+const wmCatMap  = {5:wmCat5, 6:wmCat6, 7:wmCat7, 8:wmCat8, 9:wmCat9};
+
+// ===== STATE =====
+const fcIdx   = {5:0,6:0,7:0,8:0,9:0};
+const t1State = {5:{},6:{},7:{},8:{},9:{}};
+const t2State = {5:{ans:{},checked:false},6:{ans:{},checked:false},7:{ans:{},checked:false},8:{ans:{},checked:false},9:{ans:{},checked:false}};
+const wmState = {5:{sel:null,matched:{}},6:{sel:null,matched:{}},7:{sel:null,matched:{}},8:{sel:null,matched:{}},9:{sel:null,matched:{}}};
+
+// ===== FLASHCARD FUNCTIONS =====
+function renderFC(bab) {
+  const cards = fcMap[bab];
+  const fc = cards[fcIdx[bab]];
+  const el = document.getElementById(`b${bab}-fc-display`);
+  if (!el) return;
+  el.innerHTML = `
+    <div style="perspective:1200px;margin:20px 0">
+      <div class="flashcard" onclick="this.classList.toggle('flipped')">
+        <div class="flashcard-front">
+          <div class="label">${fc.label}</div>
+          <div class="arabic">${fc.arabic}</div>
+          <div style="color:rgba(255,255,255,0.45);font-size:0.8rem;margin-top:12px">Ketuk untuk penjelasan ↓</div>
+        </div>
+        <div class="flashcard-back bab${bab}-back">
+          <div class="meaning" style="white-space:pre-line">${fc.meaning}</div>
+          <div class="source">📍 ${fc.source}</div>
+        </div>
+      </div>
+    </div>`;
+  document.getElementById(`b${bab}-fc-counter`).textContent = `${fcIdx[bab]+1} / ${cards.length}`;
+}
+function fcNav(bab, dir) {
+  const len = fcMap[bab].length;
+  fcIdx[bab] = (fcIdx[bab] + dir + len) % len;
+  renderFC(bab);
+}
+
+// ===== TUGAS I FUNCTIONS =====
+function renderT1(bab) {
+  const data = t1Map[bab];
+  const grid = document.getElementById(`b${bab}-t1-grid`);
+  if (!grid) return;
+  grid.innerHTML = '';
+  data.forEach((item, i) => {
+    const s = t1State[bab][i] || 0;
+    let marks, cls;
+    if (bab===5)      { marks=['','✓ Laut','✗ Darat'];   cls=['','selected-laut','selected-darat']; }
+    else if (bab===6) { marks=['','✓ Batal','✗ Tidak'];  cls=['','selected-batal','selected-tidak']; }
+    else if (bab===7) { marks=['','✓ Baik','✗ Buruk'];   cls=['','selected-laut','selected-darat']; }
+    else              { marks=['','✓ Benar','✗ Salah'];  cls=['','selected-benar','selected-salah']; }
+    const div = document.createElement('div');
+    div.className = `tag-item ${cls[s]}`;
+    div.innerHTML = `${item.name} <span class="tag-mark">${marks[s]}</span>`;
+    div.onclick = () => { t1State[bab][i] = ((t1State[bab][i]||0)+1)%3; renderT1(bab); };
+    grid.appendChild(div);
+  });
+}
+function checkT1(bab) {
+  const data = t1Map[bab];
+  let correct = 0;
+  data.forEach((item, i) => {
+    const s = t1State[bab][i]||0;
+    let ans;
+    if (bab===5)      ans = s===1?'laut':s===2?'darat':null;
+    else if (bab===6) ans = s===1?'batal':s===2?'tidak':null;
+    else if (bab===7) ans = s===1?'baik':s===2?'buruk':null;
+    else              ans = s===1?'benar':s===2?'salah':null;
+    if (ans===item.ans) correct++;
+  });
+  const pct = Math.round(correct/data.length*100);
+  document.getElementById(`b${bab}-t1-score`).textContent = `${correct} / ${data.length} Benar`;
+  document.getElementById(`b${bab}-t1-msg`).textContent = pct>=80?'🌟 Luar biasa!':pct>=60?'👍 Bagus! Terus belajar!':'💪 Coba lagi ya!';
+  document.getElementById(`b${bab}-t1-result`).querySelector('.result-emoji').textContent = pct>=80?'🏆':pct>=60?'⭐':'💪';
+  document.getElementById(`b${bab}-t1-result`).classList.add('show');
+}
+function resetT1(bab) {
+  t1State[bab] = {};
+  renderT1(bab);
+  document.getElementById(`b${bab}-t1-result`).classList.remove('show');
+}
+
+// ===== TUGAS II FUNCTIONS =====
+const babColors = {5:'#e0f4ff',6:'#fff3ee',7:'#eef0fb',8:'#e0f2f1',9:'#ffebee'};
+const babBorder = {5:'var(--teal)',6:'var(--orange)',7:'var(--indigo)',8:'var(--emerald)',9:'var(--crimson)'};
 
 function renderT2(bab) {
-  const data = bab===5 ? t2Data5 : t2Data6;
+  const data = t2Map[bab];
   const container = document.getElementById(`b${bab}-t2-container`);
+  if (!container) return;
   const st = t2State[bab];
   container.innerHTML = '';
   data.forEach((q, qi) => {
@@ -984,171 +1666,123 @@ function renderT2(bab) {
     const optsDiv = div.querySelector(`#b${bab}-opts-${qi}`);
     q.opts.forEach((opt, oi) => {
       const btn = document.createElement('button');
-      btn.className = `quiz-opt${bab===6?' bab6-opt':''}`;
+      btn.className = 'quiz-opt';
       btn.textContent = (oi===0?'a. ':'b. ')+opt;
       btn.onclick = () => {
         if (st.checked) return;
         st.ans[qi] = oi;
         optsDiv.querySelectorAll('.quiz-opt').forEach(b => { b.style.background=''; b.style.borderColor=''; });
-        btn.style.background = bab===5 ? '#e0f4ff' : '#fff3ee';
-        btn.style.borderColor = bab===5 ? 'var(--teal)' : 'var(--orange)';
-        const answered = Object.keys(st.ans).length;
-        document.getElementById(`b${bab}-t2-score`).textContent = `${answered} / ${data.length} dijawab`;
+        btn.style.background = babColors[bab];
+        btn.style.borderColor = babBorder[bab];
+        document.getElementById(`b${bab}-t2-score`).textContent = `${Object.keys(st.ans).length} / ${data.length} dijawab`;
       };
       optsDiv.appendChild(btn);
+      if (st.ans[qi]!==undefined && !st.checked && oi===st.ans[qi]) {
+        btn.style.background = babColors[bab]; btn.style.borderColor = babBorder[bab];
+      }
     });
-    if (st.ans[qi] !== undefined && !st.checked) {
-      const btns = optsDiv.querySelectorAll('.quiz-opt');
-      btns[st.ans[qi]].style.background = bab===5 ? '#e0f4ff' : '#fff3ee';
-      btns[st.ans[qi]].style.borderColor = bab===5 ? 'var(--teal)' : 'var(--orange)';
-    }
   });
 }
-
 function checkT2(bab) {
-  const data = bab===5 ? t2Data5 : t2Data6;
+  const data = t2Map[bab];
   const st = t2State[bab];
   st.checked = true;
   let correct = 0;
   data.forEach((q, qi) => {
     const optsDiv = document.getElementById(`b${bab}-opts-${qi}`);
-    const fbDiv = document.getElementById(`b${bab}-fb-${qi}`);
-    const btns = optsDiv.querySelectorAll('.quiz-opt');
+    const fbDiv   = document.getElementById(`b${bab}-fb-${qi}`);
+    const btns    = optsDiv.querySelectorAll('.quiz-opt');
     btns.forEach(b => { b.disabled=true; b.style.background=''; b.style.borderColor=''; });
-    if (st.ans[qi] !== undefined) {
+    if (st.ans[qi]!==undefined) {
       if (st.ans[qi]===q.ans) { btns[st.ans[qi]].classList.add('correct'); correct++; fbDiv.textContent='✅ Benar!'; fbDiv.className='quiz-feedback show correct'; }
       else { btns[st.ans[qi]].classList.add('wrong'); btns[q.ans].classList.add('correct'); fbDiv.textContent=`❌ Jawaban benar: ${q.ans===0?'a':'b'}. ${q.opts[q.ans]}`; fbDiv.className='quiz-feedback show wrong'; }
     } else { btns[q.ans].classList.add('correct'); fbDiv.textContent=`📌 Jawaban: ${q.ans===0?'a':'b'}. ${q.opts[q.ans]}`; fbDiv.className='quiz-feedback show wrong'; }
   });
   const pct = Math.round(correct/data.length*100);
-  document.getElementById(`b${bab}-t2-score`).textContent=`${correct} / ${data.length} Benar`;
-  document.getElementById(`b${bab}-t2-emoji`).textContent=pct>=80?'🏆':pct>=60?'⭐':'💪';
-  document.getElementById(`b${bab}-t2-final`).textContent=`Nilai: ${pct} — ${correct}/${data.length} Benar`;
-  document.getElementById(`b${bab}-t2-msg`).textContent=pct>=80?'Luar biasa! Kamu bintang kelas! 🌟':pct>=60?'Bagus! Terus semangat! 📚':'Jangan menyerah, pelajari lagi ya! 💪';
+  document.getElementById(`b${bab}-t2-score`).textContent  = `${correct} / ${data.length} Benar`;
+  document.getElementById(`b${bab}-t2-emoji`).textContent  = pct>=80?'🏆':pct>=60?'⭐':'💪';
+  document.getElementById(`b${bab}-t2-final`).textContent  = `Nilai: ${pct} — ${correct}/${data.length} Benar`;
+  document.getElementById(`b${bab}-t2-msg`).textContent    = pct>=80?'Luar biasa! Kamu bintang kelas! 🌟':pct>=60?'Bagus! Terus semangat! 📚':'Jangan menyerah, pelajari lagi ya! 💪';
   document.getElementById(`b${bab}-t2-result`).classList.add('show');
 }
-
 function resetT2(bab) {
-  const data = bab===5 ? t2Data5 : t2Data6;
+  const data = t2Map[bab];
   t2State[bab] = {ans:{}, checked:false};
-  document.getElementById(`b${bab}-t2-score`).textContent=`0 / ${data.length}`;
+  document.getElementById(`b${bab}-t2-score`).textContent = `0 / ${data.length}`;
   document.getElementById(`b${bab}-t2-result`).classList.remove('show');
   renderT2(bab);
 }
 
-renderT2(5); renderT2(6);
-
-// ===== WORD MATCH =====
-const wmData5 = [
-  {word:'Hiu',cat:'🌊 Laut'},{word:'Gunung',cat:'🏔️ Darat'},{word:'Bintang',cat:'🌌 Langit'},
-  {word:'Paus',cat:'🌊 Laut'},{word:'Pohon Mangga',cat:'🏔️ Darat'},{word:'Bulan',cat:'🌌 Langit'},
-  {word:'Terumbu Karang',cat:'🌊 Laut'},{word:'Manusia',cat:'🏔️ Darat'},{word:'Matahari',cat:'🌌 Langit'},
-  {word:'Ubur-ubur',cat:'🌊 Laut'},{word:'Jerapah',cat:'🏔️ Darat'},{word:'Awan',cat:'🌌 Langit'},
-  {word:'Cumi-cumi',cat:'🌊 Laut'},{word:'Harimau',cat:'🏔️ Darat'},{word:'Kerang',cat:'🌊 Laut'},
-];
-const wmCat5 = ['🌊 Laut','🏔️ Darat','🌌 Langit'];
-
-const wmData6 = [
-  {word:'Kentut',cat:'❌ Batal Wudhu'},{word:'Makan Kue',cat:'✅ Tidak Batal'},
-  {word:'Kencing',cat:'❌ Batal Wudhu'},{word:'Bermain',cat:'✅ Tidak Batal'},
-  {word:'Buang Air Besar',cat:'❌ Batal Wudhu'},{word:'Minum Susu',cat:'✅ Tidak Batal'},
-  {word:'Tidur Lelap',cat:'❌ Batal Wudhu'},{word:'Berlari',cat:'✅ Tidak Batal'},
-  {word:'Pingsan',cat:'❌ Batal Wudhu'},{word:'Bersin',cat:'✅ Tidak Batal'},
-  {word:'Makan Daging Unta',cat:'❌ Batal Wudhu'},{word:'Membaca Buku',cat:'✅ Tidak Batal'},
-];
-const wmCat6 = ['❌ Batal Wudhu','✅ Tidak Batal'];
-
-let wmState = {5:{sel:null,matched:{}}, 6:{sel:null,matched:{}}};
-
+// ===== WORD MATCH FUNCTIONS =====
 function renderWM(bab) {
-  const items = bab===5 ? wmData5 : wmData6;
-  const cats = bab===5 ? wmCat5 : wmCat6;
-  const st = wmState[bab];
+  const items = wmDataMap[bab];
+  const cats  = wmCatMap[bab];
+  const st    = wmState[bab];
   const container = document.getElementById(`b${bab}-wm-container`);
-  const remaining = items.filter(i => !st.matched[i.word]);
+  if (!container) return;
+  const remaining  = items.filter(i => !st.matched[i.word]);
   const matchedKeys = Object.keys(st.matched);
-
-  const matchedHTML = matchedKeys.length > 0
-    ? `<div class="card green" style="margin-bottom:14px">
-        <h3 style="font-family:'Baloo 2',cursive;font-size:1.05rem;color:#00805e;margin-bottom:8px">✅ Sudah dicocokkan (${matchedKeys.length}/${items.length})</h3>
-        <div class="bubble-list">${matchedKeys.map(k=>`<div class="bubble green">${k} → ${st.matched[k]}</div>`).join('')}</div>
-       </div>` : '';
-
-  container.innerHTML = `
-    ${matchedHTML}
-    <div class="card" style="margin-bottom:14px;padding:14px 18px">
-      <p style="font-size:0.95rem;color:#555">Pilih kata di <strong>KIRI</strong>, lalu klik kategori di <strong>KANAN</strong> yang sesuai.</p>
-    </div>
+  const col = {5:'var(--teal-dark)',6:'var(--orange-dark)',7:'var(--indigo-dark)',8:'var(--emerald-dark)',9:'var(--crimson-dark)'};
+  const matchedHTML = matchedKeys.length>0
+    ? `<div class="card green" style="margin-bottom:14px"><h3 style="font-family:'Baloo 2',cursive;font-size:1.05rem;color:#00805e;margin-bottom:8px">✅ Sudah dicocokkan (${matchedKeys.length}/${items.length})</h3><div class="bubble-list">${matchedKeys.map(k=>`<div class="bubble green">${k} → ${st.matched[k]}</div>`).join('')}</div></div>` : '';
+  container.innerHTML = `${matchedHTML}
+    <div class="card" style="margin-bottom:14px;padding:14px 18px"><p style="font-size:0.95rem;color:#555">Pilih kata di <strong>KIRI</strong>, lalu klik kategori di <strong>KANAN</strong>.</p></div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start">
-      <div class="card" style="margin-bottom:0;padding:14px">
-        <h3 style="font-family:'Baloo 2',cursive;font-size:1rem;margin-bottom:10px;text-align:center;color:${bab===5?'var(--teal-dark)':'var(--orange-dark)'}">📝 Kata</h3>
-        <div style="display:flex;flex-direction:column;gap:8px" id="b${bab}-wm-words"></div>
-      </div>
-      <div class="card gold" style="margin-bottom:0;padding:14px">
-        <h3 style="font-family:'Baloo 2',cursive;font-size:1rem;margin-bottom:10px;text-align:center;color:#8a6200">📂 Kategori</h3>
-        <div style="display:flex;flex-direction:column;gap:8px" id="b${bab}-wm-cats"></div>
-      </div>
+      <div class="card" style="margin-bottom:0;padding:14px"><h3 style="font-family:'Baloo 2',cursive;font-size:1rem;margin-bottom:10px;text-align:center;color:${col[bab]}">📝 Kata</h3><div style="display:flex;flex-direction:column;gap:8px" id="b${bab}-wm-words"></div></div>
+      <div class="card gold" style="margin-bottom:0;padding:14px"><h3 style="font-family:'Baloo 2',cursive;font-size:1rem;margin-bottom:10px;text-align:center;color:#8a6200">📂 Kategori</h3><div style="display:flex;flex-direction:column;gap:8px" id="b${bab}-wm-cats"></div></div>
     </div>`;
-
   const wordsDiv = document.getElementById(`b${bab}-wm-words`);
-  if (remaining.length===0) {
-    wordsDiv.innerHTML='<div style="text-align:center;color:#888;font-size:0.9rem;padding:10px">🎉 Semua dicocokkan!</div>';
-  } else {
-    [...remaining].sort(()=>Math.random()-0.5).forEach(item => {
-      const btn = document.createElement('div');
-      btn.className = 'match-item' + (st.sel===item.word?' selected':'');
-      btn.style.cssText = 'padding:11px 10px;font-size:0.9rem;';
-      btn.textContent = item.word;
-      btn.onclick = () => { st.sel = item.word; renderWM(bab); };
-      wordsDiv.appendChild(btn);
-    });
-  }
-
+  if (remaining.length===0) { wordsDiv.innerHTML='<div style="text-align:center;color:#888;font-size:0.9rem;padding:10px">🎉 Semua dicocokkan!</div>'; }
+  else { [...remaining].sort(()=>Math.random()-0.5).forEach(item => {
+    const btn = document.createElement('div');
+    btn.className = 'match-item'+(st.sel===item.word?' selected':'');
+    btn.style.cssText='padding:10px 8px;font-size:0.85rem;';
+    btn.textContent = item.word;
+    btn.onclick = () => { st.sel=item.word; renderWM(bab); };
+    wordsDiv.appendChild(btn);
+  }); }
   const catsDiv = document.getElementById(`b${bab}-wm-cats`);
   cats.forEach(cat => {
     const count = Object.values(st.matched).filter(v=>v===cat).length;
     const total = items.filter(i=>i.cat===cat).length;
-    const done = count===total;
-    const btn = document.createElement('div');
-    btn.className = 'match-item' + (done?' matched':'');
-    btn.style.cssText = 'padding:13px 10px;font-size:0.9rem;font-weight:800;';
-    btn.innerHTML = `${cat} <span style="font-size:0.75rem;opacity:0.55">(${count}/${total})</span>`;
+    const done  = count===total;
+    const btn   = document.createElement('div');
+    btn.className = 'match-item'+(done?' matched':'');
+    btn.style.cssText='padding:11px 8px;font-size:0.82rem;font-weight:800;';
+    btn.innerHTML=`${cat} <span style="font-size:0.7rem;opacity:0.55">(${count}/${total})</span>`;
     if (!done) btn.onclick = () => wmSelect(bab, cat);
     catsDiv.appendChild(btn);
   });
-
   if (matchedKeys.length===items.length) {
     document.getElementById(`b${bab}-wm-result`).classList.add('show');
     document.getElementById(`b${bab}-wm-score`).textContent=`Semua ${items.length} kata berhasil dicocokkan! 🎊`;
   }
 }
-
 function wmSelect(bab, cat) {
-  const items = bab===5 ? wmData5 : wmData6;
-  const st = wmState[bab];
+  const items = wmDataMap[bab];
+  const st    = wmState[bab];
   if (!st.sel) return;
   const item = items.find(i=>i.word===st.sel);
-  if (item && item.cat===cat) {
-    st.matched[st.sel] = cat;
-    st.sel = null;
-    renderWM(bab);
-  } else {
-    document.querySelectorAll(`#b${bab}-wm-cats .match-item`).forEach(b => {
-      if (b.textContent.includes(cat.replace(/ \(.*\)/,''))) b.classList.add('wrong-flash');
-    });
-    setTimeout(()=>{ document.querySelectorAll(`#b${bab}-wm-cats .match-item`).forEach(b=>b.classList.remove('wrong-flash')); }, 500);
-    st.sel = null;
-    renderWM(bab);
+  if (item && item.cat===cat) { st.matched[st.sel]=cat; st.sel=null; renderWM(bab); }
+  else {
+    document.querySelectorAll(`#b${bab}-wm-cats .match-item`).forEach(b=>{ if(b.textContent.includes(cat.split(' ')[0])) b.classList.add('wrong-flash'); });
+    setTimeout(()=>{ document.querySelectorAll(`#b${bab}-wm-cats .match-item`).forEach(b=>b.classList.remove('wrong-flash')); },500);
+    st.sel=null; renderWM(bab);
   }
 }
-
 function resetWM(bab) {
-  wmState[bab] = {sel:null, matched:{}};
+  wmState[bab]={sel:null,matched:{}};
   document.getElementById(`b${bab}-wm-result`).classList.remove('show');
   renderWM(bab);
 }
 
-renderWM(5); renderWM(6);
+// ===== RENDER ALL =====
+[5,6,7,8,9].forEach(b => {
+  renderFC(b);
+  renderT1(b);
+  renderT2(b);
+  renderWM(b);
+});
 </script>
 </body>
 </html>
