@@ -1,6 +1,6 @@
 # 🕌 Belajar PAI — Kelas 1 SD Islam
 
-Aplikasi web interaktif untuk belajar Pendidikan Agama Islam (PAI) Kelas 6 SD, mencakup Bab 5 hingga Bab 9. Dirancang agar siswa bisa belajar mandiri dengan tampilan yang menarik, berwarna, dan responsif di desktop maupun mobile.
+Aplikasi web interaktif untuk belajar Pendidikan Agama Islam (PAI) Kelas 1 SD, mencakup Bab 5 hingga Bab 9. Dirancang agar siswa bisa belajar mandiri dengan tampilan yang menarik, berwarna, dan responsif di desktop maupun mobile.
 
 ---
 
@@ -119,4 +119,4 @@ Tampilan otomatis menyesuaikan layar mobile (≤500px) dengan ukuran font dan pa
 
 ## 👨‍🏫 Kredit
 
-Dibuat untuk pembelajaran PAI SD Islam Kelas 1. Konten materi bersumber dari buku teks PAI SD Kelas 6 (referensi halaman tercantum di setiap flash card).
+Dibuat untuk pembelajaran PAI SD Islam Kelas 1. Konten materi bersumber dari buku teks PAI SD Kelas 1 (referensi halaman tercantum di setiap flash card).
