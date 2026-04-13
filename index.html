@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Belajar PAI — Kelas 6 🕌</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --teal:#00b4d8; --teal-dark:#0077b6;
+  --gold:#f4a500; --gold-light:#ffd166;
+  --green:#06d6a0; --purple:#7b2d8b; --purple-light:#c77dff;
+  --pink:#ef476f; --sky:#e0f4ff; --text:#1a1a2e;
+  /* Bab 6 accent */
+  --orange:#ff6b35; --orange-dark:#c84b00;
+  --lime:#8bc34a; --lime-dark:#558b2f;
+  --rose:#e91e8c; --rose-dark:#ad145c;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{font-size:18px;}
+body{font-family:'Nunito',sans-serif;background:linear-gradient(135deg,#e0f4ff 0%,#e8f5e9 50%,#fff9e6 100%);min-height:100vh;color:var(--text);}
+
+/* ===== BAB SELECTOR ===== */
+.bab-bar{
+  background:linear-gradient(135deg,#1a1a2e,#16213e);
+  padding:10px 16px;
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  align-items:center;
+}
+.bab-bar span{color:rgba(255,255,255,0.5);font-size:0.85rem;font-weight:700;letter-spacing:1px}
+.bab-btn{
+  padding:9px 22px;
+  border:2.5px solid rgba(255,255,255,0.2);
+  border-radius:50px;
+  background:transparent;
+  color:rgba(255,255,255,0.6);
+  font-family:'Nunito',sans-serif;
+  font-weight:800;
+  font-size:0.95rem;
+  cursor:pointer;
+  transition:all 0.3s;
+}
+.bab-btn.active-bab5{background:var(--teal);border-color:var(--teal);color:white;box-shadow:0 4px 14px rgba(0,180,216,0.5);}
+.bab-btn.active-bab6{background:var(--orange);border-color:var(--orange);color:white;box-shadow:0 4px 14px rgba(255,107,53,0.5);}
+
+/* ===== HEADER ===== */
+.header{
+  padding:26px 20px 22px;text-align:center;position:relative;overflow:hidden;
+  box-shadow:0 6px 24px rgba(0,0,0,0.2);
+  transition:background 0.5s;
+}
+.header.bab5{background:linear-gradient(135deg,var(--teal-dark),var(--teal));}
+.header.bab6{background:linear-gradient(135deg,var(--orange-dark),var(--orange));}
+.header::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(255,255,255,0.1) 0%,transparent 60%);animation:shimmer 4s ease-in-out infinite;}
+@keyframes shimmer{0%,100%{transform:translate(0,0);}50%{transform:translate(20px,-20px);}}
+.header h1{font-family:'Baloo 2',cursive;font-size:clamp(1.6rem,5vw,2.6rem);color:white;text-shadow:0 3px 10px rgba(0,0,0,0.2);position:relative;}
+.header p{color:rgba(255,255,255,0.92);font-size:1.05rem;margin-top:6px;position:relative;font-weight:600;}
+.bab-badge{display:inline-block;background:rgba(255,255,255,0.2);border:2px solid rgba(255,255,255,0.4);border-radius:50px;padding:4px 16px;font-size:0.85rem;font-weight:800;color:white;margin-top:8px;position:relative;}
+.stars{display:flex;justify-content:center;gap:10px;margin-top:8px;}
+.stars span{font-size:1.7rem;animation:bounce 1s ease-in-out infinite;}
+.stars span:nth-child(2){animation-delay:0.2s;}
+.stars span:nth-child(3){animation-delay:0.4s;}
+@keyframes bounce{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
+
+/* ===== NAV TABS ===== */
+.nav{display:flex;overflow-x:auto;gap:8px;padding:12px 16px;background:white;box-shadow:0 3px 14px rgba(0,0,0,0.1);position:sticky;top:0;z-index:100;scrollbar-width:none;}
+.nav::-webkit-scrollbar{display:none;}
+.tab-btn{flex-shrink:0;padding:10px 18px;border:none;border-radius:50px;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.9rem;cursor:pointer;transition:all 0.3s;display:flex;align-items:center;gap:6px;background:#f0f4f8;color:#555;}
+.tab-btn.active{color:white;box-shadow:0 5px 14px rgba(0,0,0,0.2);transform:translateY(-2px);}
+.bab5 ~ .nav .tab-btn.active,.bab5-nav .tab-btn.active{background:var(--teal);}
+.bab6-nav .tab-btn.active{background:var(--orange);}
+.tab-btn:hover:not(.active){background:var(--sky);transform:translateY(-2px);}
+
+/* ===== SECTION ===== */
+.section{display:none;padding:20px 16px;max-width:860px;margin:0 auto;}
+.section.active{display:block;}
+
+/* ===== BAB WORLDS ===== */
+.bab-world{display:none;}
+.bab-world.active{display:block;}
+
+/* ===== MATERI HERO ===== */
+.materi-hero{border-radius:24px;padding:28px;color:white;text-align:center;margin-bottom:22px;position:relative;overflow:hidden;box-shadow:0 6px 24px rgba(0,0,0,0.18);}
+.materi-hero.bab5-hero{background:linear-gradient(135deg,var(--teal-dark),var(--teal));}
+.materi-hero.bab6-hero{background:linear-gradient(135deg,var(--orange-dark),var(--orange));}
+.materi-hero::after{content:'✨';position:absolute;font-size:100px;opacity:0.08;right:10px;top:50%;transform:translateY(-50%);}
+.materi-hero h2{font-family:'Baloo 2',cursive;font-size:1.6rem;margin-bottom:10px;}
+.materi-hero p{font-size:1.05rem;opacity:0.95;font-weight:600;}
+
+/* ===== ACCORDION ===== */
+.acc-card{background:white;border-radius:20px;margin-bottom:16px;box-shadow:0 5px 18px rgba(0,0,0,0.07);border-left:7px solid var(--teal);overflow:hidden;transition:box-shadow 0.2s;}
+.acc-card:hover{box-shadow:0 8px 24px rgba(0,0,0,0.12);}
+.acc-card.gold{border-left-color:var(--gold);}
+.acc-card.green{border-left-color:var(--green);}
+.acc-card.purple{border-left-color:var(--purple-light);}
+.acc-card.pink{border-left-color:var(--pink);}
+/* Bab 6 variants */
+.acc-card.orange{border-left-color:var(--orange);}
+.acc-card.lime{border-left-color:var(--lime);}
+.acc-card.rose{border-left-color:var(--rose);}
+.acc-header{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;user-select:none;gap:12px;}
+.acc-title{font-family:'Baloo 2',cursive;font-size:1.2rem;color:var(--teal-dark);display:flex;align-items:center;gap:10px;flex:1;}
+.acc-card.gold .acc-title{color:#8a6200;}
+.acc-card.green .acc-title{color:#00805e;}
+.acc-card.purple .acc-title{color:var(--purple);}
+.acc-card.pink .acc-title{color:#b52150;}
+.acc-card.orange .acc-title{color:var(--orange-dark);}
+.acc-card.lime .acc-title{color:var(--lime-dark);}
+.acc-card.rose .acc-title{color:var(--rose-dark);}
+.acc-chevron{font-size:1.2rem;transition:transform 0.35s;color:#bbb;flex-shrink:0;}
+.acc-card.open .acc-chevron{transform:rotate(180deg);color:var(--teal);}
+.acc-card.orange.open .acc-chevron{color:var(--orange);}
+.acc-body{max-height:0;overflow:hidden;transition:max-height 0.45s ease;padding:0 22px;}
+.acc-card.open .acc-body{max-height:1400px;padding:0 22px 22px;}
+.acc-body p{line-height:1.8;color:#333;font-size:1.05rem;}
+.acc-body .anim-wrapper{margin:14px 0 0;}
+
+/* ===== CARDS (plain) ===== */
+.card{background:white;border-radius:20px;padding:22px;margin-bottom:18px;box-shadow:0 5px 18px rgba(0,0,0,0.07);border-left:7px solid var(--teal);transition:transform 0.2s,box-shadow 0.2s;}
+.card:hover{transform:translateY(-2px);}
+.card h3{font-family:'Baloo 2',cursive;font-size:1.2rem;color:var(--teal-dark);margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+.card p{line-height:1.8;color:#333;font-size:1.05rem;}
+.card.gold{border-left-color:var(--gold);}
+.card.green{border-left-color:var(--green);}
+.card.orange{border-left-color:var(--orange);}
+.card.orange h3{color:var(--orange-dark);}
+
+/* ===== BUBBLES ===== */
+.bubble-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px;}
+.bubble{background:var(--sky);border:2.5px solid var(--teal);border-radius:24px;padding:7px 16px;font-size:0.95rem;font-weight:800;color:var(--teal-dark);}
+.bubble.gold{background:#fff9e6;border-color:var(--gold);color:#a07000;}
+.bubble.green{background:#e8fff7;border-color:var(--green);color:#00805e;}
+.bubble.purple{background:#f3e8ff;border-color:var(--purple-light);color:var(--purple);}
+.bubble.orange{background:#fff3ee;border-color:var(--orange);color:var(--orange-dark);}
+.bubble.red{background:#fff0f3;border-color:var(--pink);color:#9b1a30;}
+.bubble.lime{background:#f1f8e9;border-color:var(--lime);color:var(--lime-dark);}
+
+/* ===== ARABIC BOX ===== */
+.arabic-box{background:linear-gradient(135deg,#1a1a2e,#16213e);border-radius:20px;padding:24px;text-align:center;margin:18px 0;color:white;box-shadow:0 6px 20px rgba(0,0,0,0.2);}
+.arabic-text{font-size:1.8rem;line-height:2.4;color:var(--gold-light);direction:rtl;font-weight:600;}
+.arabic-trans{font-style:italic;color:rgba(255,255,255,0.85);font-size:1rem;margin-top:12px;line-height:1.8;}
+
+/* ===== ANIM WRAPPER ===== */
+.anim-wrapper{background:#000428;border-radius:22px;overflow:hidden;margin:16px 0;box-shadow:0 6px 20px rgba(0,0,0,0.18);}
+
+/* ===== FLASHCARD ===== */
+.flashcard-container{perspective:1200px;margin:20px 0;}
+.flashcard{width:100%;min-height:280px;position:relative;transform-style:preserve-3d;transition:transform 0.6s;cursor:pointer;}
+.flashcard.flipped{transform:rotateY(180deg);}
+.flashcard-front,.flashcard-back{position:absolute;width:100%;min-height:280px;backface-visibility:hidden;border-radius:24px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px;text-align:center;}
+.flashcard-front{background:linear-gradient(135deg,#16213e,#0f3460);color:white;box-shadow:0 10px 36px rgba(0,0,0,0.25);}
+.flashcard-back{transform:rotateY(180deg);color:white;box-shadow:0 10px 36px rgba(0,0,0,0.2);}
+.flashcard-back.bab5-back{background:linear-gradient(135deg,var(--teal-dark),var(--teal));}
+.flashcard-back.bab6-back{background:linear-gradient(135deg,var(--orange-dark),var(--orange));}
+.flashcard-front .arabic{font-size:1.7rem;color:var(--gold-light);line-height:2.2;direction:rtl;}
+.flashcard-front .label{font-size:0.9rem;opacity:0.6;margin-bottom:10px;text-transform:uppercase;letter-spacing:1.5px;font-weight:700;}
+.flashcard-back .meaning{font-size:1.05rem;line-height:1.8;}
+.flashcard-back .source{font-size:0.9rem;opacity:0.75;margin-top:12px;font-weight:700;}
+.flip-hint{text-align:center;color:#777;font-size:0.95rem;margin-top:10px;font-weight:600;}
+.fc-nav{display:flex;justify-content:center;align-items:center;gap:20px;margin-top:18px;}
+.fc-btn{border:none;border-radius:50px;padding:12px 24px;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.95rem;cursor:pointer;transition:all 0.2s;color:white;}
+.fc-btn.bab5-btn{background:var(--teal);box-shadow:0 4px 12px rgba(0,180,216,0.3);}
+.fc-btn.bab5-btn:hover{background:var(--teal-dark);}
+.fc-btn.bab6-btn{background:var(--orange);box-shadow:0 4px 12px rgba(255,107,53,0.3);}
+.fc-btn.bab6-btn:hover{background:var(--orange-dark);}
+.fc-counter{font-weight:800;font-size:1.1rem;}
+
+/* ===== QUIZ ===== */
+.quiz-card{background:white;border-radius:22px;padding:24px;box-shadow:0 5px 22px rgba(0,0,0,0.08);margin-bottom:18px;}
+.quiz-q{font-family:'Baloo 2',cursive;font-size:1.2rem;margin-bottom:16px;line-height:1.6;}
+.quiz-q.bab5{color:var(--teal-dark);}
+.quiz-q.bab6{color:var(--orange-dark);}
+.quiz-options{display:flex;flex-direction:column;gap:10px;}
+.quiz-opt{border:2.5px solid #e0e0e0;border-radius:14px;padding:14px 18px;cursor:pointer;font-family:'Nunito',sans-serif;font-weight:700;font-size:1rem;text-align:left;background:white;transition:all 0.2s;color:var(--text);}
+.quiz-opt:hover:not(:disabled){border-color:var(--teal);background:var(--sky);transform:translateX(4px);}
+.quiz-opt.bab6-opt:hover:not(:disabled){border-color:var(--orange);background:#fff3ee;}
+.quiz-opt.correct{border-color:var(--green);background:#e8fff7;color:#005a42;}
+.quiz-opt.wrong{border-color:var(--pink);background:#fff0f3;color:#9b1a30;}
+.quiz-opt:disabled{cursor:default;}
+.quiz-feedback{margin-top:12px;padding:11px 16px;border-radius:12px;font-weight:700;font-size:0.95rem;display:none;}
+.quiz-feedback.show{display:block;}
+.quiz-feedback.correct{background:#e8fff7;color:#005a42;border:2.5px solid var(--green);}
+.quiz-feedback.wrong{background:#fff0f3;color:#9b1a30;border:2.5px solid var(--pink);}
+.score-bar{display:flex;align-items:center;justify-content:space-between;background:white;border-radius:50px;padding:12px 22px;margin-bottom:18px;box-shadow:0 3px 12px rgba(0,0,0,0.07);font-weight:800;font-size:1rem;}
+.score-val{font-size:1.2rem;}
+.score-val.bab5{color:var(--teal);}
+.score-val.bab6{color:var(--orange);}
+
+/* ===== TUGAS I ===== */
+.tugas-card{background:white;border-radius:22px;padding:24px;box-shadow:0 5px 22px rgba(0,0,0,0.08);margin-bottom:18px;}
+.tugas-title{font-family:'Baloo 2',cursive;font-size:1.15rem;margin-bottom:16px;line-height:1.6;}
+.tugas-title.bab5{color:var(--purple);}
+.tugas-title.bab6{color:var(--orange-dark);}
+.tag-grid{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:16px;}
+.tag-item{padding:11px 18px;border-radius:34px;font-weight:800;font-size:0.95rem;cursor:pointer;border:2.5px solid #ddd;background:#f5f5f5;transition:all 0.2s;display:flex;align-items:center;gap:7px;}
+.tag-item:hover{transform:scale(1.04);}
+.tag-item.selected-laut{background:#e0f4ff;border-color:var(--teal);color:var(--teal-dark);}
+.tag-item.selected-darat{background:#e8fff7;border-color:var(--green);color:#006048;}
+.tag-item.selected-batal{background:#fff3ee;border-color:var(--orange);color:var(--orange-dark);}
+.tag-item.selected-tidak{background:#e8fff7;border-color:var(--green);color:#006048;}
+.legend-item{display:flex;align-items:center;gap:7px;font-size:0.9rem;font-weight:700;}
+.legend-dot{width:15px;height:15px;border-radius:50%;}
+.tugas-legend{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:14px;}
+
+/* ===== BTN ===== */
+.btn{border:none;border-radius:50px;padding:13px 28px;font-family:'Nunito',sans-serif;font-weight:800;font-size:1.05rem;cursor:pointer;transition:all 0.2s;}
+.btn.bab5-btn{background:var(--teal);color:white;box-shadow:0 5px 14px rgba(0,180,216,0.35);}
+.btn.bab5-btn:hover{background:var(--teal-dark);transform:translateY(-3px);}
+.btn.bab6-btn{background:var(--orange);color:white;box-shadow:0 5px 14px rgba(255,107,53,0.35);}
+.btn.bab6-btn:hover{background:var(--orange-dark);transform:translateY(-3px);}
+.btn.gold-btn{background:var(--gold);color:#1a1a00;box-shadow:0 5px 14px rgba(244,165,0,0.3);}
+.btn.gold-btn:hover{background:#c88c00;transform:translateY(-2px);}
+.btn-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px;}
+
+/* ===== RESULT BADGE ===== */
+.result-badge{display:none;text-align:center;padding:28px 22px;border-radius:24px;color:white;margin-top:18px;}
+.result-badge.show{display:block;animation:popIn 0.5s ease;}
+.result-badge.bab5-badge{background:linear-gradient(135deg,var(--teal-dark),var(--teal));box-shadow:0 8px 28px rgba(0,119,182,0.3);}
+.result-badge.bab6-badge{background:linear-gradient(135deg,var(--orange-dark),var(--orange));box-shadow:0 8px 28px rgba(255,107,53,0.3);}
+@keyframes popIn{0%{transform:scale(0.8);opacity:0;}100%{transform:scale(1);opacity:1;}}
+.result-emoji{font-size:3.2rem;margin-bottom:8px;}
+.result-score{font-family:'Baloo 2',cursive;font-size:2rem;}
+.result-msg{font-size:1rem;opacity:0.95;margin-top:6px;font-weight:700;}
+
+/* ===== WORD MATCH ===== */
+.match-item{padding:13px 14px;border-radius:14px;border:2.5px solid #ddd;background:#f9f9f9;cursor:pointer;font-weight:800;font-size:0.95rem;text-align:center;transition:all 0.2s;}
+.match-item:hover{transform:scale(1.04);}
+.match-item.selected{border-color:var(--gold);background:#fff9e6;color:#8a6200;}
+.match-item.matched{border-color:var(--green);background:#e8fff7;color:#005a42;cursor:default;}
+.match-item.wrong-flash{border-color:var(--pink);background:#fff0f3;animation:shake 0.4s;}
+@keyframes shake{0%,100%{transform:translateX(0);}25%{transform:translateX(-8px);}75%{transform:translateX(8px);}}
+
+/* ===== CERITA CARD (Bab 6) ===== */
+.cerita-card{background:white;border-radius:20px;padding:20px 22px;margin-bottom:14px;box-shadow:0 4px 16px rgba(0,0,0,0.07);border:2.5px solid #e8f4ff;position:relative;}
+.cerita-card::before{content:'📖';position:absolute;top:14px;right:16px;font-size:1.4rem;opacity:0.3;}
+.cerita-name{font-family:'Baloo 2',cursive;font-size:1rem;color:var(--orange-dark);font-weight:800;margin-bottom:6px;}
+.cerita-text{font-size:1rem;color:#333;line-height:1.7;}
+.cerita-badge{display:inline-block;background:var(--orange);color:white;border-radius:20px;padding:3px 12px;font-size:0.8rem;font-weight:800;margin-top:8px;}
+
+/* ===== SEC HEADER ===== */
+.sec-header{font-family:'Baloo 2',cursive;font-size:1.4rem;margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+.sec-header.bab5{color:var(--teal-dark);}
+.sec-header.bab6{color:var(--orange-dark);}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:500px){
+  html{font-size:16px;}
+  .tab-btn{font-size:0.82rem;padding:8px 12px;}
+  .btn{padding:11px 20px;font-size:0.95rem;}
+  .bab-btn{padding:8px 16px;font-size:0.88rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- BAB SELECTOR -->
+<div class="bab-bar">
+  <span>PILIH BAB:</span>
+  <button class="bab-btn active-bab5" onclick="switchBab(5,this)">📖 Bab 5 — Mengenal Allah</button>
+  <button class="bab-btn" onclick="switchBab(6,this)">🚿 Bab 6 — Pembatal Wudhu</button>
+</div>
+
+<!-- HEADER -->
+<div class="header bab5" id="main-header">
+  <h1 id="header-title">🕌 Mengenal Allah Ta'ala</h1>
+  <p id="header-sub">Kelas 6 — PAI SD Islam</p>
+  <div class="bab-badge" id="bab-badge">Bab V</div>
+  <div class="stars"><span>⭐</span><span>🌙</span><span>⭐</span></div>
+</div>
+
+<!-- NAV BAB 5 -->
+<div class="nav bab5-nav" id="nav-bab5">
+  <button class="tab-btn active" onclick="showTab('b5-materi',this,'bab5-nav')">📚 Materi</button>
+  <button class="tab-btn" onclick="showTab('b5-flashcard',this,'bab5-nav')">🃏 Flash Card</button>
+  <button class="tab-btn" onclick="showTab('b5-tugas1',this,'bab5-nav')">✏️ Tugas I</button>
+  <button class="tab-btn" onclick="showTab('b5-tugas2',this,'bab5-nav')">📝 Tugas II</button>
+  <button class="tab-btn" onclick="showTab('b5-wordmatch',this,'bab5-nav')">🔤 Tebak Kata</button>
+</div>
+
+<!-- NAV BAB 6 -->
+<div class="nav bab5-nav" id="nav-bab6" style="display:none">
+  <button class="tab-btn active" onclick="showTab('b6-materi',this,'bab6-nav')">📚 Materi</button>
+  <button class="tab-btn" onclick="showTab('b6-flashcard',this,'bab6-nav')">🃏 Flash Card</button>
+  <button class="tab-btn" onclick="showTab('b6-tugas1',this,'bab6-nav')">✏️ Tugas I</button>
+  <button class="tab-btn" onclick="showTab('b6-tugas2',this,'bab6-nav')">📝 Tugas II</button>
+  <button class="tab-btn" onclick="showTab('b6-wordmatch',this,'bab6-nav')">🔤 Tebak Kata</button>
+</div>
+
+<!-- ==================== BAB 5 CONTENT ==================== -->
+<div id="bab5-world" class="bab-world active">
+
+<!-- B5 MATERI -->
+<div id="b5-materi" class="section active">
+  <div class="materi-hero bab5-hero">
+    <h2>🌟 Mengenal Allah Melalui Ayat-Ayat dan Makhluk-Nya</h2>
+    <p>Kita bisa mengenal Allah dengan 2 cara! 👇 Klik kartu untuk membuka</p>
+  </div>
+
+  <div class="acc-card open" onclick="toggleAcc(this)">
+    <div class="acc-header"><div class="acc-title">🛤️ 2 Cara Mengenal Allah</div><span class="acc-chevron">▼</span></div>
+    <div class="acc-body">
+      <div class="bubble-list">
+        <div class="bubble">1️⃣ Melalui Ayat-Ayat Allah</div>
+        <div class="bubble">2️⃣ Melalui Makhluk-Makhluk Allah</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="acc-card gold" onclick="toggleAcc(this)">
+    <div class="acc-header"><div class="acc-title">✨ Apa itu Ayat-Ayat Allah?</div><span class="acc-chevron">▼</span></div>
+    <div class="acc-body">
+      <p><strong>Ayat-ayat Allah artinya tanda-tanda kekuasaan Allah.</strong> Dengan memperhatikan ini, kita bisa mengenal betapa Maha Besarnya Allah.</p>
+      <div class="bubble-list" style="margin-top:14px">
+        <div class="bubble gold">🌌 Keajaiban di alam semesta</div>
+        <div class="bubble gold">🌊 Peristiwa alam</div>
+        <div class="bubble gold">📖 Keajaiban isi Al-Quran</div>
+        <div class="bubble gold">🕌 Keajaiban syariat Islam</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="arabic-box">
+    <div style="color:rgba(255,255,255,0.5);font-size:0.8rem;letter-spacing:1px;margin-bottom:10px">QS. FUSHILAT: 37</div>
+    <div class="arabic-text">وَمِنْ آيَاتِهِ اللَّيْلُ وَالنَّهَارُ وَالشَّمْسُ وَالْقَمَرُ</div>
+    <div class="arabic-trans">"Dan di antara tanda-tanda kekuasaan-Nya ialah malam, siang, matahari dan bulan. Janganlah kalian sembah matahari maupun bulan, tapi sembahlah Allah Yang menciptakannya."</div>
+  </div>
+
+  <div class="acc-card green" onclick="toggleAcc(this)">
+    <div class="acc-header"><div class="acc-title">🌿 Contoh Peristiwa Alam</div><span class="acc-chevron">▼</span></div>
+    <div class="acc-body">
+      <div class="bubble-list">
+        <div class="bubble green">🌅 Peralihan malam dan siang</div><div class="bubble green">🌙 Fase bulan</div>
+        <div class="bubble green">🌋 Gunung meletus</div><div class="bubble green">🌊 Tsunami</div>
+        <div class="bubble green">🌍 Gempa bumi</div><div class="bubble green">☀️ Gerhana</div>
+        <div class="bubble green">🌧️ Hujan</div><div class="bubble green">👶 Pertumbuhan manusia</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="acc-card" onclick="toggleAcc(this)">
+    <div class="acc-header"><div class="acc-title">☀️ Matahari — Tanda Kekuasaan Allah</div><span class="acc-chevron">▼</span></div>
+    <div class="acc-body">
+      <p>Matahari terbit setiap pagi di arah timur dan terbenam di sebelah barat, <strong>tanpa pernah tertukar</strong>. Pergantian malam dan siang, setiap hari berganti tanpa henti.</p>
+      <div class="anim-wrapper">
+        <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;">
+          <defs>
+            <linearGradient id="sg2" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#000428"><animate attributeName="stop-color" values="#000428;#FF7043;#FFD54F;#87CEEB;#2196F3;#000428" dur="8s" repeatCount="indefinite"/></stop>
+              <stop offset="100%" stop-color="#004e92"><animate attributeName="stop-color" values="#004e92;#FF8A65;#fff9c4;#E0F7FA;#64B5F6;#004e92" dur="8s" repeatCount="indefinite"/></stop>
+            </linearGradient>
+            <linearGradient id="gg2" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#388E3C"/><stop offset="100%" stop-color="#1B5E20"/>
+            </linearGradient>
+          </defs>
+          <rect width="400" height="220" fill="url(#sg2)"/>
+          <rect x="0" y="175" width="400" height="45" fill="url(#gg2)"/>
+          <polygon points="0,175 60,120 120,175" fill="#1B5E20"/>
+          <polygon points="80,175 150,100 220,175" fill="#2E7D32"/>
+          <polygon points="200,175 280,115 360,175" fill="#1B5E20"/>
+          <circle cx="50" cy="30" r="2" fill="white"><animate attributeName="opacity" values="1;0;0;0;1" dur="8s" repeatCount="indefinite"/></circle>
+          <circle cx="120" cy="50" r="1.5" fill="white"><animate attributeName="opacity" values="1;0;0;0;1" dur="8s" repeatCount="indefinite"/></circle>
+          <circle cx="300" cy="25" r="2" fill="white"><animate attributeName="opacity" values="1;0;0;0;1" dur="8s" repeatCount="indefinite"/></circle>
+          <circle cx="320" cy="60" r="22" fill="#F5F5DC"><animate attributeName="opacity" values="1;0.3;0;0;0;1" dur="8s" repeatCount="indefinite"/></circle>
+          <circle cx="328" cy="55" r="17" fill="#004e92"><animate attributeName="opacity" values="1;0.3;0;0;0;1" dur="8s" repeatCount="indefinite"/></circle>
+          <circle r="30" fill="#FFD700">
+            <animateMotion dur="8s" repeatCount="indefinite" path="M-30,190 Q200,-30 430,190"/>
+            <animate attributeName="fill" values="#FF8C00;#FFD700;#FFD700;#FF8C00" dur="8s" repeatCount="indefinite"/>
+          </circle>
+          <circle r="42" fill="#FFD700" opacity="0.2"><animateMotion dur="8s" repeatCount="indefinite" path="M-30,190 Q200,-30 430,190"/></circle>
+          <text x="20" y="170" fill="rgba(255,255,255,0.9)" font-size="11" font-family="Nunito,sans-serif" font-weight="bold">🌅 TIMUR</text>
+          <text x="330" y="170" fill="rgba(255,255,255,0.9)" font-size="11" font-family="Nunito,sans-serif" font-weight="bold">BARAT 🌇</text>
+          <text x="200" y="22" text-anchor="middle" font-size="11" font-family="Nunito,sans-serif" font-weight="bold" fill="rgba(255,255,255,0.85)">✨ Subhanallah — Allahu Akbar!</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="acc-card" onclick="toggleAcc(this)">
+    <div class="acc-header"><div class="acc-title">🌑 Gerhana Matahari Total</div><span class="acc-chevron">▼</span></div>
+    <div class="acc-body">
+      <p>Bulan berada tepat di tengah-tengah antara bumi dan matahari sehingga cahaya matahari tertutup bulan dan sebagian bumi menjadi gelap.</p>
+      <div class="anim-wrapper">
+        <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;background:linear-gradient(180deg,#000428 0%,#004e92 100%)">
+          <circle cx="30" cy="20" r="1.5" fill="white"><animate attributeName="opacity" values="0.8;0.2;0.8" dur="2s" repeatCount="indefinite"/></circle>
+          <circle cx="150" cy="15" r="1.5" fill="white"><animate attributeName="opacity" values="0.9;0.3;0.9" dur="2.5s" repeatCount="indefinite"/></circle>
+          <circle cx="300" cy="40" r="1.5" fill="white"><animate attributeName="opacity" values="0.5;0.1;0.5" dur="2.2s" repeatCount="indefinite"/></circle>
+          <circle cx="50" cy="100" r="38" fill="#FFD700" opacity="0.15"/>
+          <circle cx="50" cy="100" r="26" fill="#FFD700"/>
+          <line x1="50" y1="68" x2="50" y2="58" stroke="#FFD700" stroke-width="3" stroke-linecap="round"><animate attributeName="opacity" values="1;0.4;1" dur="1.5s" repeatCount="indefinite"/></line>
+          <line x1="50" y1="132" x2="50" y2="142" stroke="#FFD700" stroke-width="3" stroke-linecap="round"><animate attributeName="opacity" values="1;0.4;1" dur="1.5s" repeatCount="indefinite"/></line>
+          <circle cx="200" cy="100" r="42" fill="#FFD700" opacity="0.1"/>
+          <circle cx="200" cy="100" r="28" fill="#1a1a2e">
+            <animate attributeName="cx" values="350;200;350" dur="6s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+          </circle>
+          <polygon points="228,84 228,116 380,140 380,60" fill="rgba(0,0,0,0.5)">
+            <animate attributeName="opacity" values="0;0.5;0" dur="6s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
+          </polygon>
+          <circle cx="365" cy="100" r="22" fill="#1565C0"/>
+          <ellipse cx="362" cy="95" rx="8" ry="12" fill="#2e7d32" opacity="0.9"/>
+          <text x="50" y="160" text-anchor="middle" fill="#FFD700" font-size="10" font-family="Nunito,sans-serif" font-weight="bold">MATAHARI</text>
+          <text x="365" y="138" text-anchor="middle" fill="#90caf9" font-size="10" font-family="Nunito,sans-serif" font-weight="bold">BUMI</text>
+          <text x="200" y="185" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="9" font-family="Nunito,sans-serif">Bulan menghalangi cahaya matahari → Gerhana!</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="acc-card purple" onclick="toggleAcc(this)">
+    <div class="acc-header"><div class="acc-title">🌳 Pertumbuhan Pohon Mangga</div><span class="acc-chevron">▼</span></div>
+    <div class="acc-body">
+      <p>Biji tumbuh akar → tunas → batang tinggi → daun banyak → berbunga → berbuah. <strong>Betapa hebat yang menciptakannya!</strong></p>
+      <div class="anim-wrapper" style="background:linear-gradient(180deg,#87CEEB 0%,#e0f4f7 60%,#8BC34A 100%);">
+        <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;">
+          <defs><linearGradient id="sl2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#8D6E63"/><stop offset="100%" stop-color="#5D4037"/></linearGradient></defs>
+          <rect width="400" height="165" fill="url(#sl2)" y="165"/>
+          <rect width="400" height="20" fill="#6D4C41" y="155"/>
+          <rect width="400" height="10" fill="#8BC34A" y="148"/>
+          <g opacity="0"><animate attributeName="opacity" values="1;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;1" dur="10s" repeatCount="indefinite"/>
+            <ellipse cx="50" cy="152" rx="10" ry="6" fill="#8D6E63"/>
+            <text x="50" y="185" text-anchor="middle" fill="white" font-size="9" font-family="Nunito,sans-serif" font-weight="bold">🌰 Biji</text>
+          </g>
+          <g opacity="0"><animate attributeName="opacity" values="0;0;0;1;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0" dur="10s" repeatCount="indefinite"/>
+            <rect x="120" y="115" width="6" height="40" fill="#4CAF50" rx="3"/>
+            <ellipse cx="120" cy="108" rx="14" ry="10" fill="#66BB6A"/>
+            <text x="123" y="185" text-anchor="middle" fill="white" font-size="9" font-family="Nunito,sans-serif" font-weight="bold">🌱 Tunas</text>
+          </g>
+          <g opacity="0"><animate attributeName="opacity" values="0;0;0;0;0;0;1;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0" dur="10s" repeatCount="indefinite"/>
+            <rect x="196" y="90" width="8" height="65" fill="#795548" rx="4"/>
+            <ellipse cx="200" cy="78" rx="28" ry="22" fill="#4CAF50"/>
+            <text x="200" y="185" text-anchor="middle" fill="white" font-size="9" font-family="Nunito,sans-serif" font-weight="bold">🌿 Pohon Muda</text>
+          </g>
+          <g opacity="0"><animate attributeName="opacity" values="0;0;0;0;0;0;0;0;0;1;1;0;0;0;0;0;0;0;0;0;0;0" dur="10s" repeatCount="indefinite"/>
+            <rect x="271" y="70" width="12" height="85" fill="#5D4037" rx="6"/>
+            <ellipse cx="277" cy="48" rx="42" ry="32" fill="#388E3C"/>
+            <circle cx="270" cy="40" r="4" fill="#FFF9C4"/><circle cx="285" cy="35" r="3.5" fill="#FFF9C4"/>
+            <text x="277" y="185" text-anchor="middle" fill="white" font-size="9" font-family="Nunito,sans-serif" font-weight="bold">🌸 Berbunga</text>
+          </g>
+          <g opacity="0"><animate attributeName="opacity" values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;1;0;0;0;0;0;0" dur="10s" repeatCount="indefinite"/>
+            <rect x="351" y="55" width="14" height="100" fill="#5D4037" rx="7"/>
+            <ellipse cx="358" cy="32" rx="50" ry="38" fill="#2E7D32"/>
+            <ellipse cx="345" cy="25" rx="9" ry="12" fill="#FFD54F"/>
+            <ellipse cx="365" cy="20" rx="8" ry="11" fill="#FFA726"/>
+            <ellipse cx="380" cy="30" rx="8" ry="11" fill="#FFD54F"/>
+            <text x="358" y="185" text-anchor="middle" fill="white" font-size="9" font-family="Nunito,sans-serif" font-weight="bold">🥭 Berbuah!</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="acc-card pink" onclick="toggleAcc(this)">
+    <div class="acc-header"><div class="acc-title">🏔️ Makhluk Allah — Nyata & Ghaib</div><span class="acc-chevron">▼</span></div>
+    <div class="acc-body">
+      <p><strong>Allah disebut Khaliq (Pencipta)</strong> dan selain Allah disebut makhluk.</p>
+      <div class="bubble-list" style="margin-top:12px">
+        <div class="bubble">👁️ Makhluk nyata</div><div class="bubble">👻 Makhluk ghaib</div>
+        <div class="bubble">🌿 Makhluk hidup</div><div class="bubble">🌌 Alam semesta</div>
+      </div>
+      <p style="margin-top:14px;font-weight:800;color:var(--purple)">Makhluk ghaib:</p>
+      <div class="bubble-list">
+        <div class="bubble purple">👼 Malaikat</div><div class="bubble purple">🔥 Jin</div>
+        <div class="bubble purple">😈 Iblis</div><div class="bubble purple">👿 Setan</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="acc-card" style="border-left-color:var(--purple-light)" onclick="toggleAcc(this)">
+    <div class="acc-header"><div class="acc-title" style="color:var(--purple)">💜 Kesimpulan</div><span class="acc-chevron">▼</span></div>
+    <div class="acc-body">
+      <p style="text-align:center;font-style:italic;line-height:1.9;color:#444">"Dengan mengenal ciptaan Allah yang menakjubkan, kita akan mengenal Penciptanya — Allah Yang Maha Kuasa, kekuasaanNya menakjubkan tanpa batas."</p>
+    </div>
+  </div>
+</div>
+
+<!-- B5 FLASHCARD -->
+<div id="b5-flashcard" class="section">
+  <div class="sec-header bab5">🃏 Flash Card Dalil — Bab 5</div>
+  <p style="color:#555;margin-bottom:16px;font-size:1rem;font-weight:600">Ketuk kartu untuk melihat penjelasannya!</p>
+  <div id="b5-fc-display"></div>
+  <p class="flip-hint">👆 Ketuk kartu untuk balik!</p>
+  <div class="fc-nav">
+    <button class="fc-btn bab5-btn" onclick="fcNav(5,-1)">◀ Sebelumnya</button>
+    <span class="fc-counter" id="b5-fc-counter" style="color:var(--teal-dark)">1 / 7</span>
+    <button class="fc-btn bab5-btn" onclick="fcNav(5,1)">Berikutnya ▶</button>
+  </div>
+</div>
+
+<!-- B5 TUGAS I -->
+<div id="b5-tugas1" class="section">
+  <div class="sec-header bab5">✏️ Tugas Siswa I — Hal. 67</div>
+  <div class="tugas-card">
+    <div class="tugas-title bab5">📌 Berilah tanda centang (✓) pada makhluk LAUT dan silang (✗) pada makhluk DARAT!</div>
+    <div class="tugas-legend">
+      <div class="legend-item"><div class="legend-dot" style="background:var(--teal)"></div>Klik 1× = Laut ✓</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--green)"></div>Klik 2× = Darat ✗</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#ddd"></div>Klik 3× = Hapus</div>
+    </div>
+    <div class="tag-grid" id="b5-t1-grid"></div>
+    <div class="btn-row">
+      <button class="btn bab5-btn" onclick="checkT1(5)">✅ Periksa Jawaban</button>
+      <button class="btn gold-btn" onclick="resetT1(5)">🔄 Ulangi</button>
+    </div>
+    <div class="result-badge bab5-badge" id="b5-t1-result">
+      <div class="result-emoji">🎉</div>
+      <div class="result-score" id="b5-t1-score"></div>
+      <div class="result-msg" id="b5-t1-msg"></div>
+    </div>
+  </div>
+</div>
+
+<!-- B5 TUGAS II -->
+<div id="b5-tugas2" class="section">
+  <div class="sec-header bab5">📝 Tugas Siswa II — Hal. 68</div>
+  <div class="score-bar"><span>Skor:</span><span class="score-val bab5" id="b5-t2-score">0 / 20</span></div>
+  <div id="b5-t2-container"></div>
+  <div class="btn-row">
+    <button class="btn bab5-btn" onclick="checkT2(5)">✅ Cek Semua</button>
+    <button class="btn gold-btn" onclick="resetT2(5)">🔄 Mulai Ulang</button>
+  </div>
+  <div class="result-badge bab5-badge" id="b5-t2-result">
+    <div class="result-emoji" id="b5-t2-emoji">🏆</div>
+    <div class="result-score" id="b5-t2-final"></div>
+    <div class="result-msg" id="b5-t2-msg"></div>
+  </div>
+</div>
+
+<!-- B5 WORD MATCH -->
+<div id="b5-wordmatch" class="section">
+  <div class="sec-header bab5">🔤 Cocokkan Kata — Bab 5</div>
+  <div id="b5-wm-container"></div>
+  <div class="btn-row"><button class="btn gold-btn" onclick="resetWM(5)">🔄 Ulangi</button></div>
+  <div class="result-badge bab5-badge" id="b5-wm-result">
+    <div class="result-emoji">🌟</div>
+    <div class="result-score" id="b5-wm-score"></div>
+    <div class="result-msg">Hebat! Kamu sangat pintar! 🎓</div>
+  </div>
+</div>
+
+</div><!-- end bab5-world -->
+
+<!-- ==================== BAB 6 CONTENT ==================== -->
+<div id="bab6-world" class="bab-world">
+
+<!-- B6 MATERI -->
+<div id="b6-materi" class="section active">
+  <div class="materi-hero bab6-hero">
+    <h2>🚿 Pembatal-Pembatal Wudhu</h2>
+    <p>Apa saja yang bisa membatalkan wudhu kita? Yuk pelajari! 👇 Klik kartu untuk membuka</p>
+  </div>
+
+  <div class="acc-card orange open" onclick="toggleAcc(this)">
+    <div class="acc-header"><div class="acc-title">💧 Apa itu Wudhu?</div><span class="acc-chevron">▼</span></div>
+    <div class="acc-body">
+      <p><strong>Wudhu adalah syarat sahnya shalat.</strong> Shalat seseorang yang berhadats tidak akan diterima sampai ia berwudhu.</p>
+      <p style="margin-top:10px"><strong>Hadats</strong> adalah keadaan seseorang yang belum berwudhu.</p>
+      <p style="margin-top:10px"><em>Jika wudhu kita batal maka kita harus wudhu lagi.</em></p>
+    </div>
+  </div>
+
+  <div class="arabic-box">
+    <div style="color:rgba(255,255,255,0.5);font-size:0.8rem;letter-spacing:1px;margin-bottom:10px">HADITS RIWAYAT MUTTAFAQUN ALAIH</div>
+    <div class="arabic-text">لَا تُقْبَلُ صَلَاةٌ مَنْ أَحْدَثَ حَتَّى يَتَوَضَّأَ</div>
+    <div class="arabic-trans">"Shalat seseorang yang berhadats tidak akan diterima sampai ia berwudhu." (Muttafaqun alaih)</div>
+  </div>
+
+  <div class="acc-card rose" onclick="toggleAcc(this)">
+    <div class="acc-header"><div class="acc-title">❌ Pembatal-Pembatal Wudhu</div><span class="acc-chevron">▼</span></div>
+    <div class="acc-body">
+      <p>Wudhu kita batal jika kita melakukan hal-hal berikut:</p>
+      <div class="bubble-list" style="margin-top:14px">
+        <div class="bubble red">🚽 Kencing</div>
+        <div class="bubble red">💨 Kentut</div>
+        <div class="bubble red">🚾 Buang air besar</div>
+        <div class="bubble red">🐪 Makan daging unta</div>
+        <div class="bubble red">😴 Tidur lelap (tidak sadar)</div>
+        <div class="bubble red">😵 Hilangnya akal (mabuk, pingsan, gila)</div>
+      </div>
+      <div style="margin-top:16px;background:#fff3ee;border-radius:12px;padding:12px 16px;border-left:4px solid var(--orange)">
+        <p style="color:var(--orange-dark);font-weight:800">⚠️ Jika salah satu terjadi padamu, maka batalah wudhumu!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Animasi: Mana yang membatalkan? -->
+  <div class="acc-card lime" onclick="toggleAcc(this)">
+    <div class="acc-header"><div class="acc-title">🌸 Animasi: Batal atau Tidak?</div><span class="acc-chevron">▼</span></div>
+    <div class="acc-body">
+      <p>Perhatikan contoh kejadian berikut — apakah membatalkan wudhu?</p>
+      <div class="anim-wrapper" style="background:linear-gradient(135deg,#1a1a2e,#0d2137);padding:20px;">
+        <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;">
+          <!-- Background -->
+          <rect width="400" height="220" fill="transparent"/>
+          <!-- Kejadian cards cycling -->
+          <!-- Frame 1: Kencing — tampil detik 0–5, dur total 20s -->
+          <g opacity="0">
+            <animate attributeName="opacity" values="1;1;1;1;1;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1" dur="20s" repeatCount="indefinite"/>
+            <rect x="50" y="40" width="300" height="70" rx="16" fill="#ff6b35" opacity="0.9"/>
+            <text x="200" y="75" text-anchor="middle" fill="white" font-size="15" font-family="Nunito,sans-serif" font-weight="bold">🚽 Kencing</text>
+            <text x="200" y="98" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-size="11" font-family="Nunito,sans-serif">Setelah wudhu, aku kencing</text>
+            <rect x="120" y="130" width="160" height="44" rx="22" fill="#ef476f"/>
+            <text x="200" y="158" text-anchor="middle" fill="white" font-size="14" font-family="Nunito,sans-serif" font-weight="bold">❌ BATAL!</text>
+            <text x="200" y="200" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="10" font-family="Nunito,sans-serif">Harus wudhu lagi</text>
+          </g>
+          <!-- Frame 2: Makan kue — tampil detik 5–10 -->
+          <g opacity="0">
+            <animate attributeName="opacity" values="0;0;0;0;0;1;1;1;1;1;0;0;0;0;0;0;0;0;0;0;0" dur="20s" repeatCount="indefinite"/>
+            <rect x="50" y="40" width="300" height="70" rx="16" fill="#06d6a0" opacity="0.9"/>
+            <text x="200" y="75" text-anchor="middle" fill="white" font-size="15" font-family="Nunito,sans-serif" font-weight="bold">🍰 Makan Kue</text>
+            <text x="200" y="98" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-size="11" font-family="Nunito,sans-serif">Setelah wudhu, aku makan kue</text>
+            <rect x="120" y="130" width="160" height="44" rx="22" fill="#06d6a0"/>
+            <text x="200" y="158" text-anchor="middle" fill="white" font-size="14" font-family="Nunito,sans-serif" font-weight="bold">✅ TIDAK BATAL</text>
+            <text x="200" y="200" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="10" font-family="Nunito,sans-serif">Wudhu masih sah</text>
+          </g>
+          <!-- Frame 3: Tidur lelap — tampil detik 10–15 -->
+          <g opacity="0">
+            <animate attributeName="opacity" values="0;0;0;0;0;0;0;0;0;0;1;1;1;1;1;0;0;0;0;0;0" dur="20s" repeatCount="indefinite"/>
+            <rect x="50" y="40" width="300" height="70" rx="16" fill="#c77dff" opacity="0.9"/>
+            <text x="200" y="75" text-anchor="middle" fill="white" font-size="15" font-family="Nunito,sans-serif" font-weight="bold">😴 Tidur Lelap</text>
+            <text x="200" y="98" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-size="11" font-family="Nunito,sans-serif">Setelah wudhu, aku tidur pulas</text>
+            <rect x="120" y="130" width="160" height="44" rx="22" fill="#ef476f"/>
+            <text x="200" y="158" text-anchor="middle" fill="white" font-size="14" font-family="Nunito,sans-serif" font-weight="bold">❌ BATAL!</text>
+            <text x="200" y="200" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="10" font-family="Nunito,sans-serif">Harus wudhu lagi</text>
+          </g>
+          <!-- Frame 4: Bermain — tampil detik 15–20 -->
+          <g opacity="0">
+            <animate attributeName="opacity" values="0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;1;1;1;1;1;0" dur="20s" repeatCount="indefinite"/>
+            <rect x="50" y="40" width="300" height="70" rx="16" fill="#f4a500" opacity="0.9"/>
+            <text x="200" y="75" text-anchor="middle" fill="white" font-size="15" font-family="Nunito,sans-serif" font-weight="bold">⚽ Bermain</text>
+            <text x="200" y="98" text-anchor="middle" fill="rgba(255,255,255,0.85)" font-size="11" font-family="Nunito,sans-serif">Setelah wudhu, aku bermain</text>
+            <rect x="120" y="130" width="160" height="44" rx="22" fill="#06d6a0"/>
+            <text x="200" y="158" text-anchor="middle" fill="white" font-size="14" font-family="Nunito,sans-serif" font-weight="bold">✅ TIDAK BATAL</text>
+            <text x="200" y="200" text-anchor="middle" fill="rgba(255,255,255,0.6)" font-size="10" font-family="Nunito,sans-serif">Wudhu masih sah</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="acc-card orange" onclick="toggleAcc(this)">
+    <div class="acc-header"><div class="acc-title">📚 Contoh Kejadian Batal Wudhu</div><span class="acc-chevron">▼</span></div>
+    <div class="acc-body">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:4px">
+        <div class="cerita-card">
+          <div class="cerita-name">Ahmad</div>
+          <div class="cerita-text">Ahmad sudah berwudhu, tapi dia tertidur pulas.</div>
+          <div class="cerita-badge">❌ Batal</div>
+        </div>
+        <div class="cerita-card">
+          <div class="cerita-name">Salma</div>
+          <div class="cerita-text">Salma sudah berwudhu, lalu dia pingsan.</div>
+          <div class="cerita-badge">❌ Batal</div>
+        </div>
+        <div class="cerita-card">
+          <div class="cerita-name">Shofia</div>
+          <div class="cerita-text">Shofia sudah berwudhu lalu dia buang air kecil.</div>
+          <div class="cerita-badge">❌ Batal</div>
+        </div>
+        <div class="cerita-card">
+          <div class="cerita-name">Umar</div>
+          <div class="cerita-text">Umar sudah berwudhu, lalu dia kentut.</div>
+          <div class="cerita-badge">❌ Batal</div>
+        </div>
+        <div class="cerita-card">
+          <div class="cerita-name">Sinta</div>
+          <div class="cerita-text">Sinta sudah berwudhu lalu buang air besar.</div>
+          <div class="cerita-badge">❌ Batal</div>
+        </div>
+        <div class="cerita-card">
+          <div class="cerita-name">Ali</div>
+          <div class="cerita-text">Ali sudah berwudhu lalu makan daging unta.</div>
+          <div class="cerita-badge">❌ Batal</div>
+        </div>
+      </div>
+      <div style="margin-top:14px;background:#fff3ee;border-radius:12px;padding:12px 16px;border-left:4px solid var(--orange)">
+        <p style="color:var(--orange-dark);font-weight:800">💡 Jika terjadi batal wudhu saat seseorang sedang shalat, maka shalatnya langsung batal juga!</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="acc-card lime" onclick="toggleAcc(this)">
+    <div class="acc-header"><div class="acc-title">✅ Yang TIDAK Membatalkan Wudhu</div><span class="acc-chevron">▼</span></div>
+    <div class="acc-body">
+      <p>Perbuatan berikut <strong>tidak</strong> membatalkan wudhu:</p>
+      <div class="bubble-list" style="margin-top:12px">
+        <div class="bubble lime">🍰 Makan kue</div>
+        <div class="bubble lime">🏃 Berlari</div>
+        <div class="bubble lime">🎮 Bermain</div>
+        <div class="bubble lime">🥛 Minum susu</div>
+        <div class="bubble lime">🛒 Belanja/jalan</div>
+        <div class="bubble lime">😤 Bersin</div>
+        <div class="bubble lime">🤧 Ingus keluar</div>
+        <div class="bubble lime">💊 Minum obat</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="acc-card" style="border-left-color:var(--orange)" onclick="toggleAcc(this)">
+    <div class="acc-header"><div class="acc-title" style="color:var(--orange-dark)">🌼 Cara Menjaga Wudhu</div><span class="acc-chevron">▼</span></div>
+    <div class="acc-body">
+      <p>Agar wudhu tetap terjaga, kita perlu menghindari hal-hal yang membatalkan wudhu. Sebelum shalat, pastikan kamu dalam keadaan suci dan berwudhu. Jika ragu, lebih baik wudhu ulang.</p>
+      <p style="margin-top:10px;font-style:italic;color:var(--orange-dark);font-weight:700">"Kebersihan adalah sebagian dari iman."</p>
+    </div>
+  </div>
+</div>
+
+<!-- B6 FLASHCARD -->
+<div id="b6-flashcard" class="section">
+  <div class="sec-header bab6">🃏 Flash Card Dalil — Bab 6</div>
+  <p style="color:#555;margin-bottom:16px;font-size:1rem;font-weight:600">Ketuk kartu untuk melihat penjelasannya!</p>
+  <div id="b6-fc-display"></div>
+  <p class="flip-hint">👆 Ketuk kartu untuk balik!</p>
+  <div class="fc-nav">
+    <button class="fc-btn bab6-btn" onclick="fcNav(6,-1)">◀ Sebelumnya</button>
+    <span class="fc-counter" id="b6-fc-counter" style="color:var(--orange-dark)">1 / 6</span>
+    <button class="fc-btn bab6-btn" onclick="fcNav(6,1)">Berikutnya ▶</button>
+  </div>
+</div>
+
+<!-- B6 TUGAS I -->
+<div id="b6-tugas1" class="section">
+  <div class="sec-header bab6">✏️ Tugas Siswa I — Hal. 78</div>
+  <div class="tugas-card">
+    <div class="tugas-title bab6">📌 Berilah tanda centang (✓) pada perbuatan yang termasuk kejadian batal wudhu!</div>
+    <div class="tugas-legend">
+      <div class="legend-item"><div class="legend-dot" style="background:var(--orange)"></div>Klik 1× = Batal Wudhu ✓</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--green)"></div>Klik 2× = Tidak Batal ✗</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#ddd"></div>Klik 3× = Hapus</div>
+    </div>
+    <div class="tag-grid" id="b6-t1-grid"></div>
+    <div class="btn-row">
+      <button class="btn bab6-btn" onclick="checkT1(6)">✅ Periksa Jawaban</button>
+      <button class="btn gold-btn" onclick="resetT1(6)">🔄 Ulangi</button>
+    </div>
+    <div class="result-badge bab6-badge" id="b6-t1-result">
+      <div class="result-emoji">🎉</div>
+      <div class="result-score" id="b6-t1-score"></div>
+      <div class="result-msg" id="b6-t1-msg"></div>
+    </div>
+  </div>
+</div>
+
+<!-- B6 TUGAS II -->
+<div id="b6-tugas2" class="section">
+  <div class="sec-header bab6">📝 Tugas Siswa II — Hal. 77</div>
+  <div class="score-bar"><span>Skor:</span><span class="score-val bab6" id="b6-t2-score">0 / 20</span></div>
+  <div id="b6-t2-container"></div>
+  <div class="btn-row">
+    <button class="btn bab6-btn" onclick="checkT2(6)">✅ Cek Semua</button>
+    <button class="btn gold-btn" onclick="resetT2(6)">🔄 Mulai Ulang</button>
+  </div>
+  <div class="result-badge bab6-badge" id="b6-t2-result">
+    <div class="result-emoji" id="b6-t2-emoji">🏆</div>
+    <div class="result-score" id="b6-t2-final"></div>
+    <div class="result-msg" id="b6-t2-msg"></div>
+  </div>
+</div>
+
+<!-- B6 WORD MATCH -->
+<div id="b6-wordmatch" class="section">
+  <div class="sec-header bab6">🔤 Cocokkan Kata — Bab 6</div>
+  <div id="b6-wm-container"></div>
+  <div class="btn-row"><button class="btn gold-btn" onclick="resetWM(6)">🔄 Ulangi</button></div>
+  <div class="result-badge bab6-badge" id="b6-wm-result">
+    <div class="result-emoji">🌟</div>
+    <div class="result-score" id="b6-wm-score"></div>
+    <div class="result-msg">Hebat! Semua benar! 🎓</div>
+  </div>
+</div>
+
+</div><!-- end bab6-world -->
+
+<script>
+// ===== BAB SWITCH =====
+let currentBab = 5;
+function switchBab(bab, btn) {
+  currentBab = bab;
+  document.querySelectorAll('.bab-btn').forEach(b => b.classList.remove('active-bab5','active-bab6'));
+  btn.classList.add(`active-bab${bab}`);
+  document.getElementById('bab5-world').classList.toggle('active', bab===5);
+  document.getElementById('bab6-world').classList.toggle('active', bab===6);
+  document.getElementById('nav-bab5').style.display = bab===5 ? 'flex' : 'none';
+  document.getElementById('nav-bab6').style.display = bab===6 ? 'flex' : 'none';
+  const hdr = document.getElementById('main-header');
+  hdr.className = `header bab${bab}`;
+  document.getElementById('header-title').textContent = bab===5 ? '🕌 Mengenal Allah Ta\'ala' : '🚿 Pembatal Wudhu';
+  document.getElementById('header-sub').textContent = bab===5 ? 'Kelas 6 — PAI SD Islam' : 'Kelas 6 — PAI SD Islam';
+  document.getElementById('bab-badge').textContent = bab===5 ? 'Bab V' : 'Bab VI';
+}
+
+// ===== TAB SWITCH =====
+function showTab(id, btn, navClass) {
+  const world = document.getElementById(id.startsWith('b5') ? 'bab5-world' : 'bab6-world');
+  world.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  const nav = document.getElementById(id.startsWith('b5') ? 'nav-bab5' : 'nav-bab6');
+  nav.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+// ===== ACCORDION =====
+function toggleAcc(card) { card.classList.toggle('open'); }
+
+// ===== FLASHCARDS =====
+const fc5 = [
+  { label:'QS. Fushilat: 37', arabic:'وَمِنْ آيَاتِهِ اللَّيْلُ وَالنَّهَارُ وَالشَّمْسُ وَالْقَمَرُ', meaning:'"Dan di antara tanda-tanda kekuasaan-Nya ialah malam, siang, matahari dan bulan. Janganlah sembah matahari maupun bulan, tapi sembahlah Allah Yang menciptakannya."', source:'QS. Fushilat: 37' },
+  { label:'2 Cara Mengenal Allah', arabic:'١. عَبْرَ آيَاتِ اللهِ  ٢. عَبْرَ مَخْلُوقَاتِ اللهِ', meaning:'1️⃣ Mengenal ayat-ayat Allah (tanda kekuasaan-Nya)\n\n2️⃣ Mengenal makhluk-makhluk Allah (ciptaan-Nya)', source:'Bab V — Hal. 57' },
+  { label:'Ayat-Ayat Allah', arabic:'آيَاتُ اللهِ = عَلَامَاتُ قُدْرَةِ اللهِ', meaning:'✨ Ayat-ayat Allah = TANDA-TANDA KEKUASAAN ALLAH\n\n• Keajaiban alam semesta\n• Peristiwa alam\n• Keajaiban Al-Quran\n• Keajaiban syariat Islam', source:'Hal. 59' },
+  { label:'Peristiwa Alam', arabic:'الظَّوَاهِرُ الطَّبِيعِيَّةُ = آيَاتُ اللهِ', meaning:'🌿 Peristiwa alam sebagai ayat Allah:\n• Pergantian malam & siang\n• Fase bulan • Gunung meletus\n• Tsunami • Gempa • Gerhana\n• Hujan • Pertumbuhan manusia', source:'Hal. 60' },
+  { label:'Gerhana Matahari', arabic:'كُسُوفُ الشَّمْسِ = آيَةٌ مِنْ آيَاتِ اللهِ', meaning:'🌑 Gerhana terjadi saat bulan berada tepat di antara bumi dan matahari sehingga cahaya matahari terhalang dan sebagian bumi gelap.\n\nIni tanda kebesaran Allah!', source:'Hal. 61' },
+  { label:'Makhluk Allah', arabic:'اَللهُ = اَلْخَالِقُ  |  غَيْرُ اللهِ = اَلْمَخْلُوقُ', meaning:'🌟 Allah = KHALIQ (Pencipta)\nSelain Allah = MAKHLUK\n\n• Makhluk NYATA: manusia, hewan, tumbuhan\n• Makhluk GHAIB: malaikat, jin, iblis, setan', source:'Hal. 63' },
+  { label:'Pergantian Siang Malam', arabic:'تَعَاقُبُ اللَّيْلِ وَالنَّهَارِ بِلَا انْقِطَاعٍ', meaning:'☀️ Matahari terbit dari TIMUR dan terbenam di BARAT setiap hari, tanpa pernah tertukar.\n\n🌙 Berganti terus tanpa henti.\n\nSubhanallah — Allahu Akbar!', source:'Hal. 62' }
+];
+
+const fc6 = [
+  { label:'Hadits Wudhu', arabic:'لَا تُقْبَلُ صَلَاةٌ مَنْ أَحْدَثَ حَتَّى يَتَوَضَّأَ', meaning:'"Shalat seseorang yang berhadats tidak akan diterima sampai ia berwudhu." (Muttafaqun alaih)\n\n💧 Wudhu adalah syarat sahnya shalat!', source:'HR. Muttafaqun Alaih' },
+  { label:'Apa itu Hadats?', arabic:'اَلْحَدَثُ = حَالَةُ مَنْ لَمْ يَتَوَضَّأْ', meaning:'🚿 HADATS = keadaan seseorang yang belum berwudhu.\n\nJika batal wudhu → harus wudhu lagi sebelum shalat.', source:'Bab VI — Hal. 73' },
+  { label:'Pembatal Wudhu 1', arabic:'نَوَاقِضُ الْوُضُوءِ — الجزء الأول', meaning:'❌ Pembatal wudhu (1):\n\n🚽 Kencing\n💨 Kentut\n🚾 Buang air besar\n🐪 Makan daging unta', source:'Hal. 74' },
+  { label:'Pembatal Wudhu 2', arabic:'نَوَاقِضُ الْوُضُوءِ — الجزء الثاني', meaning:'❌ Pembatal wudhu (2):\n\n😴 Tidur lelap (dalam keadaan tidak sadar)\n😵 Hilangnya akal karena mabuk, pingsan, atau gila', source:'Hal. 74' },
+  { label:'Yang Tidak Membatalkan', arabic:'مَا لَا يَنْقُضُ الْوُضُوءَ', meaning:'✅ Yang TIDAK membatalkan wudhu:\n\n🍰 Makan kue/makanan biasa\n🏃 Berlari / bermain\n🥛 Minum susu\n😤 Bersin\n🛒 Jalan-jalan', source:'Hal. 78' },
+  { label:'Contoh Kejadian Batal', arabic:'أَمْثِلَةُ نَوَاقِضِ الْوُضُوءِ', meaning:'📖 Contoh nyata:\n• Ahmad tidur lelap → ❌ Batal\n• Salma pingsan → ❌ Batal\n• Umar kentut → ❌ Batal\n• Shofia buang air kecil → ❌ Batal\n• Ali makan daging unta → ❌ Batal', source:'Hal. 75' }
+];
+
+let fcIdx = {5:0, 6:0};
+
+function renderFC(bab) {
+  const cards = bab===5 ? fc5 : fc6;
+  const idx = fcIdx[bab];
+  const fc = cards[idx];
+  const el = document.getElementById(`b${bab}-fc-display`);
+  el.innerHTML = `
+    <div style="perspective:1200px;margin:20px 0">
+      <div class="flashcard" id="fc${bab}" onclick="this.classList.toggle('flipped')">
+        <div class="flashcard-front">
+          <div class="label">${fc.label}</div>
+          <div class="arabic">${fc.arabic}</div>
+          <div style="color:rgba(255,255,255,0.45);font-size:0.8rem;margin-top:12px">Ketuk untuk penjelasan ↓</div>
+        </div>
+        <div class="flashcard-back bab${bab}-back">
+          <div class="meaning" style="white-space:pre-line">${fc.meaning}</div>
+          <div class="source">📍 ${fc.source}</div>
+        </div>
+      </div>
+    </div>`;
+  document.getElementById(`b${bab}-fc-counter`).textContent = `${idx+1} / ${cards.length}`;
+}
+
+function fcNav(bab, dir) {
+  const cards = bab===5 ? fc5 : fc6;
+  fcIdx[bab] = (fcIdx[bab] + dir + cards.length) % cards.length;
+  renderFC(bab);
+}
+
+renderFC(5); renderFC(6);
+
+// ===== TUGAS I DATA =====
+const t1Data5 = [
+  {name:'🌳 Pohon mangga',ans:'darat'},{name:'🪼 Ubur-ubur',ans:'laut'},{name:'🌸 Bunga mawar',ans:'darat'},
+  {name:'🦐 Udang',ans:'laut'},{name:'🐋 Paus',ans:'laut'},{name:'🐻 Beruang',ans:'darat'},
+  {name:'🦀 Kepiting',ans:'laut'},{name:'🐙 Gurita',ans:'laut'},{name:'🐱 Kucing',ans:'darat'},
+  {name:'🐴 Kuda',ans:'darat'},{name:'🪸 Terumbu karang',ans:'laut'},{name:'🦈 Hiu',ans:'laut'},
+  {name:'🦒 Jerapah',ans:'darat'},{name:'🐟 Ikan tuna',ans:'laut'},{name:'🌿 Rumput laut',ans:'laut'},
+  {name:'🐭 Tikus',ans:'darat'},{name:'🐚 Kerang',ans:'laut'},{name:'🦑 Cumi-cumi',ans:'laut'},
+  {name:'🐘 Gajah',ans:'darat'},{name:'🐬 Lumba-lumba',ans:'laut'},{name:'🐊 Buaya',ans:'darat'},
+  {name:'🦞 Lobster',ans:'laut'},{name:'🐆 Macan tutul',ans:'darat'},{name:'🐠 Ikan badut',ans:'laut'},
+  {name:'🦓 Zebra',ans:'darat'},{name:'🦭 Anjing laut',ans:'laut'},{name:'🌾 Padi',ans:'darat'},
+  {name:'🐡 Ikan buntal',ans:'laut'},{name:'🦁 Singa',ans:'darat'},{name:'🦜 Burung beo',ans:'darat'},
+];
+
+const t1Data6 = [
+  {name:'😴 Tidur lelap',ans:'batal'},{name:'🍰 Makan kue',ans:'tidak'},{name:'💨 Kentut',ans:'batal'},
+  {name:'🏃 Berlari',ans:'tidak'},{name:'🚽 Kencing',ans:'batal'},{name:'🥛 Minum susu',ans:'tidak'},
+  {name:'🚾 Buang air besar',ans:'batal'},{name:'🎮 Bermain',ans:'tidak'},{name:'🐪 Makan daging unta',ans:'batal'},
+  {name:'😤 Bersin',ans:'tidak'},{name:'😵 Pingsan',ans:'batal'},{name:'📚 Membaca buku',ans:'tidak'},
+  {name:'🤪 Gila (hilang akal)',ans:'batal'},{name:'🚶 Jalan-jalan',ans:'tidak'},{name:'😵‍💫 Mabuk',ans:'batal'},
+  {name:'🍎 Makan buah',ans:'tidak'},{name:'🚿 Wudhu lagi',ans:'tidak'},{name:'💊 Minum obat',ans:'tidak'},
+  {name:'🤧 Ingus keluar',ans:'tidak'},{name:'😤 Batuk keras',ans:'tidak'},
+];
+
+let t1State = {5:{}, 6:{}};
+
+function renderT1(bab) {
+  const data = bab===5 ? t1Data5 : t1Data6;
+  const grid = document.getElementById(`b${bab}-t1-grid`);
+  grid.innerHTML = '';
+  data.forEach((item, i) => {
+    const s = t1State[bab][i] || 0;
+    const isB5 = bab===5;
+    const marks = isB5 ? ['','✓ Laut','✗ Darat'] : ['','✓ Batal','✗ Tidak'];
+    const cls = isB5
+      ? ['','selected-laut','selected-darat']
+      : ['','selected-batal','selected-tidak'];
+    const div = document.createElement('div');
+    div.className = `tag-item ${cls[s]}`;
+    div.innerHTML = `${item.name} <span class="tag-mark">${marks[s]}</span>`;
+    div.onclick = () => { t1State[bab][i] = ((t1State[bab][i]||0)+1)%3; renderT1(bab); };
+    grid.appendChild(div);
+  });
+}
+
+function checkT1(bab) {
+  const data = bab===5 ? t1Data5 : t1Data6;
+  let correct = 0;
+  data.forEach((item, i) => {
+    const s = t1State[bab][i]||0;
+    const ans = s===1 ? (bab===5?'laut':'batal') : s===2 ? (bab===5?'darat':'tidak') : null;
+    if (ans===item.ans) correct++;
+  });
+  const pct = Math.round(correct/data.length*100);
+  document.getElementById(`b${bab}-t1-score`).textContent = `${correct} / ${data.length} Benar`;
+  document.getElementById(`b${bab}-t1-msg`).textContent = pct>=80?'🌟 Luar biasa!':pct>=60?'👍 Bagus! Terus belajar!':'💪 Coba lagi ya!';
+  document.getElementById(`b${bab}-t1-result`).querySelector('.result-emoji').textContent = pct>=80?'🏆':pct>=60?'⭐':'💪';
+  document.getElementById(`b${bab}-t1-result`).classList.add('show');
+}
+
+function resetT1(bab) {
+  t1State[bab] = {};
+  renderT1(bab);
+  document.getElementById(`b${bab}-t1-result`).classList.remove('show');
+}
+
+renderT1(5); renderT1(6);
+
+// ===== TUGAS II DATA =====
+const t2Data5 = [
+  {q:'1. Kita mengenal Allah melalui ... dan ....',opts:['Ayat Al-Quran saja','Ayat-ayat-Nya dan makhluk-makhluk-Nya'],ans:1},
+  {q:'2. Semua selain Allah disebut ....',opts:['Makhluk','Khaliq'],ans:0},
+  {q:'3. Dengan mengenal Allah kita akan menjadi hamba yang ....',opts:['Selalu benar','Shalih'],ans:1},
+  {q:'4. Makhluk Allah yang sangat besar, tinggi dan tegak tanpa tiang yaitu ....',opts:['Bumi','Langit'],ans:1},
+  {q:'5. Contoh makhluk Allah yang nyata adalah ....',opts:['Pohon','Jin'],ans:0},
+  {q:'6. Contoh makhluk Allah yang ghaib adalah ....',opts:['Pohon','Jin'],ans:1},
+  {q:'7. Makhluk Allah yang kokoh sebagai pasak agar bumi tidak guncang adalah ....',opts:['Langit','Gunung'],ans:1},
+  {q:'8. Ayat Allah artinya ....',opts:['Tanda kekuasaan Allah','Ciptaan Allah'],ans:0},
+  {q:'9. Dengan memikirkan makhluk-makhluk Allah kita mengenal penciptanya yaitu ....',opts:['Pabrik','Allah'],ans:1},
+  {q:'10. Malaikat yang memiliki 600 sayap adalah malaikat ....',opts:['Jibril','Malik'],ans:0},
+  {q:'11. Allah disebut Khaliq artinya ....',opts:['Makhluk','Pencipta'],ans:1},
+  {q:'12. Gerhana matahari total terjadi karena ....',opts:['Bumi menghalangi matahari','Bulan menghalangi cahaya matahari ke bumi'],ans:1},
+  {q:'13. Matahari terbit setiap hari dari arah ....',opts:['Timur','Barat'],ans:0},
+  {q:'14. Yang termasuk makhluk ghaib Allah adalah ....',opts:['Manusia dan hewan','Malaikat dan jin'],ans:1},
+  {q:'15. Surat yang menyebutkan tanda kekuasaan Allah berupa malam dan siang adalah ....',opts:['QS. Al-Baqarah','QS. Fushilat'],ans:1},
+  {q:'16. Pertumbuhan pohon mangga dimulai dari ....',opts:['Bunga','Biji'],ans:1},
+  {q:'17. Hewan yang termasuk makhluk nyata Allah di laut adalah ....',opts:['Malaikat','Ikan tuna'],ans:1},
+  {q:'18. Keajaiban isi Al-Quran termasuk contoh ....',opts:['Ayat-ayat Allah','Makhluk ghaib Allah'],ans:0},
+  {q:'19. Iblis dan setan termasuk makhluk ....',opts:['Nyata','Ghaib'],ans:1},
+  {q:'20. Dengan mengenal ciptaan Allah yang menakjubkan, kita semakin mengenal ....',opts:['Ilmu pengetahuan saja','Allah Yang Maha Kuasa'],ans:1},
+];
+
+const t2Data6 = [
+  {q:'1. Jika wudhu kita batal, kita harus ....',opts:['Shalat saja','Wudhu lagi'],ans:1},
+  {q:'2. Jika kita shalat tanpa berwudhu, shalat kita ....',opts:['Batal','Sah'],ans:0},
+  {q:'3. Jika aku kentut, wudhuku ....',opts:['Tidak batal','Batal'],ans:1},
+  {q:'4. Pembatal wudhu juga merupakan pembatal ....',opts:['Puasa','Shalat'],ans:1},
+  {q:'5. Jika aku pingsan, wudhuku ....',opts:['Batal','Tidak batal'],ans:0},
+  {q:'6. Jika wudhu kita batal, shalat kita ....',opts:['Batal juga','Tetap sah'],ans:0},
+  {q:'7. Jika aku makan setelah berwudhu, wudhuku ....',opts:['Tidak batal','Batal'],ans:0},
+  {q:'8. Keadaan seseorang yang belum berwudhu disebut ....',opts:['Hadats','Shalat'],ans:0},
+  {q:'9. Wudhuku batal jika aku makan ....',opts:['Daging kambing','Daging unta'],ans:1},
+  {q:'10. Yang membatalkan wudhu adalah ....',opts:['Tidur tidur-tiduran','Tidur lelap'],ans:1},
+  {q:'11. Minum susu setelah berwudhu ....',opts:['Membatalkan wudhu','Tidak membatalkan wudhu'],ans:1},
+  {q:'12. Shalat seseorang yang berhadats ....',opts:['Diterima Allah','Tidak akan diterima sampai ia berwudhu'],ans:1},
+  {q:'13. Buang air kecil (kencing) termasuk ....',opts:['Pembatal wudhu','Tidak membatalkan wudhu'],ans:0},
+  {q:'14. Hilangnya akal karena gila termasuk ....',opts:['Tidak membatalkan wudhu','Pembatal wudhu'],ans:1},
+  {q:'15. Berlari dan bermain setelah wudhu ....',opts:['Membatalkan wudhu','Tidak membatalkan wudhu'],ans:1},
+  {q:'16. Ahmad sudah wudhu lalu tertidur pulas. Maka wudhu Ahmad ....',opts:['Batal','Tetap sah'],ans:0},
+  {q:'17. Jumlah pembatal wudhu yang kita pelajari ada ....',opts:['4 macam','6 macam'],ans:1},
+  {q:'18. Sebelum shalat, kita wajib ....',opts:['Mandi','Berwudhu'],ans:1},
+  {q:'19. Sinta wudhu lalu buang air besar. Wudhu Sinta ....',opts:['Batal','Tidak batal'],ans:0},
+  {q:'20. Umar wudhu lalu minum susu. Bolehkah Umar langsung shalat?',opts:['Boleh, wudhu masih sah','Tidak boleh, harus wudhu lagi'],ans:0},
+];
+
+let t2State = {5:{ans:{},checked:false}, 6:{ans:{},checked:false}};
+
+function renderT2(bab) {
+  const data = bab===5 ? t2Data5 : t2Data6;
+  const container = document.getElementById(`b${bab}-t2-container`);
+  const st = t2State[bab];
+  container.innerHTML = '';
+  data.forEach((q, qi) => {
+    const div = document.createElement('div');
+    div.className = 'quiz-card';
+    div.innerHTML = `<div class="quiz-q bab${bab}">${q.q}</div><div class="quiz-options" id="b${bab}-opts-${qi}"></div><div class="quiz-feedback" id="b${bab}-fb-${qi}"></div>`;
+    container.appendChild(div);
+    const optsDiv = div.querySelector(`#b${bab}-opts-${qi}`);
+    q.opts.forEach((opt, oi) => {
+      const btn = document.createElement('button');
+      btn.className = `quiz-opt${bab===6?' bab6-opt':''}`;
+      btn.textContent = (oi===0?'a. ':'b. ')+opt;
+      btn.onclick = () => {
+        if (st.checked) return;
+        st.ans[qi] = oi;
+        optsDiv.querySelectorAll('.quiz-opt').forEach(b => { b.style.background=''; b.style.borderColor=''; });
+        btn.style.background = bab===5 ? '#e0f4ff' : '#fff3ee';
+        btn.style.borderColor = bab===5 ? 'var(--teal)' : 'var(--orange)';
+        const answered = Object.keys(st.ans).length;
+        document.getElementById(`b${bab}-t2-score`).textContent = `${answered} / ${data.length} dijawab`;
+      };
+      optsDiv.appendChild(btn);
+    });
+    if (st.ans[qi] !== undefined && !st.checked) {
+      const btns = optsDiv.querySelectorAll('.quiz-opt');
+      btns[st.ans[qi]].style.background = bab===5 ? '#e0f4ff' : '#fff3ee';
+      btns[st.ans[qi]].style.borderColor = bab===5 ? 'var(--teal)' : 'var(--orange)';
+    }
+  });
+}
+
+function checkT2(bab) {
+  const data = bab===5 ? t2Data5 : t2Data6;
+  const st = t2State[bab];
+  st.checked = true;
+  let correct = 0;
+  data.forEach((q, qi) => {
+    const optsDiv = document.getElementById(`b${bab}-opts-${qi}`);
+    const fbDiv = document.getElementById(`b${bab}-fb-${qi}`);
+    const btns = optsDiv.querySelectorAll('.quiz-opt');
+    btns.forEach(b => { b.disabled=true; b.style.background=''; b.style.borderColor=''; });
+    if (st.ans[qi] !== undefined) {
+      if (st.ans[qi]===q.ans) { btns[st.ans[qi]].classList.add('correct'); correct++; fbDiv.textContent='✅ Benar!'; fbDiv.className='quiz-feedback show correct'; }
+      else { btns[st.ans[qi]].classList.add('wrong'); btns[q.ans].classList.add('correct'); fbDiv.textContent=`❌ Jawaban benar: ${q.ans===0?'a':'b'}. ${q.opts[q.ans]}`; fbDiv.className='quiz-feedback show wrong'; }
+    } else { btns[q.ans].classList.add('correct'); fbDiv.textContent=`📌 Jawaban: ${q.ans===0?'a':'b'}. ${q.opts[q.ans]}`; fbDiv.className='quiz-feedback show wrong'; }
+  });
+  const pct = Math.round(correct/data.length*100);
+  document.getElementById(`b${bab}-t2-score`).textContent=`${correct} / ${data.length} Benar`;
+  document.getElementById(`b${bab}-t2-emoji`).textContent=pct>=80?'🏆':pct>=60?'⭐':'💪';
+  document.getElementById(`b${bab}-t2-final`).textContent=`Nilai: ${pct} — ${correct}/${data.length} Benar`;
+  document.getElementById(`b${bab}-t2-msg`).textContent=pct>=80?'Luar biasa! Kamu bintang kelas! 🌟':pct>=60?'Bagus! Terus semangat! 📚':'Jangan menyerah, pelajari lagi ya! 💪';
+  document.getElementById(`b${bab}-t2-result`).classList.add('show');
+}
+
+function resetT2(bab) {
+  const data = bab===5 ? t2Data5 : t2Data6;
+  t2State[bab] = {ans:{}, checked:false};
+  document.getElementById(`b${bab}-t2-score`).textContent=`0 / ${data.length}`;
+  document.getElementById(`b${bab}-t2-result`).classList.remove('show');
+  renderT2(bab);
+}
+
+renderT2(5); renderT2(6);
+
+// ===== WORD MATCH =====
+const wmData5 = [
+  {word:'Hiu',cat:'🌊 Laut'},{word:'Gunung',cat:'🏔️ Darat'},{word:'Bintang',cat:'🌌 Langit'},
+  {word:'Paus',cat:'🌊 Laut'},{word:'Pohon Mangga',cat:'🏔️ Darat'},{word:'Bulan',cat:'🌌 Langit'},
+  {word:'Terumbu Karang',cat:'🌊 Laut'},{word:'Manusia',cat:'🏔️ Darat'},{word:'Matahari',cat:'🌌 Langit'},
+  {word:'Ubur-ubur',cat:'🌊 Laut'},{word:'Jerapah',cat:'🏔️ Darat'},{word:'Awan',cat:'🌌 Langit'},
+  {word:'Cumi-cumi',cat:'🌊 Laut'},{word:'Harimau',cat:'🏔️ Darat'},{word:'Kerang',cat:'🌊 Laut'},
+];
+const wmCat5 = ['🌊 Laut','🏔️ Darat','🌌 Langit'];
+
+const wmData6 = [
+  {word:'Kentut',cat:'❌ Batal Wudhu'},{word:'Makan Kue',cat:'✅ Tidak Batal'},
+  {word:'Kencing',cat:'❌ Batal Wudhu'},{word:'Bermain',cat:'✅ Tidak Batal'},
+  {word:'Buang Air Besar',cat:'❌ Batal Wudhu'},{word:'Minum Susu',cat:'✅ Tidak Batal'},
+  {word:'Tidur Lelap',cat:'❌ Batal Wudhu'},{word:'Berlari',cat:'✅ Tidak Batal'},
+  {word:'Pingsan',cat:'❌ Batal Wudhu'},{word:'Bersin',cat:'✅ Tidak Batal'},
+  {word:'Makan Daging Unta',cat:'❌ Batal Wudhu'},{word:'Membaca Buku',cat:'✅ Tidak Batal'},
+];
+const wmCat6 = ['❌ Batal Wudhu','✅ Tidak Batal'];
+
+let wmState = {5:{sel:null,matched:{}}, 6:{sel:null,matched:{}}};
+
+function renderWM(bab) {
+  const items = bab===5 ? wmData5 : wmData6;
+  const cats = bab===5 ? wmCat5 : wmCat6;
+  const st = wmState[bab];
+  const container = document.getElementById(`b${bab}-wm-container`);
+  const remaining = items.filter(i => !st.matched[i.word]);
+  const matchedKeys = Object.keys(st.matched);
+
+  const matchedHTML = matchedKeys.length > 0
+    ? `<div class="card green" style="margin-bottom:14px">
+        <h3 style="font-family:'Baloo 2',cursive;font-size:1.05rem;color:#00805e;margin-bottom:8px">✅ Sudah dicocokkan (${matchedKeys.length}/${items.length})</h3>
+        <div class="bubble-list">${matchedKeys.map(k=>`<div class="bubble green">${k} → ${st.matched[k]}</div>`).join('')}</div>
+       </div>` : '';
+
+  container.innerHTML = `
+    ${matchedHTML}
+    <div class="card" style="margin-bottom:14px;padding:14px 18px">
+      <p style="font-size:0.95rem;color:#555">Pilih kata di <strong>KIRI</strong>, lalu klik kategori di <strong>KANAN</strong> yang sesuai.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:start">
+      <div class="card" style="margin-bottom:0;padding:14px">
+        <h3 style="font-family:'Baloo 2',cursive;font-size:1rem;margin-bottom:10px;text-align:center;color:${bab===5?'var(--teal-dark)':'var(--orange-dark)'}">📝 Kata</h3>
+        <div style="display:flex;flex-direction:column;gap:8px" id="b${bab}-wm-words"></div>
+      </div>
+      <div class="card gold" style="margin-bottom:0;padding:14px">
+        <h3 style="font-family:'Baloo 2',cursive;font-size:1rem;margin-bottom:10px;text-align:center;color:#8a6200">📂 Kategori</h3>
+        <div style="display:flex;flex-direction:column;gap:8px" id="b${bab}-wm-cats"></div>
+      </div>
+    </div>`;
+
+  const wordsDiv = document.getElementById(`b${bab}-wm-words`);
+  if (remaining.length===0) {
+    wordsDiv.innerHTML='<div style="text-align:center;color:#888;font-size:0.9rem;padding:10px">🎉 Semua dicocokkan!</div>';
+  } else {
+    [...remaining].sort(()=>Math.random()-0.5).forEach(item => {
+      const btn = document.createElement('div');
+      btn.className = 'match-item' + (st.sel===item.word?' selected':'');
+      btn.style.cssText = 'padding:11px 10px;font-size:0.9rem;';
+      btn.textContent = item.word;
+      btn.onclick = () => { st.sel = item.word; renderWM(bab); };
+      wordsDiv.appendChild(btn);
+    });
+  }
+
+  const catsDiv = document.getElementById(`b${bab}-wm-cats`);
+  cats.forEach(cat => {
+    const count = Object.values(st.matched).filter(v=>v===cat).length;
+    const total = items.filter(i=>i.cat===cat).length;
+    const done = count===total;
+    const btn = document.createElement('div');
+    btn.className = 'match-item' + (done?' matched':'');
+    btn.style.cssText = 'padding:13px 10px;font-size:0.9rem;font-weight:800;';
+    btn.innerHTML = `${cat} <span style="font-size:0.75rem;opacity:0.55">(${count}/${total})</span>`;
+    if (!done) btn.onclick = () => wmSelect(bab, cat);
+    catsDiv.appendChild(btn);
+  });
+
+  if (matchedKeys.length===items.length) {
+    document.getElementById(`b${bab}-wm-result`).classList.add('show');
+    document.getElementById(`b${bab}-wm-score`).textContent=`Semua ${items.length} kata berhasil dicocokkan! 🎊`;
+  }
+}
+
+function wmSelect(bab, cat) {
+  const items = bab===5 ? wmData5 : wmData6;
+  const st = wmState[bab];
+  if (!st.sel) return;
+  const item = items.find(i=>i.word===st.sel);
+  if (item && item.cat===cat) {
+    st.matched[st.sel] = cat;
+    st.sel = null;
+    renderWM(bab);
+  } else {
+    document.querySelectorAll(`#b${bab}-wm-cats .match-item`).forEach(b => {
+      if (b.textContent.includes(cat.replace(/ \(.*\)/,''))) b.classList.add('wrong-flash');
+    });
+    setTimeout(()=>{ document.querySelectorAll(`#b${bab}-wm-cats .match-item`).forEach(b=>b.classList.remove('wrong-flash')); }, 500);
+    st.sel = null;
+    renderWM(bab);
+  }
+}
+
+function resetWM(bab) {
+  wmState[bab] = {sel:null, matched:{}};
+  document.getElementById(`b${bab}-wm-result`).classList.remove('show');
+  renderWM(bab);
+}
+
+renderWM(5); renderWM(6);
+</script>
+</body>
+</html>
