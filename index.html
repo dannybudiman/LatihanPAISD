@@ -1810,7 +1810,62 @@ const fc3 = [
   {label:'Rabb-ku adalah Allah', arabic:'رَبِّيَ اللهُ — خَلَقَنِي وَرَزَقَنِي وَيُحْيِينِي', meaning:'🌟 Aku hanya menyembah Allah.\n\nAllah adalah Rabb-ku:\n• Yang menciptakanku\n• Yang memberiku rezeki\n• Yang menghidupkan dan mematikanku\n\n"Sembahlah Rabb-mu yang telah menciptakan kamu!" (QS. Al-Baqarah: 21)', source:'Hal. 29'},
 ];
 
+// ── BAB 4: BACAAN SHALAT ──────────────────────────────────────────────────────
+const fc4 = [
+  {label:'Takbiratul Ihram', arabic:'اَللهُ أَكْبَرُ', meaning:'🕌 TAKBIRATUL IHRAM\n\nDibaca saat memulai shalat sambil mengangkat kedua tangan.\n\nArtinya: "Allah Maha Besar"', source:'Bab IV — Hal. 43'},
+  {label:'Doa Iftitah', arabic:'اَللّهُمَّ بَاعِدْ بَيْنِي وَبَيْنَ خَطَايَايَ', meaning:'🌟 DOA IFTITAH\n\n"Ya Allah, jauhkanlah antara aku dan kesalahanku, sebagaimana Engkau menjauhkan timur dan barat."\n\nDibaca setelah takbiratul ihram.', source:'Hal. 44'},
+  {label:'Bacaan Ruku\'', arabic:'سُبْحَانَ رَبِّيَ الْعَظِيمِ وَبِحَمْدِهِ', meaning:'🙇 RUKU\'\n\n"Maha Suci Rabbku Yang Maha Agung dan dengan memuji-Nya."\n\nDibaca minimal 3× saat badan membungkuk 90°.', source:'Hal. 46'},
+  {label:'Bacaan I\'tidal', arabic:'سَمِعَ اللهُ لِمَنْ حَمِدَهُ — رَبَّنَا وَلَكَ الْحَمْدُ', meaning:'🧍 I\'TIDAL\n\n"Allah mendengar orang yang memuji-Nya."\n"Wahai Rabb kami, bagi-Mu segala puji."\n\nDibaca saat berdiri tegak setelah ruku\'.', source:'Hal. 47'},
+  {label:'Bacaan Sujud', arabic:'سُبْحَانَ رَبِّيَ الْأَعْلَى وَبِحَمْدِهِ', meaning:'🤲 SUJUD\n\n"Maha Suci Rabbku Yang Maha Tinggi dan dengan memuji-Nya."\n\nDibaca minimal 3× saat sujud dengan 7 anggota badan menyentuh lantai.', source:'Hal. 47'},
+  {label:'Duduk Antara 2 Sujud', arabic:'رَبِّ اغْفِرْ لِي وَارْحَمْنِي', meaning:'🪑 DUDUK ANTARA 2 SUJUD\n\n"Ya Rabb-ku, ampunilah aku dan kasihanilah aku."\n\nDibaca saat duduk di antara dua sujud.', source:'Hal. 48'},
+  {label:'Tasyahud Akhir & Salam', arabic:'اَلتَّحِيَّاتُ لِلَّهِ — اَلسَّلَامُ عَلَيْكُمْ', meaning:'📿 TASYAHUD AKHIR\n\nDiawali dengan At-Tahiyyat, lalu shalawat, lalu doa.\n\nSALAM:\n"Assalaamu \'alaikum warahmatullaah" (kanan dan kiri)\n\nSalam adalah penutup shalat!', source:'Hal. 49-50'},
+];
 
+const t1Data4 = [
+  {name:'🤲 Takbiratul Ihram — الله أكبر', ans:'benar'},
+  {name:'🙇 Ruku\' — سبحان ربي العظيم', ans:'benar'},
+  {name:'🧍 I\'tidal — سمع الله لمن حمده', ans:'benar'},
+  {name:'🤲 Sujud — سبحان ربي الأعلى', ans:'benar'},
+  {name:'🪑 Duduk antara sujud — رب اغفر لي', ans:'benar'},
+  {name:'📿 Tasyahud — التحيات لله', ans:'benar'},
+  {name:'👋 Salam — السلام عليكم', ans:'benar'},
+  {name:'🙇 Ruku\' dibaca سبحان ربي الأعلى', ans:'salah'},
+  {name:'🤲 Sujud dibaca سبحان ربي العظيم', ans:'salah'},
+  {name:'🧍 I\'tidal sambil membungkuk', ans:'salah'},
+  {name:'📿 Tasyahud dibaca saat ruku\'', ans:'salah'},
+  {name:'👋 Salam penutup shalat', ans:'benar'},
+  {name:'🤲 Doa Iftitah dibaca setelah takbir', ans:'benar'},
+  {name:'🕌 Shalat dimulai dengan salam', ans:'salah'},
+  {name:'🙏 Sujud dengan 7 anggota badan', ans:'benar'},
+  {name:'🙇 Ruku\' badan membungkuk 90°', ans:'benar'},
+  {name:'🪑 Duduk di antara dua sujud', ans:'benar'},
+  {name:'📿 Shalawat dibaca saat tasyahud akhir', ans:'benar'},
+  {name:'🕌 Takbir dibaca sambil berdiri', ans:'benar'},
+  {name:'👋 Salam ke kanan dan kiri', ans:'benar'},
+];
+
+const t2Data4 = [
+  {q:'1. Bacaan yang pertama kali dibaca dalam shalat adalah ....',opts:['Doa Iftitah','Allahu Akbar (takbiratul ihram)'],ans:1},
+  {q:'2. Saat ruku\', kita membaca ....',opts:['Subhaana robbiyal a\'laa','Subhaana robbiyal azhiim'],ans:1},
+  {q:'3. Saat sujud, kita membaca ....',opts:['Subhaana robbiyal a\'laa','Subhaana robbiyal azhiim'],ans:0},
+  {q:'4. Bacaan saat berdiri setelah ruku\' (i\'tidal) adalah ....',opts:['Sami\'allaahu liman hamidah','Allahu Akbar'],ans:0},
+  {q:'5. Shalat diakhiri dengan membaca ....',opts:['Salam','Takbir'],ans:0},
+  {q:'6. Doa iftitah dibaca setelah ....',opts:['Takbiratul ihram','Ruku\''],ans:0},
+  {q:'7. Sujud dilakukan dengan ... anggota badan menyentuh lantai.',opts:['5','7'],ans:1},
+  {q:'8. Bacaan duduk antara dua sujud adalah ....',opts:['Rabbighfirlii','Allahu Akbar'],ans:0},
+  {q:'9. At-Tahiyyat dibaca saat ....',opts:['Sujud','Tasyahud'],ans:1},
+  {q:'10. Ruku\' adalah gerakan membungkuk dengan ....',opts:['Badan 90°','Badan 45°'],ans:0},
+  {q:'11. Salam dibaca menghadap ke ....',opts:['Depan saja','Kanan dan kiri'],ans:1},
+  {q:'12. "Subhana Rabbiyal A\'la" dibaca saat ....',opts:['Sujud','Ruku\''],ans:0},
+  {q:'13. Tasyahud akhir berisi bacaan At-Tahiyyat dan ....',opts:['Doa Iftitah','Shalawat'],ans:1},
+  {q:'14. Takbiratul ihram dibaca sambil ....',opts:['Mengangkat kedua tangan','Sujud'],ans:0},
+  {q:'15. Jumlah bacaan dalam gerakan ruku\' minimal ....',opts:['1 kali','3 kali'],ans:1},
+  {q:'16. Setelah i\'tidal kita melakukan ....',opts:['Sujud','Ruku\''],ans:0},
+  {q:'17. Bacaan "Sami\'allahu liman hamidah" dibaca saat ....',opts:['I\'tidal','Sujud'],ans:0},
+  {q:'18. Gerakan shalat yang dilakukan setelah ruku\' adalah ....',opts:['I\'tidal','Sujud'],ans:0},
+  {q:'19. Kita membaca shalawat kepada Nabi Muhammad ﷺ saat ....',opts:['Ruku\'','Tasyahud akhir'],ans:1},
+  {q:'20. Shalat sah apabila dimulai dengan ....',opts:['Salam','Takbiratul ihram'],ans:1},
+];
 
 const fc5 = [
   {label:'QS. Fushilat: 37', arabic:'وَمِنْ آيَاتِهِ اللَّيْلُ وَالنَّهَارُ وَالشَّمْسُ وَالْقَمَرُ', meaning:'"Dan di antara tanda-tanda kekuasaan-Nya ialah malam, siang, matahari dan bulan. Janganlah sembah matahari maupun bulan, tapi sembahlah Allah Yang menciptakannya."', source:'QS. Fushilat: 37'},
@@ -2128,6 +2183,78 @@ const wmData4 = [
 ];
 
 const wmCat4 = ['🔊 Allaahu Akbar','🔊 Subhaana robbiyal azhiim','🔊 Sami\'allaahu liman hamidah','🔊 Subhaana robbiyal a\'laa','🔊 Robbighfirlii rabbighfirlii','🔊 At tahiyyaatu lillaah','🔊 Assalaamu\'alaikum','🔊 Baca surat Al-Quran'];
+
+// ── WORD MATCH DATA BAB 5-9 ──────────────────────────────────────────────────
+const wmData5 = [
+  {word:'Langit',cat:'🌌 Makhluk Nyata'},
+  {word:'Gunung',cat:'🌌 Makhluk Nyata'},
+  {word:'Matahari',cat:'🌌 Makhluk Nyata'},
+  {word:'Ikan tuna',cat:'🌌 Makhluk Nyata'},
+  {word:'Pohon mangga',cat:'🌌 Makhluk Nyata'},
+  {word:'Malaikat Jibril',cat:'👻 Makhluk Ghaib'},
+  {word:'Jin',cat:'👻 Makhluk Ghaib'},
+  {word:'Iblis',cat:'👻 Makhluk Ghaib'},
+  {word:'Setan',cat:'👻 Makhluk Ghaib'},
+  {word:'Ruh',cat:'👻 Makhluk Ghaib'},
+];
+const wmCat5 = ['🌌 Makhluk Nyata','👻 Makhluk Ghaib'];
+
+const wmData6 = [
+  {word:'Kencing',cat:'❌ Batal Wudhu'},
+  {word:'Kentut',cat:'❌ Batal Wudhu'},
+  {word:'Buang air besar',cat:'❌ Batal Wudhu'},
+  {word:'Makan daging unta',cat:'❌ Batal Wudhu'},
+  {word:'Tidur lelap',cat:'❌ Batal Wudhu'},
+  {word:'Pingsan',cat:'❌ Batal Wudhu'},
+  {word:'Makan kue',cat:'✅ Tidak Batal'},
+  {word:'Berlari',cat:'✅ Tidak Batal'},
+  {word:'Minum susu',cat:'✅ Tidak Batal'},
+  {word:'Bersin',cat:'✅ Tidak Batal'},
+  {word:'Membaca buku',cat:'✅ Tidak Batal'},
+  {word:'Makan buah',cat:'✅ Tidak Batal'},
+];
+const wmCat6 = ['❌ Batal Wudhu','✅ Tidak Batal'];
+
+const wmData7 = [
+  {word:'Membaca Al-Quran',cat:'👍 Perbuatan Baik'},
+  {word:'Berzikir',cat:'👍 Perbuatan Baik'},
+  {word:'Berkata jujur',cat:'👍 Perbuatan Baik'},
+  {word:'Berdoa dengan sungguh',cat:'👍 Perbuatan Baik'},
+  {word:'Mengucapkan salam',cat:'👍 Perbuatan Baik'},
+  {word:'Berkata lemah lembut',cat:'👍 Perbuatan Baik'},
+  {word:'Menghina orang',cat:'👎 Perbuatan Buruk'},
+  {word:'Memfitnah',cat:'👎 Perbuatan Buruk'},
+  {word:'Berbohong',cat:'👎 Perbuatan Buruk'},
+  {word:'Ribut di masjid',cat:'👎 Perbuatan Buruk'},
+  {word:'Berteriak-teriak',cat:'👎 Perbuatan Buruk'},
+  {word:'Mengejek teman',cat:'👎 Perbuatan Buruk'},
+];
+const wmCat7 = ['👍 Perbuatan Baik','👎 Perbuatan Buruk'];
+
+const wmData8 = [
+  {word:'Shubuh',cat:'2️⃣ 2 Rakaat'},
+  {word:'Zhuhur',cat:'4️⃣ 4 Rakaat'},
+  {word:'Ashar',cat:'4️⃣ 4 Rakaat'},
+  {word:'Maghrib',cat:'3️⃣ 3 Rakaat'},
+  {word:'Isya',cat:'4️⃣ 4 Rakaat'},
+];
+const wmCat8 = ['2️⃣ 2 Rakaat','3️⃣ 3 Rakaat','4️⃣ 4 Rakaat'];
+
+const wmData9 = [
+  {word:'Selalu berkata baik',cat:'✅ Sikap Benar'},
+  {word:'Tidak mau berbuat dosa walau sepi',cat:'✅ Sikap Benar'},
+  {word:'Suka bersedekah walau tidak dilihat',cat:'✅ Sikap Benar'},
+  {word:'Ikhlas beribadah tanpa ingin dipuji',cat:'✅ Sikap Benar'},
+  {word:'Menjaga hati dari iri dan dengki',cat:'✅ Sikap Benar'},
+  {word:'Rajin beribadah walaupun sendirian',cat:'✅ Sikap Benar'},
+  {word:'Biasa saja berbuat dosa',cat:'❌ Sikap Salah'},
+  {word:'Berbuat buruk saat sendiri',cat:'❌ Sikap Salah'},
+  {word:'Berbuat baik hanya jika dilihat',cat:'❌ Sikap Salah'},
+  {word:'Curang saat ujian',cat:'❌ Sikap Salah'},
+  {word:'Berbohong kepada teman',cat:'❌ Sikap Salah'},
+  {word:'Malas shalat kalau tidak ada ibu',cat:'❌ Sikap Salah'},
+];
+const wmCat9 = ['✅ Sikap Benar','❌ Sikap Salah'];
 
 // ── MAPS ─────────────────────────────────────────────────────────────────────
 const fcMap      = {3:fc3,4:fc4,5:fc5,6:fc6,7:fc7,8:fc8,9:fc9};
