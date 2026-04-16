@@ -1,6 +1,6 @@
 # 🕌 Belajar PAI — Kelas 1 SD Islam
 
-Aplikasi web interaktif untuk belajar Pendidikan Agama Islam (PAI) Kelas 1 SD, mencakup Bab 5 hingga Bab 9. Dirancang agar siswa bisa belajar mandiri dengan tampilan yang menarik, berwarna, dan responsif di desktop maupun mobile.
+Aplikasi web interaktif untuk belajar Pendidikan Agama Islam (PAI) Kelas 1 SD, mencakup Bab 3 hingga Bab 9. Dirancang agar siswa bisa belajar mandiri dengan tampilan yang menarik, berwarna, dan responsif di desktop maupun mobile.
 
 🔗 **[Buka Aplikasi — dannybudiman.github.io/LatihanPAISD](https://dannybudiman.github.io/LatihanPAISD/)**
 
@@ -29,6 +29,8 @@ Aplikasi web interaktif untuk belajar Pendidikan Agama Islam (PAI) Kelas 1 SD, m
 
 | Bab | Judul | Warna Tema |
 |-----|-------|-----------|
+| Bab 3 | 🕌 Aku Hanya Menyembah Allah Rabb-ku | Violet / Ungu |
+| Bab 4 | 🙏 Bacaan Shalat | Amber / Kuning |
 | Bab 5 | 🕌 Mengenal Allah Ta'ala | Teal / Biru |
 | Bab 6 | 🚿 Pembatal Wudhu | Orange |
 | Bab 7 | 👂 Allah Maha Mendengar (As-Sami') | Indigo |
@@ -40,19 +42,32 @@ Aplikasi web interaktif untuk belajar Pendidikan Agama Islam (PAI) Kelas 1 SD, m
 ## ✨ Fitur
 
 ### 📖 Materi
-Penjelasan materi lengkap dalam format accordion yang bisa dibuka-tutup. Dilengkapi animasi SVG interaktif (contoh: animasi matahari terbit, gerhana matahari) dan kotak dalil Arab beserta terjemahannya.
+Penjelasan materi lengkap dalam format accordion yang bisa dibuka-tutup. Dilengkapi animasi SVG interaktif (contoh: animasi matahari terbit, gerhana matahari, batal/tidak wudhu) dan kotak dalil Arab beserta terjemahannya.
+
+**Khusus Bab 4:** Materi disajikan sebagai panduan langkah demi langkah (step-by-step) dengan 23 gerakan shalat, lengkap dengan teks Arab, latin, dan artinya.
 
 ### 🃏 Flash Card
 Kartu dalil dengan efek flip 3D. Sisi depan menampilkan ayat/dalil dalam tulisan Arab, sisi belakang menampilkan arti dan penjelasan lengkap. Bisa dinavigasi maju-mundur.
 
 ### ✏️ Tugas I — Klik & Pilih
-Latihan interaktif dengan cara mengklik tag untuk memilih jawaban (misalnya: makhluk laut atau darat, batal atau tidak batal wudhu, benar atau salah). Klik 1× = pilihan pertama, klik 2× = pilihan kedua, klik 3× = hapus pilihan. Dilengkapi tombol **Periksa** dan skor otomatis.
+Latihan interaktif dengan cara mengklik tag untuk memilih jawaban. Format berbeda per bab:
+- **Bab 3:** Ibadah Benar atau Salah
+- **Bab 4:** Gerakan shalat dan bacaannya (Benar/Salah)
+- **Bab 5:** Makhluk Laut atau Darat
+- **Bab 6:** Batal atau Tidak Batal wudhu
+- **Bab 7:** Perbuatan Baik atau Buruk
+- **Bab 8:** Pernyataan shalat Benar atau Salah
+- **Bab 9:** Sikap Benar atau Salah mengimani Al-'Aliim
+
+Klik 1× = pilihan pertama, klik 2× = pilihan kedua, klik 3× = hapus. Dilengkapi tombol **Periksa** dan skor otomatis.
 
 ### 📝 Tugas II — Kuis Pilihan Ganda
 Soal pilihan ganda (a/b) sebanyak 20 soal per bab, diambil dari soal buku siswa. Tersedia feedback langsung (✅ Benar / ❌ Salah) setelah dicek, beserta skor akhir dan pesan motivasi.
 
 ### 🔤 Tebak Kata (Word Match)
 Aktivitas mencocokkan kata/istilah ke kategori yang tepat. Pilih kata di kolom kiri, lalu klik kategori di kolom kanan. Jika salah, kartu akan bergetar (efek shake). Semua pasangan yang sudah cocok ditampilkan di bagian atas.
+
+**Khusus Bab 4:** Mencocokkan gerakan shalat dengan bacaannya (contoh: Ruku' → Subhaana robbiyal azhiim).
 
 ---
 
@@ -97,7 +112,7 @@ start index.html
 - **HTML5** — Struktur dan konten
 - **CSS3** — Styling, animasi (keyframes), CSS variables, responsive layout
 - **Vanilla JavaScript** — Logika interaktif, state management, render dinamis
-- **SVG animasi** — Ilustrasi gerhana, matahari terbit, dll. (inline, tanpa library eksternal)
+- **SVG animasi** — Ilustrasi gerhana, matahari terbit, animasi batal wudhu, dll. (inline, tanpa library eksternal)
 - **Google Fonts** — Baloo 2 & Nunito
 
 Tidak menggunakan framework atau library eksternal apapun — 100% native HTML/CSS/JS dalam satu file.

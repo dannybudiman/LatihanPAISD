@@ -303,6 +303,54 @@ body{font-family:'Nunito',sans-serif;background:linear-gradient(135deg,#e0f4ff 0
 .shalat-table tr:nth-child(even){background:#f9f9f9;}
 .shalat-table .rakaat-badge{display:inline-block;background:var(--emerald);color:white;border-radius:20px;padding:3px 14px;font-weight:800;}
 
+/* ===== BAB 3 & 4 EXTRA CSS ===== */
+:root {
+  --violet:#8e44ad; --violet-dark:#6c3483;
+  --amber:#e67e22; --amber-dark:#b7570b;
+}
+.bab-btn.active-bab3{background:var(--violet);border-color:var(--violet);color:white;box-shadow:0 4px 14px rgba(142,68,173,0.5);}
+.bab-btn.active-bab4{background:var(--amber);border-color:var(--amber);color:white;box-shadow:0 4px 14px rgba(230,126,34,0.5);}
+.header.bab3{background:linear-gradient(135deg,var(--violet-dark),var(--violet));}
+.header.bab4{background:linear-gradient(135deg,var(--amber-dark),var(--amber));}
+.materi-hero.bab3-hero{background:linear-gradient(135deg,var(--violet-dark),var(--violet));}
+.materi-hero.bab4-hero{background:linear-gradient(135deg,var(--amber-dark),var(--amber));}
+.flashcard-back.bab3-back{background:linear-gradient(135deg,var(--violet-dark),var(--violet));}
+.flashcard-back.bab4-back{background:linear-gradient(135deg,var(--amber-dark),var(--amber));}
+.fc-btn.bab3-btn{background:var(--violet);}
+.fc-btn.bab3-btn:hover{background:var(--violet-dark);}
+.fc-btn.bab4-btn{background:var(--amber);}
+.fc-btn.bab4-btn:hover{background:var(--amber-dark);}
+.quiz-q.bab3{color:var(--violet-dark);}
+.quiz-q.bab4{color:var(--amber-dark);}
+.score-val.bab3{color:var(--violet);}
+.score-val.bab4{color:var(--amber);}
+.sec-header.bab3{color:var(--violet-dark);}
+.sec-header.bab4{color:var(--amber-dark);}
+.tugas-title.bab3{color:var(--violet-dark);}
+.tugas-title.bab4{color:var(--amber-dark);}
+.btn.bab3-btn{background:var(--violet);color:white;box-shadow:0 5px 14px rgba(142,68,173,0.35);}
+.btn.bab3-btn:hover{background:var(--violet-dark);transform:translateY(-3px);}
+.btn.bab4-btn{background:var(--amber);color:white;box-shadow:0 5px 14px rgba(230,126,34,0.35);}
+.btn.bab4-btn:hover{background:var(--amber-dark);transform:translateY(-3px);}
+.result-badge.bab3-badge{background:linear-gradient(135deg,var(--violet-dark),var(--violet));box-shadow:0 8px 28px rgba(142,68,173,0.3);}
+.result-badge.bab4-badge{background:linear-gradient(135deg,var(--amber-dark),var(--amber));box-shadow:0 8px 28px rgba(230,126,34,0.3);}
+.acc-card.violet{border-left-color:var(--violet);}
+.acc-card.violet .acc-title{color:var(--violet-dark);}
+.acc-card.amber{border-left-color:var(--amber);}
+.acc-card.amber .acc-title{color:var(--amber-dark);}
+.bubble.violet{background:#f5eef8;border-color:var(--violet);color:var(--violet-dark);}
+.bubble.amber{background:#fef5e7;border-color:var(--amber);color:var(--amber-dark);}
+/* Bab 4 special: gerakan shalat stepper */
+.shalat-step{background:white;border-radius:18px;padding:18px 20px;margin-bottom:14px;box-shadow:0 4px 14px rgba(0,0,0,0.07);border-left:6px solid var(--amber);display:flex;align-items:flex-start;gap:14px;}
+.step-num{background:var(--amber);color:white;font-family:'Baloo 2',cursive;font-size:1.3rem;font-weight:800;min-width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.step-body{flex:1;}
+.step-title{font-family:'Baloo 2',cursive;font-size:1.1rem;color:var(--amber-dark);margin-bottom:4px;}
+.step-arab{font-size:1.3rem;color:#1a1a2e;direction:rtl;line-height:2;margin:8px 0;}
+.step-latin{font-size:0.9rem;color:#555;font-style:italic;margin-bottom:4px;}
+.step-arti{font-size:0.9rem;color:#333;font-weight:600;}
+/* match-gerakan for bab 4 */
+.tag-item.selected-match{background:#fef5e7;border-color:var(--amber);color:var(--amber-dark);}
+
 /* ===== RESPONSIVE ===== */
 @media(max-width:500px){
   html{font-size:16px;}
@@ -317,6 +365,8 @@ body{font-family:'Nunito',sans-serif;background:linear-gradient(135deg,#e0f4ff 0
 <!-- BAB SELECTOR -->
 <div class="bab-bar">
   <span>BAB:</span>
+  <button class="bab-btn" onclick="switchBab(3,this)">🕌 Bab 3</button>
+  <button class="bab-btn" onclick="switchBab(4,this)">🙏 Bab 4</button>
   <button class="bab-btn active-bab5" onclick="switchBab(5,this)">📖 Bab 5</button>
   <button class="bab-btn" onclick="switchBab(6,this)">🚿 Bab 6</button>
   <button class="bab-btn" onclick="switchBab(7,this)">👂 Bab 7</button>
@@ -332,6 +382,24 @@ body{font-family:'Nunito',sans-serif;background:linear-gradient(135deg,#e0f4ff 0
   <div class="stars"><span>⭐</span><span>🌙</span><span>⭐</span></div>
 </div>
 
+<!-- NAV BAB 3 -->
+<div class="nav" id="nav-bab3" style="display:none">
+  <button class="tab-btn active" onclick="showTab('b3-materi',this,'bab3-nav')">📚 Materi</button>
+  <button class="tab-btn" onclick="showTab('b3-flashcard',this,'bab3-nav')">🃏 Flash Card</button>
+  <button class="tab-btn" onclick="showTab('b3-tugas1',this,'bab3-nav')">✏️ Tugas I</button>
+  <button class="tab-btn" onclick="showTab('b3-tugas2',this,'bab3-nav')">📝 Tugas II</button>
+  <button class="tab-btn" onclick="showTab('b3-wordmatch',this,'bab3-nav')">🔤 Tebak Kata</button>
+</div>
+
+<!-- NAV BAB 4 -->
+<div class="nav" id="nav-bab4" style="display:none">
+  <button class="tab-btn active" onclick="showTab('b4-materi',this,'bab4-nav')">📚 Materi</button>
+  <button class="tab-btn" onclick="showTab('b4-flashcard',this,'bab4-nav')">🃏 Flash Card</button>
+  <button class="tab-btn" onclick="showTab('b4-tugas1',this,'bab4-nav')">✏️ Tugas I</button>
+  <button class="tab-btn" onclick="showTab('b4-tugas2',this,'bab4-nav')">📝 Tugas II</button>
+  <button class="tab-btn" onclick="showTab('b4-wordmatch',this,'bab4-nav')">🔤 Tebak Kata</button>
+</div>
+
 <!-- NAV BAB 5 -->
 <div class="nav bab5-nav" id="nav-bab5">
   <button class="tab-btn active" onclick="showTab('b5-materi',this,'bab5-nav')">📚 Materi</button>
@@ -342,7 +410,7 @@ body{font-family:'Nunito',sans-serif;background:linear-gradient(135deg,#e0f4ff 0
 </div>
 
 <!-- NAV BAB 6 -->
-<div class="nav bab6-nav" id="nav-bab6" style="display:none">
+<div class="nav bab5-nav" id="nav-bab6" style="display:none">
   <button class="tab-btn active" onclick="showTab('b6-materi',this,'bab6-nav')">📚 Materi</button>
   <button class="tab-btn" onclick="showTab('b6-flashcard',this,'bab6-nav')">🃏 Flash Card</button>
   <button class="tab-btn" onclick="showTab('b6-tugas1',this,'bab6-nav')">✏️ Tugas I</button>
@@ -376,6 +444,403 @@ body{font-family:'Nunito',sans-serif;background:linear-gradient(135deg,#e0f4ff 0
   <button class="tab-btn" onclick="showTab('b9-tugas2',this,'bab9-nav')">📝 Tugas II</button>
   <button class="tab-btn" onclick="showTab('b9-wordmatch',this,'bab9-nav')">🔤 Tebak Kata</button>
 </div>
+
+<!-- ==================== BAB 3: AKU HANYA MENYEMBAH ALLAH ==================== -->
+<div id="bab3-world" class="bab-world">
+
+<div id="b3-materi" class="section active">
+  <div class="materi-hero bab3-hero">
+    <h2>🕌 Aku Hanya Menyembah Allah Rabb-ku</h2>
+    <p>Mengapa kita hanya boleh menyembah Allah? Yuk pelajari! 👇 Klik kartu untuk membuka</p>
+  </div>
+
+  <div class="acc-card violet open" onclick="toggleAcc(this)">
+    <div class="acc-header"><div class="acc-title">🌟 Mengapa Hanya Allah yang Berhak Disembah?</div><span class="acc-chevron">▼</span></div>
+    <div class="acc-body">
+      <p>Allah adalah satu-satunya yang berhak kita sembah karena Allah Ta'ala satu-satunya yang:</p>
+      <div class="bubble-list" style="margin-top:12px">
+        <div class="bubble violet">🌟 Menciptakan kita</div>
+        <div class="bubble violet">🌿 Memelihara kita</div>
+        <div class="bubble violet">🍚 Memberi kita rezeki setiap saat</div>
+        <div class="bubble violet">🌍 Mengatur seluruh alam semesta</div>
+      </div>
+      <div style="margin-top:14px;background:#f5eef8;border-radius:12px;padding:14px;border-left:4px solid var(--violet)">
+        <p style="color:var(--violet-dark);font-weight:800">❌ Kita tidak boleh menyembah selain Allah!</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="acc-card violet" onclick="toggleAcc(this)">
+    <div class="acc-header"><div class="acc-title">📌 Perintah Menyembah Allah Saja</div><span class="acc-chevron">▼</span></div>
+    <div class="acc-body">
+      <p>Allah Ta'ala menyuruh semua manusia untuk menyembah-Nya. Allah berfirman:</p>
+      <div class="arabic-box" style="margin-top:12px">
+        <div style="color:rgba(255,255,255,0.5);font-size:0.8rem;margin-bottom:8px">QS. AL-BAQARAH: 21-22</div>
+        <div class="arabic-text" style="font-size:1.3rem">يَا أَيُّهَا النَّاسُ اعْبُدُوا رَبَّكُمُ الَّذِي خَلَقَكُمْ</div>
+        <div class="arabic-trans">"Hai manusia, sembahlah Tuhanmu yang telah menciptakanmu..." (QS. Al-Baqarah: 21)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="acc-card" onclick="toggleAcc(this)">
+    <div class="acc-header"><div class="acc-title">❌ Larangan Menyembah Selain Allah</div><span class="acc-chevron">▼</span></div>
+    <div class="acc-body">
+      <p>Kita tidak boleh menyembah selain Allah! Yang termasuk larangan disembah antara lain:</p>
+      <div class="bubble-list" style="margin-top:12px">
+        <div class="bubble red">👼 Malaikat</div><div class="bubble red">🌙 Bulan</div>
+        <div class="bubble red">☀️ Matahari</div><div class="bubble red">⭐ Bintang</div>
+        <div class="bubble red">🏔️ Batu</div><div class="bubble red">🌳 Kayu</div>
+        <div class="bubble red">⚱️ Patung</div><div class="bubble red">👤 Nabi</div>
+        <div class="bubble red">😇 Orang shalih</div><div class="bubble red">🪦 Kuburan</div>
+        <div class="bubble red">😈 Setan</div><div class="bubble red">🔥 Jin</div>
+      </div>
+      <div style="margin-top:14px;background:#fff0f3;border-radius:12px;padding:14px;border-left:4px solid var(--pink)">
+        <p style="color:#9b1a30;font-weight:800;font-size:1.05rem">⚠️ Menyembah selain Allah adalah dosa besar!</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="acc-card violet" onclick="toggleAcc(this)">
+    <div class="acc-header"><div class="acc-title">✅ Mengapa Selain Allah Tidak Boleh Disembah?</div><span class="acc-chevron">▼</span></div>
+    <div class="acc-body">
+      <div class="bubble-list">
+        <div class="bubble violet">❌ Karena bukan mereka yang menciptakan kita</div>
+        <div class="bubble violet">❌ Karena bukan mereka yang memberi kita rezeki</div>
+        <div class="bubble violet">❌ Karena bukan mereka yang memelihara kita dengan berbagai kenikmatan</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="acc-card green" onclick="toggleAcc(this)">
+    <div class="acc-header"><div class="acc-title">✅ Contoh Ibadah yang Benar</div><span class="acc-chevron">▼</span></div>
+    <div class="acc-body">
+      <p>Ibadah yang benar adalah ibadah yang hanya ditujukan kepada Allah:</p>
+      <div class="bubble-list" style="margin-top:12px">
+        <div class="bubble green">🙏 Berdoa hanya kepada Allah</div>
+        <div class="bubble green">📖 Membaca Al-Quran mengharap ridha Allah</div>
+        <div class="bubble green">🕌 Shalat hanya karena Allah</div>
+        <div class="bubble green">💝 Bersedekah hanya karena Allah</div>
+        <div class="bubble green">🐑 Menyembelih karena Allah</div>
+        <div class="bubble green">🕋 Berhaji karena Allah</div>
+        <div class="bubble green">🌙 Berpuasa hanya karena Allah</div>
+        <div class="bubble green">📚 Belajar hanya karena Allah</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="acc-card" style="border-left-color:var(--violet)" onclick="toggleAcc(this)">
+    <div class="acc-header"><div class="acc-title" style="color:var(--violet-dark)">💜 Kesimpulan</div><span class="acc-chevron">▼</span></div>
+    <div class="acc-body">
+      <p style="text-align:center;font-style:italic;line-height:1.9;color:#444;font-size:1.05rem">"Aku hanya menyembah Allah. Allah adalah Rabb-ku — Yang menciptakanku, memeliharaku, dan memberiku rezeki."</p>
+    </div>
+  </div>
+</div>
+
+<!-- B3 FLASHCARD -->
+<div id="b3-flashcard" class="section">
+  <div class="sec-header bab3">🃏 Flash Card Dalil — Bab 3</div>
+  <p style="color:#555;margin-bottom:16px;font-size:1rem;font-weight:600">Ketuk kartu untuk melihat penjelasannya!</p>
+  <div id="b3-fc-display"></div>
+  <p class="flip-hint">👆 Ketuk kartu untuk balik!</p>
+  <div class="fc-nav">
+    <button class="fc-btn bab3-btn" onclick="fcNav(3,-1)">◀ Sebelumnya</button>
+    <span class="fc-counter" id="b3-fc-counter" style="color:var(--violet-dark)">1 / 6</span>
+    <button class="fc-btn bab3-btn" onclick="fcNav(3,1)">Berikutnya ▶</button>
+  </div>
+</div>
+
+<!-- B3 TUGAS I -->
+<div id="b3-tugas1" class="section">
+  <div class="sec-header bab3">✏️ Tugas Siswa I — Ibadah Benar atau Salah?</div>
+  <div class="tugas-card">
+    <div class="tugas-title bab3">📌 Klik sekali = Ibadah BENAR ✓, dua kali = Ibadah SALAH ✗</div>
+    <div class="tugas-legend">
+      <div class="legend-item"><div class="legend-dot" style="background:var(--green)"></div>Klik 1× = Benar ✓</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--pink)"></div>Klik 2× = Salah ✗</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#ddd"></div>Klik 3× = Hapus</div>
+    </div>
+    <div class="tag-grid" id="b3-t1-grid"></div>
+    <div class="btn-row">
+      <button class="btn bab3-btn" onclick="checkT1(3)">✅ Periksa</button>
+      <button class="btn gold-btn" onclick="resetT1(3)">🔄 Ulangi</button>
+    </div>
+    <div class="result-badge bab3-badge" id="b3-t1-result">
+      <div class="result-emoji">🎉</div><div class="result-score" id="b3-t1-score"></div><div class="result-msg" id="b3-t1-msg"></div>
+    </div>
+  </div>
+</div>
+
+<!-- B3 TUGAS II -->
+<div id="b3-tugas2" class="section">
+  <div class="sec-header bab3">📝 Tugas Siswa II — Lingkari Jawaban</div>
+  <div class="score-bar"><span>Skor:</span><span class="score-val bab3" id="b3-t2-score">0 / 20</span></div>
+  <div id="b3-t2-container"></div>
+  <div class="btn-row">
+    <button class="btn bab3-btn" onclick="checkT2(3)">✅ Cek Semua</button>
+    <button class="btn gold-btn" onclick="resetT2(3)">🔄 Mulai Ulang</button>
+  </div>
+  <div class="result-badge bab3-badge" id="b3-t2-result">
+    <div class="result-emoji" id="b3-t2-emoji">🏆</div>
+    <div class="result-score" id="b3-t2-final"></div>
+    <div class="result-msg" id="b3-t2-msg"></div>
+  </div>
+</div>
+
+<!-- B3 WORD MATCH -->
+<div id="b3-wordmatch" class="section">
+  <div class="sec-header bab3">🔤 Cocokkan Kata — Bab 3</div>
+  <div id="b3-wm-container"></div>
+  <div class="btn-row"><button class="btn gold-btn" onclick="resetWM(3)">🔄 Ulangi</button></div>
+  <div class="result-badge bab3-badge" id="b3-wm-result">
+    <div class="result-emoji">🌟</div><div class="result-score" id="b3-wm-score"></div><div class="result-msg">Hebat! Kamu sangat pintar! 🎓</div>
+  </div>
+</div>
+</div><!-- end bab3-world -->
+
+<!-- ==================== BAB 4: BACAAN SHALAT ==================== -->
+<div id="bab4-world" class="bab-world">
+
+<div id="b4-materi" class="section active">
+  <div class="materi-hero bab4-hero">
+    <h2>🙏 Bacaan Shalat</h2>
+    <p>Belajar gerakan dan bacaan shalat dari awal hingga akhir! 👇 Klik kartu untuk membuka</p>
+  </div>
+
+  <div class="acc-card amber open" onclick="toggleAcc(this)">
+    <div class="acc-header"><div class="acc-title">📖 Gerakan dan Bacaan Shalat 2 Rakaat</div><span class="acc-chevron">▼</span></div>
+    <div class="acc-body">
+      <p>Kita wajib melakukan shalat dengan gerakan dan bacaan yang benar sesuai dengan tuntunan Rasulullah ﷺ. Berikut gerakan dan bacaannya:</p>
+
+      <div class="shalat-step" style="margin-top:14px">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <div class="step-title">Berdiri menghadap kiblat</div>
+          <div class="step-arti">Pandangan ke tempat sujud.</div>
+        </div>
+      </div>
+
+      <div class="shalat-step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <div class="step-title">Takbiratul Ihram</div>
+          <div class="step-arab">اَللهُ أَكْبَرُ</div>
+          <div class="step-latin">"Allaahu Akbar"</div>
+          <div class="step-arti">Kedua tangan diangkat sejajar bahu atau telinga.</div>
+        </div>
+      </div>
+
+      <div class="shalat-step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <div class="step-title">Bersedekap, lalu membaca Doa Iftitah</div>
+          <div class="step-arab" style="font-size:1rem">اَللّهُمَّ بَاعِدْ بَيْنِيْ وَبَيْنَ خَطَايَايَ كَمَا بَاعَدْتَ بَيْنَ الْمَشْرِقِ وَالْمَغْرِبِ</div>
+          <div class="step-latin">"Allaahumma baa'id baynii wabayna khathaayaaya kamaa baa'atta baynal masyriqi wal maghrib..."</div>
+          <div class="step-arti">Ya Allah, jauhkanlah aku dan kesalahanku sebagaimana Engkau telah menjauhkan antara timur dan barat...</div>
+        </div>
+      </div>
+
+      <div class="shalat-step">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <div class="step-title">Membaca Al-Fatihah</div>
+          <div class="step-arab" style="font-size:1rem">بِسْمِ اللهِ الرَّحْمنِ الرَّحِيمِ — اَلْحَمْدُ لِلّهِ رَبِّ الْعَالَمِينَ</div>
+          <div class="step-arti">Membaca Al-Fatihah lengkap dari awal sampai akhir.</div>
+        </div>
+      </div>
+
+      <div class="shalat-step">
+        <div class="step-num">5</div>
+        <div class="step-body">
+          <div class="step-title">Membaca Surat dari Al-Quran</div>
+          <div class="step-arti">Misalnya Surah An-Naas, Al-Ikhlas, Al-Falaq, dll.</div>
+        </div>
+      </div>
+
+      <div class="shalat-step">
+        <div class="step-num">6</div>
+        <div class="step-body">
+          <div class="step-title">Ruku' — membaca doa ruku' 3 kali</div>
+          <div class="step-arab">سُبْحَانَ رَبِّيَ الْعَظِيمِ</div>
+          <div class="step-latin">"Subhaana robbiyal 'azhiim"</div>
+          <div class="step-arti">Artinya: Maha Suci Rabb-ku yang Maha Agung.</div>
+        </div>
+      </div>
+
+      <div class="shalat-step">
+        <div class="step-num">7</div>
+        <div class="step-body">
+          <div class="step-title">I'tidal — bangun dari ruku', mengucapkan:</div>
+          <div class="step-arab">سَمِعَ اللهُ لِمَنْ حَمِدَهُ</div>
+          <div class="step-latin">"Sami'allaahu liman hamidah"</div>
+          <div class="step-arti">Artinya: Allah Maha Mendengar orang yang memuji-Nya.</div>
+        </div>
+      </div>
+
+      <div class="shalat-step">
+        <div class="step-num">8</div>
+        <div class="step-body">
+          <div class="step-title">Lalu membaca doa I'tidal:</div>
+          <div class="step-arab" style="font-size:1rem">رَبَّنَا وَلَكَ الْحَمْدُ حَمْدًا كَثِيرًا طَيِّبًا مُبَارَكًا فِيهِ</div>
+          <div class="step-latin">"Rabbanaa walakal hamdu hamdan katsiiran thayyiban mubaarakan fiih"</div>
+          <div class="step-arti">Artinya: Wahai Rabb kami, milik-Mu lah semua pujian yang banyak lagi baik serta ada keberkahan di dalamnya.</div>
+        </div>
+      </div>
+
+      <div class="shalat-step">
+        <div class="step-num">9</div>
+        <div class="step-body">
+          <div class="step-title">Sujud — takbir lalu sujud, membaca doa sujud 3 kali</div>
+          <div class="step-arab">سُبْحَانَ رَبِّيَ الْأَعْلَى</div>
+          <div class="step-latin">"Subhaana robbiyal a'laa"</div>
+          <div class="step-arti">Artinya: Maha Suci Rabb-ku yang Maha Tinggi.</div>
+        </div>
+      </div>
+
+      <div class="shalat-step">
+        <div class="step-num">10</div>
+        <div class="step-body">
+          <div class="step-title">Duduk antara 2 sujud — bangun dari sujud, membaca:</div>
+          <div class="step-arab">رَبِّ اغْفِرْلِي رَبِّ اغْفِرْلِي</div>
+          <div class="step-latin">"Robbighfirlii, robbighfirlii"</div>
+          <div class="step-arti">Artinya: Wahai Rabb-ku, ampunilah aku, ampunilah aku.</div>
+        </div>
+      </div>
+
+      <div class="shalat-step">
+        <div class="step-num">11-19</div>
+        <div class="step-body">
+          <div class="step-title">Sujud ke-2 → Rakaat ke-2 (sama dengan rakaat 1)</div>
+          <div class="step-arti">Sujud yang kedua, bangkit untuk rakaat ke-2 (sama gerakannya), kemudian sujud lagi.</div>
+        </div>
+      </div>
+
+      <div class="shalat-step">
+        <div class="step-num">20</div>
+        <div class="step-body">
+          <div class="step-title">Duduk Tasyahud Akhir, membaca:</div>
+          <div class="step-arab" style="font-size:0.95rem">اَلتَّحِيَّاتُ لِلّهِ وَالصَّلَوَاتُ وَالطَّيِّبَاتُ — أَشْهَدُ أَنْ لَا إِلهَ إِلَّا الله وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ</div>
+          <div class="step-latin">"At tahiyyaatu lillaah was shalawaatu wat thayyibaat... Asyhadu an laa ilaaha illallaah wa asyhadu anna Muhammadan 'abduhu wa rasuuluh"</div>
+        </div>
+      </div>
+
+      <div class="shalat-step">
+        <div class="step-num">21</div>
+        <div class="step-body">
+          <div class="step-title">Membaca Shalawat:</div>
+          <div class="step-arab" style="font-size:0.9rem">اَللّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ</div>
+          <div class="step-latin">"Allahumma shalli 'ala Muhammad wa 'ala aali Muhammad kamaa shalayta..."</div>
+          <div class="step-arti">Ya Allah semoga shalawat terlimpah kepada Muhammad dan keluarga Muhammad...</div>
+        </div>
+      </div>
+
+      <div class="shalat-step">
+        <div class="step-num">22</div>
+        <div class="step-body">
+          <div class="step-title">Membaca Doa Perlindungan dari 4 hal:</div>
+          <div class="step-arab" style="font-size:0.9rem">اَللّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ عَذَابِ جَهَنَّمَ</div>
+          <div class="step-latin">"Allahumma inni a'udzubika min 'adzabi jahannam, wamin 'adzabil qabri, wamin fitnatil mahyaa wal mamaat, wamin syarri fitnatil masiiihid dajjaal."</div>
+          <div class="step-arti">Ya Allah, aku memohon perlindungan-Mu dari neraka jahannam, dari azab kubur, dari fitnah hidup dan mati, dan dari fitnah Al-Masih Ad-Dajjal.</div>
+        </div>
+      </div>
+
+      <div class="shalat-step">
+        <div class="step-num">23</div>
+        <div class="step-body">
+          <div class="step-title">Salam — menoleh kanan lalu kiri:</div>
+          <div class="step-arab">اَلسَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللهِ</div>
+          <div class="step-latin">"Assalaamu'alaikum warahmatullaah"</div>
+          <div class="step-arti">Selesailah shalat 2 rakaat kita. ✅</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="acc-card" onclick="toggleAcc(this)">
+    <div class="acc-header"><div class="acc-title">📋 Ringkasan: Gerakan → Bacaan</div><span class="acc-chevron">▼</span></div>
+    <div class="acc-body">
+      <table class="shalat-table" style="--emerald:var(--amber)">
+        <tr><th>Gerakan</th><th>Bacaan</th></tr>
+        <tr><td>Takbiratul Ihram</td><td>Allaahu Akbar</td></tr>
+        <tr><td>Bersedekap</td><td>Doa Iftitah → Al-Fatihah → Surat</td></tr>
+        <tr><td>Ruku'</td><td>Subhaana robbiyal 'azhiim (3×)</td></tr>
+        <tr><td>I'tidal</td><td>Sami'allaahu liman hamidah → Rabbanaa walakal hamdu...</td></tr>
+        <tr><td>Sujud</td><td>Subhaana robbiyal a'laa (3×)</td></tr>
+        <tr><td>Duduk antara 2 sujud</td><td>Robbighfirlii robbighfirlii</td></tr>
+        <tr><td>Tasyahud Akhir</td><td>At tahiyyaatu... → Shalawat → Doa perlindungan</td></tr>
+        <tr><td>Salam</td><td>Assalaamu'alaikum warahmatullaah (2×)</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="acc-card amber" onclick="toggleAcc(this)">
+    <div class="acc-header"><div class="acc-title">📖 Bacaan Shalat 3 Rakaat atau Lebih</div><span class="acc-chevron">▼</span></div>
+    <div class="acc-body">
+      <p>Jika shalat 3 rakaat (Maghrib) atau 4 rakaat (Zhuhur, Ashar, Isya), setelah rakaat ke-2:</p>
+      <div class="bubble-list" style="margin-top:12px">
+        <div class="bubble amber">📿 Ada Tasyahud Awal setelah rakaat ke-2</div>
+        <div class="bubble amber">🔄 Lalu berdiri lagi untuk rakaat ke-3 dan 4</div>
+        <div class="bubble amber">📖 Bacaan sama seperti rakaat sebelumnya</div>
+        <div class="bubble amber">✅ Tasyahud Akhir hanya di rakaat terakhir</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- B4 FLASHCARD -->
+<div id="b4-flashcard" class="section">
+  <div class="sec-header bab4">🃏 Flash Card Bacaan Shalat — Bab 4</div>
+  <p style="color:#555;margin-bottom:16px;font-size:1rem;font-weight:600">Ketuk kartu untuk melihat penjelasannya!</p>
+  <div id="b4-fc-display"></div>
+  <p class="flip-hint">👆 Ketuk kartu untuk balik!</p>
+  <div class="fc-nav">
+    <button class="fc-btn bab4-btn" onclick="fcNav(4,-1)">◀ Sebelumnya</button>
+    <span class="fc-counter" id="b4-fc-counter" style="color:var(--amber-dark)">1 / 8</span>
+    <button class="fc-btn bab4-btn" onclick="fcNav(4,1)">Berikutnya ▶</button>
+  </div>
+</div>
+
+<!-- B4 TUGAS I: Hubungkan Gerakan & Bacaan -->
+<div id="b4-tugas1" class="section">
+  <div class="sec-header bab4">✏️ Tugas I — Cocokkan Gerakan & Bacaan Shalat</div>
+  <div class="tugas-card">
+    <div class="tugas-title bab4">📌 Pilih gerakan di KIRI, lalu klik bacaannya di KANAN!</div>
+    <div id="b4-t1-container"><div class="tag-grid" id="b4-t1-grid"></div></div>
+    <div class="btn-row">
+      <button class="btn gold-btn" onclick="resetT1(4)">🔄 Ulangi</button>
+    </div>
+    <div class="result-badge bab4-badge" id="b4-t1-result">
+      <div class="result-emoji">🎉</div><div class="result-score" id="b4-t1-score"></div><div class="result-msg" id="b4-t1-msg"></div>
+    </div>
+  </div>
+</div>
+
+<!-- B4 TUGAS II -->
+<div id="b4-tugas2" class="section">
+  <div class="sec-header bab4">📝 Tugas Siswa II — Pilihan Ganda Bacaan Shalat</div>
+  <div class="score-bar"><span>Skor:</span><span class="score-val bab4" id="b4-t2-score">0 / 20</span></div>
+  <div id="b4-t2-container"></div>
+  <div class="btn-row">
+    <button class="btn bab4-btn" onclick="checkT2(4)">✅ Cek Semua</button>
+    <button class="btn gold-btn" onclick="resetT2(4)">🔄 Mulai Ulang</button>
+  </div>
+  <div class="result-badge bab4-badge" id="b4-t2-result">
+    <div class="result-emoji" id="b4-t2-emoji">🏆</div>
+    <div class="result-score" id="b4-t2-final"></div>
+    <div class="result-msg" id="b4-t2-msg"></div>
+  </div>
+</div>
+
+<!-- B4 WORD MATCH -->
+<div id="b4-wordmatch" class="section">
+  <div class="sec-header bab4">🔤 Cocokkan Kata — Bab 4</div>
+  <div id="b4-wm-container"></div>
+  <div class="btn-row"><button class="btn gold-btn" onclick="resetWM(4)">🔄 Ulangi</button></div>
+  <div class="result-badge bab4-badge" id="b4-wm-result">
+    <div class="result-emoji">🌟</div><div class="result-score" id="b4-wm-score"></div>
+    <div class="result-msg">Hafal bacaan shalat! Allahu Akbar! 🕌</div>
+  </div>
+</div>
+</div><!-- end bab4-world -->
 
 <!-- ==================== BAB 5 CONTENT ==================== -->
 <div id="bab5-world" class="bab-world active">
@@ -1265,6 +1730,7 @@ body{font-family:'Nunito',sans-serif;background:linear-gradient(135deg,#e0f4ff 0
 </div>
 </div><!-- end bab9-world -->
 
+
 <script>
 // ===== BAB SWITCH =====
 const babInfo = {
@@ -1277,7 +1743,7 @@ const babInfo = {
 function switchBab(bab, btn) {
   document.querySelectorAll('.bab-btn').forEach(b => b.classList.remove('active-bab5','active-bab6','active-bab7','active-bab8','active-bab9'));
   btn.classList.add(`active-bab${bab}`);
-  [5,6,7,8,9].forEach(b => {
+  [3,4,5,6,7,8,9].forEach(b => {
     const w = document.getElementById(`bab${b}-world`);
     if (w) w.classList.toggle('active', b===bab);
     const n = document.getElementById(`nav-bab${b}`);
@@ -1344,6 +1810,7 @@ const fc9 = [
   {label:'Manfaat Mengimani Al-\'Aliim', arabic:'فَوَائِدُ الإِيمَانِ بِالْعَلِيمِ', meaning:'✅ Manfaat mengimani Allah Al-\'Aliim:\n\n• Semakin taat kepada Allah\n• Menjauhi maksiat\n• Selalu berbuat baik\n• Menjauhi penyakit hati\n• Rajin beribadah\n• Ikhlas dalam ibadah', source:'Hal. 108'},
 ];
 const fcMap = {5:fc5, 6:fc6, 7:fc7, 8:fc8, 9:fc9};
+const fcIdx = {5:0, 6:0, 7:0, 8:0, 9:0};
 
 // ===== TUGAS I DATA =====
 const t1Data5 = [
@@ -1777,12 +2244,194 @@ function resetWM(bab) {
 }
 
 // ===== RENDER ALL =====
-[5,6,7,8,9].forEach(b => {
+[3,4,5,6,7,8,9].forEach(b => {
   renderFC(b);
   renderT1(b);
   renderT2(b);
   renderWM(b);
 });
+</script>
+
+// ===== BAB 3 & 4 EXTRA DATA =====
+
+// --- FLASHCARDS ---
+const fc3 = [
+  {label:'QS. Al-Baqarah: 21', arabic:'يَا أَيُّهَا النَّاسُ اعْبُدُوا رَبَّكُمُ الَّذِي خَلَقَكُمْ', meaning:'"Hai manusia, sembahlah Tuhanmu yang telah menciptakanmu dan orang-orang yang sebelummu, agar kamu bertakwa." (QS. Al-Baqarah: 21)', source:'Hal. 29'},
+  {label:'Mengapa Hanya Allah?', arabic:'لِأَنَّ اللهَ هُوَ الْخَالِقُ وَالرَّازِقُ وَالْمُرَبِّي', meaning:'🌟 Mengapa hanya Allah yang boleh kita sembah?\n\n1. Hanya Allah yang menciptakan kita\n2. Hanya Allah yang memberi kita rezeki\n3. Hanya Allah yang memelihara kita dengan berbagai kenikmatan', source:'Hal. 29-30'},
+  {label:'Larangan Menyembah Selain Allah', arabic:'لَا تَجْعَلُوا لِلَّهِ أَندَادًا', meaning:'❌ Kita TIDAK BOLEH menyembah selain Allah:\n\nMalaikat, Bulan, Matahari, Bintang, Batu, Kayu, Patung, Nabi, Orang shalih, Kuburan, Setan, Jin, dll.\n\n⚠️ Menyembah selain Allah = dosa besar!', source:'Hal. 30-31'},
+  {label:'Mengapa Selain Allah Tidak Boleh?', arabic:'لِأَنَّهُمْ لَا يَخْلُقُونَ وَلَا يَرْزُقُونَ', meaning:'❌ Karena bukan mereka yang menciptakan kita\n❌ Karena bukan mereka yang memberi rezeki\n❌ Karena bukan mereka yang memelihara kita\n\nHanya Allah yang melakukan semua ini!', source:'Hal. 33'},
+  {label:'Ibadah yang Benar', arabic:'كُلُّ عِبَادَةٍ لِلّهِ وَحْدَهُ', meaning:'✅ Contoh ibadah yang benar:\n\n• Shalat hanya karena Allah\n• Bersedekah hanya karena Allah\n• Berdoa hanya kepada Allah\n• Berpuasa hanya karena Allah\n• Berhaji karena Allah\n• Belajar hanya karena Allah', source:'Hal. 31-32'},
+  {label:'Rabb-ku adalah Allah', arabic:'رَبِّيَ اللهُ — خَلَقَنِي وَرَزَقَنِي وَيُحْيِينِي', meaning:'🌟 Aku hanya menyembah Allah.\n\nAllah adalah Rabb-ku:\n• Yang menciptakanku\n• Yang memberiku rezeki\n• Yang menghidupkan dan mematikanku\n\n"Sembahlah Rabb-mu yang telah menciptakan kamu!" (QS. Al-Baqarah: 21)', source:'Hal. 29'},
+];
+
+const fc4 = [
+  {label:'Takbiratul Ihram & Doa Iftitah', arabic:'اَللهُ أَكْبَرُ', meaning:'1️⃣ Berdiri menghadap kiblat\n2️⃣ Ucapkan: "Allaahu Akbar" (angkat tangan)\n3️⃣ Bersedekap, baca Doa Iftitah:\n\n"Allaahumma baa\'id baynii wabayna khathaayaaya kamaa baa\'atta baynal masyriqi wal maghrib..."', source:'Bab IV — Hal. 42-43'},
+  {label:'Al-Fatihah & Surat', arabic:'بِسْمِ اللهِ الرَّحْمنِ الرَّحِيمِ', meaning:'4️⃣ Membaca Al-Fatihah (wajib di setiap rakaat)\n\n5️⃣ Membaca surat dari Al-Quran\n   Contoh: Surah An-Naas, Al-Ikhlas, Al-Falaq\n\n"Bismillaahir rahmaanir rahiim — Alhamdulillaahi rabbil \'aalamiin..."', source:'Hal. 43-44'},
+  {label:'Doa Ruku\'', arabic:'سُبْحَانَ رَبِّيَ الْعَظِيمِ', meaning:'6️⃣ Ruku\' — kedua tangan di atas lutut\n\nMembaca: "Subhaana robbiyal \'azhiim" (3×)\n\nArtinya: Maha Suci Rabb-ku yang Maha Agung.', source:'Hal. 45'},
+  {label:'I\'tidal & Doanya', arabic:'سَمِعَ اللهُ لِمَنْ حَمِدَهُ', meaning:'7️⃣ I\'tidal — bangun dari ruku\'\nMembaca: "Sami\'allaahu liman hamidah"\n\n8️⃣ Lalu membaca:\n"Rabbanaa walakal hamdu hamdan katsiiran thayyiban mubaarakan fiih"\n\nArtinya: Wahai Rabb kami, milik-Mu lah semua pujian...', source:'Hal. 45'},
+  {label:'Sujud & Duduk antara 2 Sujud', arabic:'سُبْحَانَ رَبِّيَ الْأَعْلَى', meaning:'9️⃣ Sujud — ucapkan Allaahu Akbar\nMembaca: "Subhaana robbiyal a\'laa" (3×)\n\n🔟 Duduk antara 2 sujud:\nMembaca: "Robbighfirlii, robbighfirlii"\n\nArtinya: Ya Rabb-ku, ampunilah aku.', source:'Hal. 45-46'},
+  {label:'Tasyahud Akhir', arabic:'اَلتَّحِيَّاتُ لِلّهِ وَالصَّلَوَاتُ وَالطَّيِّبَاتُ', meaning:'2️⃣0️⃣ Duduk tasyahud akhir (rakaat terakhir)\n\n"At tahiyyaatu lillaah was shalawaatu wat thayyibaat as salaamu \'alaika ayyuhannabiyyu warahmatullaah wabarakaatuh, as salaamu \'alainaa wa \'ala ibaadillahis shaalihiin. Asyhadu an laa ilaaha illallaah wa asyhadu anna Muhammadan \'abduhu wa rasuuluh."', source:'Hal. 49'},
+  {label:'Shalawat & Doa Perlindungan', arabic:'اَللّهُمَّ صَلِّ عَلَى مُحَمَّدٍ', meaning:'2️⃣1️⃣ Shalawat:\n"Allahumma shalli \'ala Muhammad wa \'ala aali Muhammad kamaa shalayta..."\n\n2️⃣2️⃣ Doa perlindungan dari 4 hal:\n"Allahumma inni a\'udzubika min \'adzabi jahannam, wamin \'adzabil qabri, wamin fitnatil mahyaa wal mamaat, wamin syarri fitnatil masiiihid dajjaal."', source:'Hal. 50-51'},
+  {label:'Salam', arabic:'اَلسَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللهِ', meaning:'2️⃣3️⃣ Salam:\n\nMenoleh ke kanan: "Assalaamu\'alaikum warahmatullaah"\nMenoleh ke kiri: "Assalaamu\'alaikum warahmatullaah"\n\n✅ Selesailah shalat kita! Alhamdulillah.', source:'Hal. 51'},
+];
+
+// --- TUGAS I BAB 3: Ibadah BENAR vs SALAH ---
+const t1Data3 = [
+  {name:'🙏 Bersedekah supaya dipuji teman',ans:'salah'},
+  {name:'🐑 Menyembelih kambing untuk jin',ans:'salah'},
+  {name:'🕌 Shalat shubuh karena Allah',ans:'benar'},
+  {name:'🌙 Puasa karena ingin sehat',ans:'salah'},
+  {name:'💝 Bersedekah karena ingin ridha Allah',ans:'benar'},
+  {name:'🌳 Sujud kepada pohon besar',ans:'salah'},
+  {name:'🙏 Berdoa kepada Nabi Muhammad ﷺ',ans:'salah'},
+  {name:'💰 Meminta rezeki kepada Allah',ans:'benar'},
+  {name:'🔔 Berdzikir kepada Allah',ans:'benar'},
+  {name:'📖 Membaca Al-Quran karena Allah',ans:'benar'},
+  {name:'📚 Menuntut ilmu mengharap ridha Allah',ans:'benar'},
+  {name:'🌙 Puasa sunnah Senin-Kamis karena Allah',ans:'benar'},
+  {name:'💊 Meminta kesembuhan kepada dokter saja',ans:'salah'},
+  {name:'📖 Membaca Al-Quran agar dapat hadiah',ans:'salah'},
+  {name:'👥 Membantu teman agar dipuji',ans:'salah'},
+  {name:'🕌 Shalat mengharap ridha Allah',ans:'benar'},
+  {name:'🐪 Menyembelih unta karena Allah',ans:'benar'},
+  {name:'🤲 Berdoa hanya kepada Allah',ans:'benar'},
+  {name:'⭐ Meminta pertolongan kepada bintang',ans:'salah'},
+  {name:'🕋 Berhaji karena Allah',ans:'benar'},
+];
+
+// --- TUGAS I BAB 4: Gerakan Shalat ↔ Bacaan (Word Match style, rendered as wm) ---
+// Actually Bab 4 Tugas I is a "match gerakan-bacaan" — we'll use the wm system for this
+// but also provide a simpler click-tag version
+const t1Data4 = [
+  {name:'1️⃣ Takbiratul Ihram → Allaahu Akbar',ans:'benar'},
+  {name:'✅ Ruku\' → Subhaana robbiyal azhiim',ans:'benar'},
+  {name:'❓ Sujud → Sami\'allaahu liman hamidah',ans:'salah'},
+  {name:'✅ I\'tidal → Sami\'allaahu liman hamidah',ans:'benar'},
+  {name:'❓ Ruku\' → Subhaana robbiyal a\'laa',ans:'salah'},
+  {name:'✅ Sujud → Subhaana robbiyal a\'laa',ans:'benar'},
+  {name:'❓ Salam → Robbighfirlii',ans:'salah'},
+  {name:'✅ Duduk antara 2 sujud → Robbighfirlii',ans:'benar'},
+  {name:'✅ Salam → Assalaamu\'alaikum warahmatullaah',ans:'benar'},
+  {name:'❓ I\'tidal → Allaahu Akbar saja',ans:'salah'},
+  {name:'✅ Tasyahud Akhir → At tahiyyaatu...',ans:'benar'},
+  {name:'❓ Tasyahud → Subhaana robbiyal a\'laa',ans:'salah'},
+  {name:'✅ Setelah Al-Fatihah → Baca surat Al-Quran',ans:'benar'},
+  {name:'❓ Takbiratul Ihram → Sami\'allaahu',ans:'salah'},
+  {name:'✅ Rakaat pertama → Baca Al-Fatihah',ans:'benar'},
+  {name:'❓ Sujud → At tahiyyaatu',ans:'salah'},
+  {name:'✅ Setelah shalawat → Doa perlindungan 4 hal',ans:'benar'},
+  {name:'❓ Ruku\' → Rabbana walakal hamdu',ans:'salah'},
+  {name:'✅ I\'tidal diakhiri → Rabbanaa walakal hamdu',ans:'benar'},
+  {name:'✅ Berdiri pertama → Membaca Doa Iftitah',ans:'benar'},
+];
+
+// --- TUGAS II BAB 3 ---
+const t2Data3 = [
+  {q:'1. Aku hanya beribadah kepada ....',opts:['Nabi','Allah'],ans:1},
+  {q:'2. Aku hanya shalat menyembah ....',opts:['Allah','Rasul'],ans:0},
+  {q:'3. Menyembah gunung hukumnya ....',opts:['Baik','Haram'],ans:1},
+  {q:'4. Aku berpuasa karena ....',opts:['Allah','Hadiah'],ans:0},
+  {q:'5. Saat aku sakit yang bisa menyembuhkanku hanya ....',opts:['Dokter','Allah'],ans:1},
+  {q:'6. Aku membaca Al-Quran karena ....',opts:['Supaya dapat hadiah','Supaya Allah sayang aku'],ans:1},
+  {q:'7. Setiap hari aku ruku\' dan sujud kepada ....',opts:['Ka\'bah','Allah'],ans:1},
+  {q:'8. Aku ... beribadah hanya kepada Allah.',opts:['Boleh','Wajib'],ans:1},
+  {q:'9. Rabb-ku adalah yang ....',opts:['Menciptakanku','Melahirkanku'],ans:0},
+  {q:'10. Menyembah selain Allah adalah perbuatan ....',opts:['Baik','Haram/dosa besar'],ans:1},
+  {q:'11. Allah berhak disembah karena hanya Allah yang ....',opts:['Menghiburku','Menciptakan kita'],ans:1},
+  {q:'12. Selain Allah tidak boleh disembah karena ....',opts:['Bukan mereka yang memberi rezeki','Mereka tidak suka disembah'],ans:0},
+  {q:'13. Berdoa kepada Nabi Muhammad ﷺ hukumnya ....',opts:['Boleh','Tidak boleh'],ans:1},
+  {q:'14. Ibadah yang benar adalah ibadah yang hanya ditujukan kepada ....',opts:['Orang tua','Allah'],ans:1},
+  {q:'15. Bersedekah karena ingin dipuji teman adalah ibadah yang ....',opts:['Salah','Benar'],ans:0},
+  {q:'16. Allah memelihara kita dengan ....',opts:['Berbagai kenikmatan','Hukuman'],ans:0},
+  {q:'17. Perintah menyembah Allah ada dalam surat ....',opts:['Al-Baqarah: 21','An-Nas: 1'],ans:0},
+  {q:'18. Sujud kepada pohon besar hukumnya ....',opts:['Haram','Boleh'],ans:0},
+  {q:'19. Contoh ibadah yang benar adalah ....',opts:['Shalat karena ingin dilihat teman','Shalat karena Allah'],ans:1},
+  {q:'20. Allah mengatur seluruh ....',opts:['Satu negara saja','Alam semesta'],ans:1},
+];
+
+// --- TUGAS II BAB 4: Bacaan Shalat ---
+const t2Data4 = [
+  {q:'1. Bacaan saat takbiratul ihram adalah ....',opts:['Subhaanallaah','Allaahu Akbar'],ans:1},
+  {q:'2. Doa iftitah dibaca setelah ....',opts:['Salam','Takbiratul ihram'],ans:1},
+  {q:'3. Bacaan ruku\' adalah ....',opts:['Subhaana robbiyal a\'laa','Subhaana robbiyal azhiim'],ans:1},
+  {q:'4. Bacaan sujud adalah ....',opts:['Subhaana robbiyal a\'laa','Subhaana robbiyal azhiim'],ans:0},
+  {q:'5. Bacaan saat bangun dari ruku\' (i\'tidal) adalah ....',opts:['Sami\'allaahu liman hamidah','Robbighfirlii'],ans:0},
+  {q:'6. Bacaan duduk antara dua sujud adalah ....',opts:['At tahiyyaatu','Robbighfirlii rabbighfirlii'],ans:1},
+  {q:'7. Surat yang wajib dibaca di setiap rakaat adalah ....',opts:['Al-Ikhlas','Al-Fatihah'],ans:1},
+  {q:'8. Tasyahud akhir dibaca saat ....',opts:['Duduk setelah rakaat terakhir','Ruku\''],ans:0},
+  {q:'9. Shalat diakhiri dengan bacaan ....',opts:['Allaahu Akbar','Assalaamu\'alaikum warahmatullaah'],ans:1},
+  {q:'10. Setelah Al-Fatihah kita membaca ....',opts:['Doa iftitah','Surat dari Al-Quran'],ans:1},
+  {q:'11. Bacaan ruku\' dibaca sebanyak ....',opts:['3 kali','1 kali'],ans:0},
+  {q:'12. Doa setelah i\'tidal yang benar adalah ....',opts:['Rabbanaa walakal hamdu...','Subhaana robbiyal azhiim'],ans:0},
+  {q:'13. Setelah tasyahud akhir kita membaca ....',opts:['Shalawat','Doa iftitah'],ans:0},
+  {q:'14. Shalat 2 rakaat diakhiri dengan ....',opts:['Tasyahud awal','Salam'],ans:1},
+  {q:'15. Pada shalat Maghrib (3 rakaat), tasyahud awal dibaca setelah rakaat ke- ....',opts:['1','2'],ans:1},
+  {q:'16. Bacaan doa perlindungan sebelum salam memohon perlindungan dari ....',opts:['2 hal','4 hal'],ans:1},
+  {q:'17. Ketika salam, kepala menoleh ke ....',opts:['Kanan saja','Kanan lalu kiri'],ans:1},
+  {q:'18. Artinya "Subhaana robbiyal a\'laa" adalah ....',opts:['Maha Suci Rabb-ku yang Maha Agung','Maha Suci Rabb-ku yang Maha Tinggi'],ans:1},
+  {q:'19. Gerakan bersedekap dilakukan saat ....',opts:['Setelah bersedekap dan sebelum ruku\'','Setelah ruku\''],ans:0},
+  {q:'20. Doa i\'tidal yang lengkap diakhiri dengan kata ....',opts:['mubaarakan fiih','robbighfirlii'],ans:0},
+];
+
+// --- WORD MATCH BAB 3 ---
+const wmData3 = [
+  {word:'Shalat karena Allah',cat:'✅ Ibadah Benar'},
+  {word:'Berdoa kepada bintang',cat:'❌ Ibadah Salah'},
+  {word:'Bersedekah ridha Allah',cat:'✅ Ibadah Benar'},
+  {word:'Sujud kepada pohon',cat:'❌ Ibadah Salah'},
+  {word:'Puasa karena Allah',cat:'✅ Ibadah Benar'},
+  {word:'Menyembah patung',cat:'❌ Ibadah Salah'},
+  {word:'Berdoa hanya kepada Allah',cat:'✅ Ibadah Benar'},
+  {word:'Menyembah kuburan',cat:'❌ Ibadah Salah'},
+  {word:'Haji karena Allah',cat:'✅ Ibadah Benar'},
+  {word:'Meminta rizki ke jin',cat:'❌ Ibadah Salah'},
+  {word:'Belajar karena Allah',cat:'✅ Ibadah Benar'},
+  {word:'Sedekah supaya dipuji',cat:'❌ Ibadah Salah'},
+];
+const wmCat3 = ['✅ Ibadah Benar','❌ Ibadah Salah'];
+
+// --- WORD MATCH BAB 4: Gerakan → Bacaan ---
+const wmData4 = [
+  {word:'Takbiratul Ihram',cat:'🔊 Allaahu Akbar'},
+  {word:'Ruku\'',cat:'🔊 Subhaana robbiyal azhiim'},
+  {word:'I\'tidal',cat:'🔊 Sami\'allaahu liman hamidah'},
+  {word:'Sujud',cat:'🔊 Subhaana robbiyal a\'laa'},
+  {word:'Duduk antara 2 sujud',cat:'🔊 Robbighfirlii rabbighfirlii'},
+  {word:'Tasyahud Akhir',cat:'🔊 At tahiyyaatu lillaah'},
+  {word:'Salam',cat:'🔊 Assalaamu\'alaikum'},
+  {word:'Setelah Al-Fatihah',cat:'🔊 Baca surat Al-Quran'},
+];
+const wmCat4 = ['🔊 Allaahu Akbar','🔊 Subhaana robbiyal azhiim','🔊 Sami\'allaahu liman hamidah','🔊 Subhaana robbiyal a\'laa','🔊 Robbighfirlii rabbighfirlii','🔊 At tahiyyaatu lillaah','🔊 Assalaamu\'alaikum','🔊 Baca surat Al-Quran'];
+
+// ===== EXTEND MAPS =====
+fcMap[3] = fc3;   fcMap[4] = fc4;
+fcIdx[3] = 0;     fcIdx[4] = 0;
+t1Map[3] = t1Data3; t1Map[4] = t1Data4;
+t1State[3] = {};    t1State[4] = {};
+t2Map[3] = t2Data3; t2Map[4] = t2Data4;
+t2State[3] = {ans:{},checked:false};
+t2State[4] = {ans:{},checked:false};
+wmDataMap[3] = wmData3; wmDataMap[4] = wmData4;
+wmCatMap[3]  = wmCat3;  wmCatMap[4]  = wmCat4;
+wmState[3] = {sel:null,matched:{}}; wmState[4] = {sel:null,matched:{}};
+
+// ===== EXTEND SWITCHBAB =====
+babInfo[3] = {title:'🕌 Aku Hanya Menyembah Allah', badge:'Bab III'};
+babInfo[4] = {title:'🙏 Bacaan Shalat', badge:'Bab IV'};
+
+// ===== SPECIAL: BAB 4 TUGAS I as Word Match =====
+// We render bab4 t1 as a word-match UI (gerakan ↔ bacaan)
+// Overwrite renderT1 for bab=4 via the existing renderWM-like approach
+// We use the existing t1 click-tag approach but with t1Data4
+
+// ===== RENDER ALL BAB 3 & 4 =====
+[3,4].forEach(b => {
+  renderFC(b);
+  renderT1(b);
+  renderT2(b);
+  renderWM(b);
+});
+
 </script>
 </body>
 </html>
