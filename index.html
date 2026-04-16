@@ -32,6 +32,10 @@ body{font-family:'Nunito',sans-serif;background:linear-gradient(135deg,#e0f4ff 0
   gap:10px;
   justify-content:center;
   align-items:center;
+  flex-wrap:wrap;
+  position:sticky;
+  top:0;
+  z-index:200;
 }
 .bab-bar span{color:rgba(255,255,255,0.5);font-size:0.85rem;font-weight:700;letter-spacing:1px}
 .bab-btn{
@@ -72,7 +76,7 @@ body{font-family:'Nunito',sans-serif;background:linear-gradient(135deg,#e0f4ff 0
 @keyframes bounce{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
 
 /* ===== NAV TABS ===== */
-.nav{display:flex;overflow-x:auto;gap:8px;padding:12px 16px;background:white;box-shadow:0 3px 14px rgba(0,0,0,0.1);position:sticky;top:0;z-index:100;scrollbar-width:none;}
+.nav{display:flex;overflow-x:auto;gap:8px;padding:12px 16px;background:white;box-shadow:0 3px 14px rgba(0,0,0,0.1);position:sticky;top:44px;z-index:99;scrollbar-width:none;}
 .nav::-webkit-scrollbar{display:none;}
 .tab-btn{flex-shrink:0;padding:10px 18px;border:none;border-radius:50px;font-family:'Nunito',sans-serif;font-weight:800;font-size:0.9rem;cursor:pointer;transition:all 0.3s;display:flex;align-items:center;gap:6px;background:#f0f4f8;color:#555;}
 .tab-btn.active{color:white;box-shadow:0 5px 14px rgba(0,0,0,0.2);transform:translateY(-2px);}
@@ -1741,7 +1745,7 @@ const babInfo = {
   9:{title:'🧠 Allah Maha Mengetahui', badge:'Bab IX'},
 };
 function switchBab(bab, btn) {
-  document.querySelectorAll('.bab-btn').forEach(b => b.classList.remove('active-bab5','active-bab6','active-bab7','active-bab8','active-bab9'));
+  document.querySelectorAll('.bab-btn').forEach(b => b.classList.remove('active-bab3','active-bab4','active-bab5','active-bab6','active-bab7','active-bab8','active-bab9'));
   btn.classList.add(`active-bab${bab}`);
   [3,4,5,6,7,8,9].forEach(b => {
     const w = document.getElementById(`bab${b}-world`);
@@ -2116,8 +2120,8 @@ function resetT1(bab) {
 }
 
 // ===== TUGAS II FUNCTIONS =====
-const babColors = {5:'#e0f4ff',6:'#fff3ee',7:'#eef0fb',8:'#e0f2f1',9:'#ffebee'};
-const babBorder = {5:'var(--teal)',6:'var(--orange)',7:'var(--indigo)',8:'var(--emerald)',9:'var(--crimson)'};
+const babColors = {3:'#f5eef8',4:'#fef5e7',5:'#e0f4ff',6:'#fff3ee',7:'#eef0fb',8:'#e0f2f1',9:'#ffebee'};
+const babBorder = {3:'var(--violet)',4:'var(--amber)',5:'var(--teal)',6:'var(--orange)',7:'var(--indigo)',8:'var(--emerald)',9:'var(--crimson)'};
 
 function renderT2(bab) {
   const data = t2Map[bab];
@@ -2189,7 +2193,7 @@ function renderWM(bab) {
   if (!container) return;
   const remaining  = items.filter(i => !st.matched[i.word]);
   const matchedKeys = Object.keys(st.matched);
-  const col = {5:'var(--teal-dark)',6:'var(--orange-dark)',7:'var(--indigo-dark)',8:'var(--emerald-dark)',9:'var(--crimson-dark)'};
+  const col = {3:'var(--violet-dark)',4:'var(--amber-dark)',5:'var(--teal-dark)',6:'var(--orange-dark)',7:'var(--indigo-dark)',8:'var(--emerald-dark)',9:'var(--crimson-dark)'};
   const matchedHTML = matchedKeys.length>0
     ? `<div class="card green" style="margin-bottom:14px"><h3 style="font-family:'Baloo 2',cursive;font-size:1.05rem;color:#00805e;margin-bottom:8px">✅ Sudah dicocokkan (${matchedKeys.length}/${items.length})</h3><div class="bubble-list">${matchedKeys.map(k=>`<div class="bubble green">${k} → ${st.matched[k]}</div>`).join('')}</div></div>` : '';
   container.innerHTML = `${matchedHTML}
@@ -2244,12 +2248,7 @@ function resetWM(bab) {
 }
 
 // ===== RENDER ALL =====
-[3,4,5,6,7,8,9].forEach(b => {
-  renderFC(b);
-  renderT1(b);
-  renderT2(b);
-  renderWM(b);
-});
+
 // ===== BAB 3 & 4 EXTRA DATA =====
 
 // --- FLASHCARDS ---
@@ -2422,14 +2421,13 @@ babInfo[4] = {title:'🙏 Bacaan Shalat', badge:'Bab IV'};
 // Overwrite renderT1 for bab=4 via the existing renderWM-like approach
 // We use the existing t1 click-tag approach but with t1Data4
 
-// ===== RENDER ALL BAB 3 & 4 =====
-[3,4].forEach(b => {
+// ===== RENDER ALL =====
+[3,4,5,6,7,8,9].forEach(b => {
   renderFC(b);
   renderT1(b);
   renderT2(b);
   renderWM(b);
 });
-
 </script>
 </body>
 </html>
