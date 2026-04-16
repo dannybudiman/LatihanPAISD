@@ -6,7 +6,7 @@
 <title>Belajar PAI — Kelas 1 SD Islam 🕌</title>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-/* --- SEMUA CSS ASLI ANDA DIKEMBALIKAN --- */
+/* --- KEMBALIKAN CSS ASLI KAMU --- */
 :root {
   --teal:#00b4d8; --teal-dark:#0077b6;
   --gold:#f4a500; --gold-light:#ffd166;
@@ -50,24 +50,31 @@ h1, h2, h3 { font-family:'Baloo 2', cursive; margin:0; }
 .tab-content { display:none; }
 .tab-content.active { display:block; }
 
-/* Styles untuk Flashcard, Task, dan Word Match tetap sama dengan file pertama Anda */
-.fc-card { background:#fff; border-radius:25px; padding:30px; text-align:center; box-shadow:0 15px 35px rgba(0,0,0,0.1); border:8px solid var(--sky); margin-bottom:20px; }
-.fc-text { font-size:24px; font-weight:800; color:var(--purple); }
-.fc-sub { font-size:18px; color:#666; margin-top:10px; }
+/* Styles Flashcard */
+.fc-card { background:#fff; border-radius:25px; padding:30px; text-align:center; box-shadow:0 15px 35px rgba(0,0,0,0.1); border:8px solid var(--sky); margin-bottom:20px; position:relative; }
+.fc-img-box { width:100%; max-width:200px; height:200px; margin:0 auto 20px; background:#f9f9f9; border-radius:20px; display:flex; align-items:center; justify-content:center; }
+.fc-img-box img { max-width:90%; max-height:90%; border-radius:15px; }
+.fc-text { font-size:24px; font-weight:800; color:var(--purple); margin-bottom:10px; }
+.fc-sub { font-size:18px; color:#666; }
 .fc-nav { display:flex; justify-content:space-between; align-items:center; }
-.fc-btn { background:var(--teal); color:#fff; padding:10px 20px; border-radius:12px; cursor:pointer; border:none; font-weight:700; box-shadow:0 4px 0 var(--teal-dark); }
+.fc-btn { background:var(--teal); color:#fff; padding:12px 25px; border-radius:15px; font-weight:700; cursor:pointer; border:none; box-shadow:0 4px 0 var(--teal-dark); }
 .fc-btn:active { transform:translateY(2px); box-shadow:none; }
-.fc-counter { font-weight:800; color:var(--teal-dark); }
+.fc-counter { font-weight:800; font-size:18px; color:var(--teal-dark); }
 
-.task-item { display:flex; align-items:center; padding:15px; background:#fff; margin-bottom:10px; border-radius:15px; gap:15px; }
-.check-btn { width:30px; height:30px; border-radius:8px; border:3px solid var(--teal); cursor:pointer; display:flex; align-items:center; justify-content:center; }
-.check-btn.done { background:var(--green); border-color:var(--green); color:white; }
-.task-text.done { text-decoration:line-through; color:#aaa; }
-
+/* Styles Matching Game */
 .wm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-.match-item { background: #fff; padding: 15px; border-radius: 15px; text-align: center; font-weight: 700; cursor: pointer; border: 3px solid var(--sky); }
+.wm-col { display: flex; flex-direction: column; gap: 10px; }
+.match-item { background: #fff; padding: 15px; border-radius: 15px; text-align: center; font-weight: 700; cursor: pointer; border: 3px solid var(--sky); transition: 0.2s; min-height: 60px; display: flex; align-items: center; justify-content: center; }
 .match-item.selected { border-color: var(--gold); background: var(--gold-light); }
-.match-item.matched { background: var(--green); color: #fff; border-color: transparent; }
+.match-item.matched { background: var(--green); border-color: #fff; color: #fff; cursor: default; }
+
+/* Styles Checklist */
+.task-list { background:#fff; border-radius:20px; padding:20px; box-shadow:0 5px 15px rgba(0,0,0,0.05); }
+.task-item { display:flex; align-items:center; padding:15px; border-bottom:1px solid #eee; gap:15px; cursor: pointer; }
+.check-btn { width:30px; height:30px; border-radius:8px; border:3px solid var(--teal); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.check-btn.done { background:var(--green); border-color:var(--green); color:#fff; }
+.task-text { font-size:16px; font-weight:600; }
+.task-text.done { text-decoration:line-through; color:#aaa; }
 </style>
 </head>
 <body>
@@ -89,33 +96,37 @@ h1, h2, h3 { font-family:'Baloo 2', cursive; margin:0; }
 
 <main id="main-content">
   <script>
-    const babs = [3,4,5,6,7,8,9];
-    const titles = {3:"Iman Kepada Allah", 4:"Bersuci", 5:"Kisah Para Nabi", 6:"Surah Pendek", 7:"Adab Anak", 8:"Membaca", 9:"Bersyukur"};
+    const babList = [3,4,5,6,7,8,9];
+    const babTitles = {
+      3: "Iman Kepada Allah", 4: "Bersuci", 5: "Kisah Para Nabi",
+      6: "Al-Qur'an", 7: "Adab Anak", 8: "Membaca", 9: "Bersyukur"
+    };
     
-    babs.forEach(b => {
+    babList.forEach(b => {
       document.write(`
         <section id="world-bab${b}" class="world-section ${b===5?'active':''}">
-          <h2 style="text-align:center; color:var(--teal-dark); margin-bottom:20px;">Bab ${b}: ${titles[b]}</h2>
+          <h2 style="text-align:center; color:var(--teal-dark); margin-bottom:20px;">Bab ${b}: ${babTitles[b]}</h2>
           <div class="tab-container">
-            <div class="tab-btn active" onclick="switchTab(${b}, 'fc')">Flashcard</div>
-            <div class="tab-btn" onclick="switchTab(${b}, 'tg')">Tugas</div>
-            <div class="tab-btn" onclick="switchTab(${b}, 'wm')">Tebak Kata</div>
+            <div class="tab-btn active" id="btn-fc-${b}" onclick="switchTab(${b}, 'fc')">Flashcard</div>
+            <div class="tab-btn" id="btn-tg-${b}" onclick="switchTab(${b}, 'tg')">Tugas</div>
+            <div class="tab-btn" id="btn-wm-${b}" onclick="switchTab(${b}, 'wm')">Tebak Kata</div>
           </div>
 
           <div id="b${b}-fc" class="tab-content active">
             <div class="fc-card">
+              <div class="fc-img-box" id="b${b}-fc-img">🖼️</div>
               <div class="fc-text" id="b${b}-fc-text">...</div>
               <div class="fc-sub" id="b${b}-fc-sub">...</div>
             </div>
             <div class="fc-nav">
               <button class="fc-btn" onclick="prevFC(${b})">⬅️</button>
-              <div class="fc-counter" id="b${b}-fc-count">1 / 1</div>
+              <div class="fc-counter" id="b${b}-fc-count">0 / 0</div>
               <button class="fc-btn" onclick="nextFC(${b})">➡️</button>
             </div>
           </div>
 
           <div id="b${b}-tg" class="tab-content">
-            <div id="b${b}-task-list"></div>
+            <div class="task-list" id="b${b}-task-list"></div>
           </div>
 
           <div id="b${b}-wm" class="tab-content">
@@ -131,47 +142,48 @@ h1, h2, h3 { font-family:'Baloo 2', cursive; margin:0; }
 </main>
 
 <script>
-// --- DATA DAN LOGIKA PERBAIKAN ---
-
+// --- DATA MATERIMU (LENGKAP) ---
 const flashcardsData = {
-  3: [{t:"Rukun Iman", s:"Ada 6 Perkara"}, {t:"Iman Pertama", s:"Iman kepada Allah"}],
-  4: [{t:"Wudhu", s:"Suci dari hadas kecil"}, {t:"Istinja", s:"Membersihkan kotoran"}],
+  3: [{t:"Rukun Iman", s:"Ada 6 Perkara"}, {t:"Iman", s:"Artinya Percaya"}],
+  4: [{t:"Wudhu", s:"Suci sebelum shalat"}, {t:"Istinja", s:"Bersih setelah buang air"}],
   5: [
-    {t:"Nabi Adam a.s.", s:"Manusia Pertama"},
-    {t:"Nabi Idris a.s.", s:"Nabi yang Pandai Menulis"},
-    {t:"Nabi Nuh a.s.", s:"Membuat Kapal Besar"},
-    {t:"Nabi Hud a.s.", s:"Sabar terhadap Kaum Aad"},
-    {t:"Sifat Siddiq", s:"Artinya Jujur"}
+    {t:"Nabi Adam a.s.", s:"Manusia Pertama", i:"img/bab5/1.png"},
+    {t:"Nabi Idris a.s.", s:"Sangat Cerdas", i:"img/bab5/2.png"},
+    {t:"Nabi Nuh a.s.", s:"Membuat Kapal Besar", i:"img/bab5/3.png"},
+    {t:"Nabi Hud a.s.", s:"Sabar Menghadapi Kaum Aad", i:"img/bab5/4.png"},
+    {t:"Siddiq", s:"Artinya Jujur", i:"img/bab5/5.png"},
+    {t:"Amanah", s:"Terpercaya", i:"img/bab5/6.png"},
+    {t:"Tabligh", s:"Menyampaikan", i:"img/bab5/7.png"}
   ],
   6: [{t:"Al-Fatihah", s:"Pembukaan"}, {t:"Al-Ikhlas", s:"Keesaan Allah"}],
   7: [{t:"Sopan", s:"Kepada Orang Tua"}, {t:"Sayang", s:"Kepada Teman"}],
-  8: [{t:"Iqra", s:"Artinya Bacalah"}, {t:"Ilmu", s:"Wajib bagi setiap muslim"}],
-  9: [{t:"Syukur", s:"Ucap Alhamdulillah"}, {t:"Sabar", s:"Tahan Emosi"}]
+  8: [{t:"Iqra", s:"Artinya Bacalah"}, {t:"Buku", s:"Jendela Dunia"}],
+  9: [{t:"Alhamdulillah", s:"Ucap Syukur"}, {t:"Sabar", s:"Tahan Amarah"}]
 };
 
 const tugasData = {
-  3: ["Berdoa sebelum tidur", "Menyebutkan 6 Rukun Iman"],
-  4: ["Praktek Wudhu di rumah"],
-  5: ["Mendengarkan kisah Nabi Adam", "Mewarnai gambar Kapal Nuh", "Menyebutkan 25 Nama Nabi"],
-  6: ["Hafal Surah Al-Fatihah"],
-  7: ["Membantu orang tua"],
-  8: ["Membaca 1 buku cerita"],
-  9: ["Mengucapkan syukur setiap hari"]
+  5: ["Mendengar cerita Nabi Adam", "Mewarnai Kapal Nabi Nuh", "Menghafal 25 Nabi"],
+  3: ["Sebutkan 6 Rukun Iman", "Berdoa sebelum belajar"]
 };
 
 const wmDataMap = {
-  5: [{word:"Adam", cat:"Manusia Pertama"}, {word:"Nuh", cat:"Kapal"}, {word:"Hud", cat:"Kaum Aad"}],
+  5: [{word:"Adam", cat:"Pertama"}, {word:"Nuh", cat:"Kapal"}, {word:"Idris", cat:"Cerdas"}],
   3: [{word:"Iman", cat:"Percaya"}]
 };
 
-// State untuk menyimpan index halaman per bab
+// --- MESIN LOGIKA (PERBAIKAN UTAMA) ---
 let flashState = {};
+let taskState = {};
 let wmState = {};
 
 function initApp() {
-  babs.forEach(b => {
+  babList.forEach(b => {
+    // Inisialisasi status data per bab
     flashState[b] = { idx: 0 };
+    taskState[b] = (tugasData[b] || ["Belajar Bab " + b]).map(t => ({text:t, done:false}));
     wmState[b] = { sel: null, matched: {} };
+    
+    // Render semua supaya data masuk ke HTML
     renderFlashcard(b);
     renderTugas(b);
     renderWM(b);
@@ -179,105 +191,125 @@ function initApp() {
 }
 
 function showWorld(n) {
-  // Update Navigasi
+  // 1. Ganti tampilan Navigasi
   document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
   document.getElementById('nav' + n).classList.add('active');
 
-  // Tampilkan Section
+  // 2. Ganti tampilan Section
   document.querySelectorAll('.world-section').forEach(sec => sec.classList.remove('active'));
   document.getElementById('world-bab' + n).classList.add('active');
-  
-  // Pastikan konten dirender
+
+  // 3. Render Ulang konten bab tersebut agar fresh
   renderFlashcard(n);
-  renderTugas(n);
-  renderWM(n);
 }
 
 function switchTab(bab, tabType) {
   const section = document.getElementById('world-bab' + bab);
-  section.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-  section.querySelectorAll('.tab-content').forEach(cont => cont.classList.remove('active'));
-
-  // Aktifkan tab yang dipilih
-  const clickedBtn = Array.from(section.querySelectorAll('.tab-btn')).find(b => b.innerText.toLowerCase().includes(tabType==='fc'?'flash':tabType==='tg'?'tugas':'tebak'));
-  if(clickedBtn) clickedBtn.classList.add('active');
-  document.getElementById(`b${bab}-${tabType}`).classList.add('active');
-}
-
-function renderFlashcard(bab) {
-  const data = flashcardsData[bab] || [{t:"Materi", s:"Segera Hadir"}];
-  const st = flashState[bab];
-  const item = data[st.idx];
   
-  document.getElementById(`b${bab}-fc-text`).innerText = item.t;
-  document.getElementById(`b${bab}-fc-sub`).innerText = item.s;
-  document.getElementById(`b${bab}-fc-count`).innerText = `${st.idx + 1} / ${data.length}`;
+  // Update tombol tab
+  section.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+  document.getElementById(`btn-${tabType}-${bab}`).classList.add('active');
+
+  // Update isi tab
+  section.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+  document.getElementById(`b${bab}-${tabType}`).classList.add('active');
+  
+  // Re-render tab yang dibuka
+  if(tabType === 'fc') renderFlashcard(bab);
+  if(tabType === 'tg') renderTugas(bab);
+  if(tabType === 'wm') renderWM(bab);
 }
 
-function nextFC(bab) {
-  if (flashState[bab].idx < flashcardsData[bab].length - 1) {
-    flashState[bab].idx++;
-    renderFlashcard(bab);
+function renderFlashcard(b) {
+  const data = flashcardsData[b] || [{t:"Materi", s:"Segera hadir"}];
+  const st = flashState[b];
+  const item = data[st.idx];
+
+  document.getElementById(`b${b}-fc-text`).innerText = item.t;
+  document.getElementById(`b${b}-fc-sub`).innerText = item.s;
+  document.getElementById(`b${b}-fc-count`).innerText = `${st.idx + 1} / ${data.length}`;
+  
+  const imgBox = document.getElementById(`b${b}-fc-img`);
+  if(item.i) {
+    imgBox.innerHTML = `<img src="${item.i}" onerror="this.innerHTML='🖼️';">`;
+  } else {
+    imgBox.innerHTML = '🖼️';
   }
 }
 
-function prevFC(bab) {
-  if (flashState[bab].idx > 0) {
-    flashState[bab].idx--;
-    renderFlashcard(bab);
+function nextFC(b) {
+  if (flashState[b].idx < (flashcardsData[b] || []).length - 1) {
+    flashState[b].idx++;
+    renderFlashcard(b);
   }
 }
 
-function renderTugas(bab) {
-  const list = document.getElementById(`b${bab}-task-list`);
-  const tasks = tugasData[bab] || ["Belajar Bab " + bab];
+function prevFC(b) {
+  if (flashState[b].idx > 0) {
+    flashState[b].idx--;
+    renderFlashcard(b);
+  }
+}
+
+function renderTugas(b) {
+  const list = document.getElementById(`b${b}-task-list`);
+  const tasks = taskState[b];
   list.innerHTML = tasks.map((t, i) => `
-    <div class="task-item" onclick="this.querySelector('.check-btn').classList.toggle('done'); this.querySelector('.task-text').classList.toggle('done')">
-      <div class="check-btn"></div>
-      <div class="task-text">${t}</div>
+    <div class="task-item" onclick="toggleTask(${b}, ${i})">
+      <div class="check-btn ${t.done ? 'done' : ''}">${t.done ? '✔' : ''}</div>
+      <div class="task-text ${t.done ? 'done' : ''}">${t.text}</div>
     </div>
   `).join('');
 }
 
-function renderWM(bab) {
-  const data = wmDataMap[bab] || [];
-  const st = wmState[bab];
-  const wordCol = document.getElementById(`b${bab}-wm-words`);
-  const catCol = document.getElementById(`b${bab}-wm-cats`);
+function toggleTask(b, i) {
+  taskState[b][i].done = !taskState[b][i].done;
+  renderTugas(b);
+}
+
+function renderWM(b) {
+  const data = wmDataMap[b] || [];
+  const st = wmState[b];
+  const wordCol = document.getElementById(`b${b}-wm-words`);
+  const catCol = document.getElementById(`b${b}-wm-cats`);
   
-  if(!wordCol || data.length === 0) return;
+  if(!wordCol) return;
+  if(data.length === 0) {
+    wordCol.innerHTML = "Segera hadir";
+    return;
+  }
 
   wordCol.innerHTML = data.map(i => `
-    <div class="match-item ${st.sel===i.word?'selected':''} ${st.matched[i.word]?'matched':''}" onclick="selectWMWord(${bab}, '${i.word}')">${i.word}</div>
+    <div class="match-item ${st.sel===i.word?'selected':''} ${st.matched[i.word]?'matched':''}" onclick="selectWMWord(${b}, '${i.word}')">${i.word}</div>
   `).join('');
 
   catCol.innerHTML = data.map(i => `
-    <div class="match-item ${Object.values(st.matched).includes(i.cat)?'matched':''}" onclick="selectWMCat(${bab}, '${i.cat}')">${i.cat}</div>
+    <div class="match-item ${Object.values(st.matched).includes(i.cat)?'matched':''}" onclick="selectWMCat(${b}, '${i.cat}')">${i.cat}</div>
   `).join('');
 }
 
-function selectWMWord(bab, word) {
-  wmState[bab].sel = word;
-  renderWM(bab);
+function selectWMWord(b, w) {
+  if(wmState[b].matched[w]) return;
+  wmState[b].sel = w;
+  renderWM(b);
 }
 
-function selectWMCat(bab, cat) {
-  const st = wmState[bab];
+function selectWMCat(b, c) {
+  const st = wmState[b];
   if(!st.sel) return;
-  const item = wmDataMap[bab].find(i => i.word === st.sel);
-  if(item && item.cat === cat) {
-    st.matched[st.sel] = cat;
+  const item = wmDataMap[b].find(i => i.word === st.sel);
+  if(item && item.cat === c) {
+    st.matched[st.sel] = c;
     st.sel = null;
-    renderWM(bab);
+    renderWM(b);
   } else {
     st.sel = null;
-    renderWM(bab);
+    renderWM(b);
   }
 }
 
-// JALANKAN SAAT AWAL
+// Jalankan aplikasi
 window.addEventListener('DOMContentLoaded', initApp);
 </script>
-
 </body>
 </html>
